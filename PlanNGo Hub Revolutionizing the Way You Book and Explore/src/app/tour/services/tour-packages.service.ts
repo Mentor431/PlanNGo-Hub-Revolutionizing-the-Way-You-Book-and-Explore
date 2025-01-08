@@ -1,16 +1,29 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { map, Observable, switchMap } from "rxjs";
-import { Agencies, Locations, TourPackage, TourType } from "../models/tour-package-entities";
+import {
+  Agencies,
+  Locations,
+  TourPackage,
+  TourType,
+} from "../models/tour-package-entities";
+import { TourBooking } from "../models/tour-booking-entities";
 
 @Injectable({
   providedIn: "root",
 })
 export class TourPackagesService {
+  getTourPackageById(tourId: string) {
+    throw new Error("Method not implemented.");
+  }
   private toursApiUrl = "http://localhost:3000/Tours";
   private locationsApiUrl = "http://localhost:3000/Locations";
   private agenciesApiUrl = "http://localhost:3000/Agencies";
   private tourTypeApiUrl = "http://localhost:3000/TourType";
+  private bookingApiUrl = "http://localhost:3000/Bookings"; 
+  private paymentApiUrl = "http://localhost:3000/Payments";
+
+  bookTour: any;
 
   constructor(private http: HttpClient) {}
 
@@ -26,8 +39,10 @@ export class TourPackagesService {
               return tours.map((tour) => ({
                 ...tour,
                 Location:
-                  locations.find((loc) => loc.LocationId === tour.LocationId)
-                    ?.Location || "Unknown",
+                  locations.find(
+                    (loc: { LocationId: any }) =>
+                      loc.LocationId === tour.LocationId
+                  )?.Location || "Unknown",
               }));
             })
           )
@@ -69,5 +84,40 @@ export class TourPackagesService {
   // Fetch tour types
   getTourTypes(): Observable<TourType[]> {
     return this.http.get<TourType[]>(this.tourTypeApiUrl);
+  }
+  // Fetch all bookings
+  getAllBookings(): Observable<TourBooking[]> {
+    return this.http.get<TourBooking[]>(this.bookingApiUrl);
+  }
+
+  // Fetch booking by ID
+  getBookingById(bookingId: string): Observable<TourBooking> {
+    return this.http.get<TourBooking>(`${this.bookingApiUrl}/${bookingId}`);
+  }
+
+  // Add a new booking
+  createBooking(bookingData: TourBooking): Observable<TourBooking> {
+    return this.http.post<TourBooking>(this.bookingApiUrl, bookingData);
+  }
+
+  // Update an existing booking
+  updateBooking(
+    bookingId: string,
+    updatedData: Partial<TourBooking>
+  ): Observable<any> {
+    return this.http.put<any>(
+      `${this.bookingApiUrl}/${bookingId}`,
+      updatedData
+    );
+  }
+
+  // Delete a booking
+  deleteBooking(bookingId: string): Observable<void> {
+    return this.http.delete<void>(`${this.bookingApiUrl}/${bookingId}`);
+  }
+
+  // Function to add a new payment
+  addNewPayment(paymentData: any): Observable<any> {
+    return this.http.post(this.paymentApiUrl, paymentData);
   }
 }
