@@ -4,14 +4,17 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import { Router } from '@angular/router';
 import { HotelService } from '../../services/hotel.service';
 import { Hotel } from '../../models/hotel.model';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {faFilter} from'@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-search-results',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, FontAwesomeModule],
   templateUrl: './hotel-results.component.html',
   styleUrls: ['./hotel-results.component.css'],
 })
@@ -20,6 +23,8 @@ export class HotelResultsComponent implements OnInit {
   filteredHotels: Hotel[] = [];
   searchParams: any;
 
+  faFilter = faFilter;
+
   filters = {
     price: 0,
     minPrice: 0,
@@ -27,36 +32,26 @@ export class HotelResultsComponent implements OnInit {
   };
 
   availableAmenities = [
-    'Free WiFi',
-    'Air Conditioning',
-    'Parking',
-    'Sea View',
-    'Spa',
-    'Fitness Center',
-    'Restaurant',
-    'Bar',
-    'Garden View',
-    'Pool',
-    'Mountain View',
-    'Yoga Retreat',
-    'City View',
-    'Beachfront',
-    'Palace View',
-    'Gym',
-    'Lake View',
-  ];
+    'Outdoor swimming pool','Spa','Gym','Bar','Massage room','Restaurant','Children pool','Free Wifi','Karaoke','Playground','Free Parking','Lift','Sauna','Childcare service','Luggage storage','Conference room','EV charging station','Cleaning Services','Table tennis room','Yoga Retreat'];
 
-  constructor(private route: ActivatedRoute, private hotelService: HotelService) {}
 
-  ngOnInit(): void {
-    this.route.queryParams.subscribe((params) => {
-      this.searchParams = params;
-      this.fetchHotels(params['location']);
-    });
+  constructor(private route: ActivatedRoute, private hotelService: HotelService, private router: Router) {}
+
+  location: string = "";
+
+  ngOnInit() {
+    
+    this.hotelService.getSearchDetails().subscribe((details) => {
+      if (details) {
+        this.searchParams = details;
+        this.fetchHotels(details['location']); 
+      }
+ 
+  });
+    
   }
-
+  
   fetchHotels(location?: string) {
-    console.log("Location passed: ", location);
     if (!location?.trim()) {
       this.hotels = [];
       this.filteredHotels = [];
@@ -92,4 +87,10 @@ export class HotelResultsComponent implements OnInit {
     }
     // Do not call applyFilters() here to avoid auto-filtering
   }
-}  
+  
+  navigateToDetails(hotel: Hotel): void {
+    this.hotelService.setSelectedHotel(hotel);
+    this.router.navigate(['/hotel-details', hotel.id]);
+  }
+
+}

@@ -3,20 +3,41 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject} from 'rxjs';
 import { Hotel } from '../models/hotel.model';
 
 @Injectable({
   providedIn: 'root',
 })
+
 export class HotelService {
   private apiUrl = 'http://localhost:3000/hotels';
 
-  constructor(private http: HttpClient) {}
+constructor(private http: HttpClient) {}
+ // BehaviorSubject to store search details
+ private searchDetailsSource = new BehaviorSubject<any>(null);
+ private selectedHotelSource = new BehaviorSubject<Hotel | null>(null);
+ private selectedRoomSource = new BehaviorSubject<any>(null);
 
-  getHotels(): Observable<Hotel[]> {
+  /*** Search Hotel Component ***/
+
+// Save search details
+  setSearchDetails(details: any): void {
+    this.searchDetailsSource.next(details);
+  }
+
+// Get search details
+ getSearchDetails(): Observable<any> {
+  return this.searchDetailsSource.asObservable();
+}
+
+// get all hotels
+getHotels(): Observable<Hotel[]> {
     return this.http.get<Hotel[]>(this.apiUrl);
   }
+
+
+  /*** Hotel Results Component ***/
 
   /**
    * Fetch hotels filtered by location
@@ -53,4 +74,36 @@ export class HotelService {
       return matchesMaxPrice && matchesMinPrice && matchesAmenities;
     });
   }
+
+  /*** Hotel Details Component ***/
+
+// Save selected hotel
+setSelectedHotel(hotel: Hotel): void {
+  this.selectedHotelSource.next(hotel);
 }
+getSelectedHotel(): Observable<Hotel | null> {
+  return this.selectedHotelSource.asObservable();
+}
+getHotelById(id: number): Observable<Hotel> {
+  return this.http.get<Hotel>(`${this.apiUrl}/${id}`);
+}
+ /*** Hotel Booking Component ***/
+ // Save selected room
+ setSelectedRoom(room: any): void {
+  this.selectedRoomSource.next(room);
+}
+
+// Get selected room
+getSelectedRoom(): Observable<any> {
+  return this.selectedRoomSource.asObservable();
+}
+
+// Booking method to save booking data
+bookHotel(bookingData: any): Observable<any> {
+  const url = `http://localhost:3000/bookings`; // Booking endpoint in db.json
+  return this.http.post<any>(url, bookingData);
+}
+
+}
+
+
