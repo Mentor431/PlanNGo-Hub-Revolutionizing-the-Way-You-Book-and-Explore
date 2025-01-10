@@ -1,0 +1,70 @@
+{
+  "users": [
+    {
+      "id": "PG001",
+      "fullName": "helloii",
+      "email": "hihe@gmail.com",
+      "password": "1999",
+      "age": 39,
+      "gender": "Female",
+      "location": "Bangalo"
+    },
+    {
+      "id": "PG002",
+      "fullName": "Bindushree R",
+      "email": "bindur@gmail.com",
+      "password": "2004",
+      "age": 22,
+      "gender": "Female",
+      "location": "Bangalore"
+    },
+    {
+      "id": "PG003",
+      "fullName": "sindu",
+      "email": "sindu@gmail.com",
+      "password": "2002",
+      "age": 22,
+      "gender": "Female",
+      "location": "mysore"
+    },
+    {
+      "id": "PG004",
+      "fullName": "Vasudharani",
+      "email": "vasudharanignayak@gmail.com",
+      "password": "v",
+      "age": 2,
+      "gender": "Female",
+      "location": "Ankola"
+    },
+    {
+      "id": "PG005",
+      "fullName": "Vasudharani",
+      "email": "vasudharanignayak@gmail.com",
+      "password": "v",
+      "age": 2,
+      "gender": "Female",
+      "role": "Admin",
+      "location": "Ankola"
+    },
+    {
+      "id": "PG006",
+      "fullName": "Shree",
+      "email": "abc@gmail.com",
+      "password": "v",
+      "age": 22,
+      "gender": "Female",
+      "role": "Admin",
+      "location": "Belagavi"
+    },
+    {
+      "id": "PG007",
+      "fullName": "a",
+      "email": "a@gmail.com",
+      "password": "a",
+      "age": 20,
+      "gender": "Male",
+      "role": "User",
+      "location": "Belagavi"
+    }
+  ]
+}
