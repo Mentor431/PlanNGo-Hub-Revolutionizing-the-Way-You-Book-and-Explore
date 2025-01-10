@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { RegisterPostData, User } from '../interfaces/auth';
+import { RegisterPostData, User } from '../models/auth';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 

@@ -4,7 +4,7 @@ import { ButtonModule } from 'primeng/button';
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common'; // Import CommonModule
 import { FormsModule } from '@angular/forms'; // Import FormsModule
-import { User } from '../../interfaces/auth'; // Adjust the path as per your project structure
+import { User } from '../../models/auth'; // Adjust the path as per your project structure
 
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';

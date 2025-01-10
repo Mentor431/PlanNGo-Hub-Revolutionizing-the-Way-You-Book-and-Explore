@@ -12,9 +12,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { DropdownModule } from 'primeng/dropdown'; // Import DropdownModule
 import { CommonModule } from '@angular/common'; // Import CommonModule
-import { passwordMismatchValidator } from '../../shared/password-mismatch.directive';
+import { passwordMismatchValidator } from '../../services/password-mismatch.directive';
 import { AuthService } from '../../services/auth.service';
-import { RegisterPostData } from '../../interfaces/auth';
+import { RegisterPostData } from '../../models/auth';
 import { MessageService } from 'primeng/api';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 

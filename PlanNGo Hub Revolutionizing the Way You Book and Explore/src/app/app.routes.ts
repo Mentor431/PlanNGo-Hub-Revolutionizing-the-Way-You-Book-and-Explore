@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './authentication/components/login/login.component';
 import { RegisterComponent } from './authentication/components/register/register.component';
 import { HomeComponent } from './authentication/components/home/home.component';
-import { authGuard } from './authentication/guards/auth.guard';
+import { authGuard } from './authentication/services/auth.guard';
 import { ForgotPasswordComponent } from './authentication/components/forgotpassword/forgotpassword.component';
 import { RouterModule  } from '@angular/router';
 import { AdminDashboardComponent } from './authentication/components/admin-dashboard/admin-dashboard.component';

@@ -65,6 +65,16 @@
       "gender": "Male",
       "role": "User",
       "location": "Belagavi"
+    },
+    {
+      "id": "PG008",
+      "fullName": "Guddu Kumar",
+      "email": "guddu748081@gmail.com",
+      "password": "Guddu@123",
+      "age": 20,
+      "gender": "Male",
+      "role": "Admin",
+      "location": "Majhauliya"
     }
   ]
 }
