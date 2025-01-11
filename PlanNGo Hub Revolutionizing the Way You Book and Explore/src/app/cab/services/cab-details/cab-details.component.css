@@ -1,0 +1,60 @@
+body {
+  background: linear-gradient(135deg, #f0f4f7, #c9e1e8);
+  font-family: 'Arial', sans-serif; /* Ensure the font family is consistent */
+  margin: 0;
+  padding: 0;
+}
+
+.cab-details {
+  background: rgb(70 130 180);
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  max-width: 624px;
+  margin: 20px auto;
+  height: 30em;
+  margin-top: 88px;
+}
+
+.cab-details h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 5px;
+}
+
+.cab-details p {
+  font-size: 1rem;
+  margin: 19px 0;
+}
+
+.cab-details button {
+  background-color: #ff6f61;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 20px auto 0;
+}
+
+.cab-details button:hover {
+  background-color: #ff5047;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+.cab-data {
+  text-align: center;
+}
+.cab-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 55px;
+}

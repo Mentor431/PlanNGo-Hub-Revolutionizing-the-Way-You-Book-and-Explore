@@ -1,0 +1,34 @@
+<!-- src/app/cab/components/cab-booking.component.html -->
+<div class="booking-container">
+    <div class="cab-info">
+      <div *ngIf="cab">
+        <p class="cab-successmsg">Cab Booked Successfully !!</p>
+        <h2 style="top: -11px;
+        position: relative;
+        text-align: center;">Booking Details</h2>
+        <div class="cab-details-box">
+          <div class="details-left">
+            <p><strong>Driver Name:</strong> {{ cab.driverName }}</p>
+            <p><strong>Pickup Location:</strong> {{ cab.location }}</p>
+            <p><strong>Drop Location:</strong> {{ cab.dropLocation }}</p>
+            <p><strong>Fare:</strong> ${{ cab.fareEstimate }}</p>
+            <p><strong>Pin Generated:</strong> {{ cab.pinGenerated }}</p>
+            <p><strong>Contact Number:</strong> {{ cab.contactNumber }}</p>
+
+            <div class="cab-buttons">
+                <button (click) = "back()">Back to booking</button>
+              </div>
+          </div>
+          <div class="details-right">
+            <img [src]="cab.image" alt="Cab Image" class="cab-image">
+          </div>
+        </div>
+      </div>
+      <div *ngIf="error">
+        <p>{{ error }}</p>
+      </div>
+    </div>
+  </div>
+  
+
+ 
