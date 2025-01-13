@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { DropdownModule } from 'primeng/dropdown';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faUserLock, faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
+// import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login',
@@ -24,6 +25,7 @@ import { faUserLock, faEnvelope, faLock } from '@fortawesome/free-solid-svg-icon
     CommonModule,
     FontAwesomeModule,
     ButtonModule,
+    // BrowserModule,
   ],
   templateUrl: './login.component.html',
 })
@@ -44,17 +46,17 @@ export class LoginComponent {
 
   onLogin() {
     const { email, password, role } = this.login;
-  
+
     // Log the login attempt for debugging
     console.log('Login initiated:', { email, password, role });
-  
+
     this.authService.getUserDetails(email, password).subscribe({
       next: (response) => {
         console.log('API Response:', response);
-  
+
         if (response.length > 0) {
           const user = response[0];
-  
+
           // Save user details in sessionStorage
           sessionStorage.setItem('userId', user.id);
           sessionStorage.setItem('role', role); // Save role in sessionStorage
@@ -63,7 +65,7 @@ export class LoginComponent {
           console.log("user", user);
           console.log("role", role);
           console.log("email", email);
-  
+
           // Redirect based on role
           if (role === 'admin') {
             this.router.navigate(['/admin-dashboard']).then((success) => {
@@ -94,7 +96,7 @@ export class LoginComponent {
       },
     });
   }
-  
+
 
   navigateToRegister() {
     this.router.navigate(['/register']);

@@ -1,1 +1,53 @@
-<p>admin-dashboard</p>
+<div class="dashboard-container">
+    <h1>Admin Dashboard</h1>
+    <p>Total Users: {{ totalUsers }}</p>
+
+    <div class="chart-section">
+        <!-- Gender Pie Chart -->
+        <div class="chart">
+            <h2>Gender Distribution</h2>
+            <canvas baseChart [data]="genderDistribution" [type]="'pie'">
+            </canvas>
+        </div>
+
+        <!-- Age Bar Chart -->
+        <div class="chart">
+            <h2>Age Distribution</h2>
+            <canvas baseChart [data]="ageDistribution" [type]="'bar'">
+            </canvas>
+        </div>
+
+        <!-- Location Line Chart -->
+        <div class="chart">
+            <h2>Location Distribution</h2>
+            <canvas baseChart [data]="locationDistribution" [type]="'line'">
+            </canvas>
+        </div>
+    </div>
+
+    <div class="table-section">
+        <h2>User Details</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.fullName }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.age }}</td>
+                    <td>{{ user.gender }}</td>
+                    <td>{{ user.location }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

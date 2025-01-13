@@ -13,18 +13,43 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   // Register User
+  // registerUser(postData: RegisterPostData): Observable<any> {
+  //   return new Observable((observer) => {
+  //     // Generate the next ID
+  //     this.http.get<User[]>(`${this.baseUrl}/users`).subscribe(
+  //       (users) => {
+  //         const ids = users
+  //           .map((user) => parseInt(user.id.replace('PG', ''), 10))
+  //           .filter((num) => !isNaN(num));
+  //         const maxId = Math.max(0, ...ids);
+  //         const nextId = `PG${(maxId + 1).toString().padStart(3, '0')}`;
+  //         const userData = { ...postData, id: nextId };
+
+  //         this.http.post(`${this.baseUrl}/users`, userData).subscribe(
+  //           (response) => {
+  //             observer.next(response);
+  //             observer.complete();
+  //           },
+  //           (error) => observer.error(error)
+  //         );
+  //       },
+  //       (error) => observer.error(error)
+  //     );
+  //   });
+  // }
+
   registerUser(postData: RegisterPostData): Observable<any> {
     return new Observable((observer) => {
       // Generate the next ID
       this.http.get<User[]>(`${this.baseUrl}/users`).subscribe(
         (users) => {
           const ids = users
-            .map((user) => parseInt(user.id.replace('PG', ''), 10))
+            .map((user) => (user.id ? parseInt(user.id.replace('PG', ''), 10) : NaN))
             .filter((num) => !isNaN(num));
           const maxId = Math.max(0, ...ids);
           const nextId = `PG${(maxId + 1).toString().padStart(3, '0')}`;
           const userData = { ...postData, id: nextId };
-
+  
           this.http.post(`${this.baseUrl}/users`, userData).subscribe(
             (response) => {
               observer.next(response);
@@ -37,7 +62,7 @@ export class AuthService {
       );
     });
   }
-
+  
   // Get User Details for Login
   getUserDetails(email: string, password: string): Observable<User[]> {
     // console.log('hello')

@@ -2,75 +2,89 @@
   "users": [
     {
       "id": "PG001",
-      "fullName": "helloii",
-      "email": "hihe@gmail.com",
-      "password": "1999",
-      "age": 39,
+      "fullName": "Vasudharani",
+      "email": "vasudharanignayak@gmail.com",
+      "password": "2323",
+      "age": 20,
       "gender": "Female",
-      "location": "Bangalo"
+      "role": "Admin",
+      "location": "Karnataka"
     },
     {
       "id": "PG002",
-      "fullName": "Bindushree R",
-      "email": "bindur@gmail.com",
-      "password": "2004",
+      "fullName": "Shree",
+      "email": "aaa@gmail.com",
+      "password": "444",
       "age": 22,
       "gender": "Female",
-      "location": "Bangalore"
+      "role": "User",
+      "location": "Belagavi"
     },
     {
       "id": "PG003",
-      "fullName": "sindu",
-      "email": "sindu@gmail.com",
-      "password": "2002",
-      "age": 22,
+      "fullName": "Bindushree",
+      "email": "bindushree@gmail.com",
+      "password": "1530",
+      "age": 21,
       "gender": "Female",
-      "location": "mysore"
+      "role": "Admin",
+      "location": "Bangalore"
     },
     {
       "id": "PG004",
-      "fullName": "Vasudharani",
-      "email": "vasudharanignayak@gmail.com",
-      "password": "v",
-      "age": 2,
+      "fullName": "meena",
+      "email": "meenaa@gmail.com",
+      "password": "meen11",
+      "age": 22,
       "gender": "Female",
-      "location": "Ankola"
+      "role": "User",
+      "location": "mysore"
     },
     {
       "id": "PG005",
-      "fullName": "Vasudharani",
-      "email": "vasudharanignayak@gmail.com",
-      "password": "v",
-      "age": 2,
-      "gender": "Female",
-      "role": "Admin",
-      "location": "Ankola"
+      "fullName": "sind",
+      "email": "sindus@gmail.com",
+      "password": "sin123",
+      "age": 30,
+      "gender": "Male",
+      "role": "User",
+      "location": "mandya"
     },
     {
       "id": "PG006",
-      "fullName": "Shree",
-      "email": "abc@gmail.com",
-      "password": "v",
-      "age": 22,
-      "gender": "Female",
-      "role": "Admin",
-      "location": "Belagavi"
+      "fullName": "John",
+      "email": "smith@gmail.com",
+      "password": "jo90",
+      "age": 5,
+      "gender": "Male",
+      "role": "User",
+      "location": "Bangalore"
     },
     {
       "id": "PG007",
-      "fullName": "a",
-      "email": "a@gmail.com",
-      "password": "a",
-      "age": 20,
-      "gender": "Male",
+      "fullName": "jane",
+      "email": "jane@gmail.com",
+      "password": "ja45",
+      "age": 40,
+      "gender": "Other",
       "role": "User",
-      "location": "Belagavi"
+      "location": "Bangalore"
     },
     {
       "id": "PG008",
       "fullName": "Guddu Kumar",
       "email": "guddu748081@gmail.com",
-      "password": "Guddu@123",
+      "password": "123",
+      "age": 20,
+      "gender": "Male",
+      "role": "Admin",
+      "location": "Majhauliya"
+    },
+    {
+      "id": "PG009",
+      "fullName": "Guddu Kumar",
+      "email": "guddu748081@gmail.com",
+      "password": "123",
       "age": 20,
       "gender": "Male",
       "role": "Admin",
