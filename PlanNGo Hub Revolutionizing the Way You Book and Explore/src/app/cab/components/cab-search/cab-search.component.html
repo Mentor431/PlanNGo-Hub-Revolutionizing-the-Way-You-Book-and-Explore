@@ -1,0 +1,39 @@
+<div class="page-container">
+  <div class="logo">PlanNGoHub</div>
+
+<div class="cab-search">
+    <h1>Search for Cabs</h1>
+    <form (ngSubmit)="onSearch()">
+      <input type="text" [(ngModel)]="location" name="location" placeholder="Enter pickup location" />
+      <input type="text" [(ngModel)]="dropLocation" name="location" placeholder="Enter drop location" />
+      <input type="text" [(ngModel)]="rideType" name="rideType" placeholder="Enter ride type" />
+      <button type="submit">Search</button>
+    </form>
+  
+    <div class="popup-backdrop" *ngIf="isPopupVisible">
+      <div class="popup-container">
+        <h2>Validation Message</h2>
+        <p>{{ popupMessage }}</p>
+        <button (click)="isPopupVisible = false">Close</button>
+      </div>
+    </div>
+    
+<!-- Display message if no cabs are available for the location -->
+<div *ngIf="!cabs || cabs.length === 0">
+  <p>Not available. Try after a few minutes.</p>
+</div>
+
+  
+  <div *ngFor="let cab of cabs" class="cab-item" (click)="onSelectCab(cab.id)">
+    <img
+     [src]="cab.image"    
+    alt="{{ cab.name }}"
+    class=" "
+  />  
+    <p>Model:{{cab.type}}</p>   
+    <p>Location: {{ cab.location }}</p>
+    <p>Fare Estimate: ${{ cab.fareEstimate }}</p>
+    <p>Status: {{ cab.available ? 'Available' : 'Not Available' }}</p>
+  </div>
+</div>
+</div>

@@ -1,0 +1,39 @@
+<!-- <div class="cab-details">
+  <div *ngIf="isLoading">Loading...</div>
+  <div *ngIf="error">{{ error }}</div>
+
+  <div *ngIf="cab">
+    <h2>{{ cab.type }} Details</h2>
+    <p class="cab-data">Location: {{ cab.location }}</p>
+    <p class="cab-data">DropLocation:{{cab.dropLocation}}</p>
+    <p class="cab-data">Fare Estimate: ${{ cab.fareEstimate }}</p>
+    <p class="cab-data">Status: {{ cab.available ? 'Available' : 'Not Available' }}</p>
+    <p class="cab-data">Seater: {{ cab.seater }}</p>
+  </div>
+
+  <div class="cab-buttons">
+    <button (click)="goBack()">Back to Search</button>
+    <button (click) = "book()">Book Cab</button>
+  </div>
+</div> -->
+
+<div class="cab-details">
+  <div *ngIf="isLoading">Loading...</div>
+  <div *ngIf="error">{{ error }}</div>
+
+  <div *ngIf="cab">
+    <h2>{{ cab.type }} Details</h2>
+    <p class="cab-data">Location: {{ cab.location }}</p>
+    <p class="cab-data">DropLocation:{{ cab.dropLocation }}</p>
+    <p class="cab-data">Fare Estimate: ${{ cab.fareEstimate }}</p>
+    <p class="cab-data">Status: {{ cab.available ? 'Available' : 'Not Available' }}</p>
+    <p class="cab-data">Seater: {{ cab.seater }}</p>
+  </div>
+
+  <div class="cab-buttons">
+    <button (click)="goBack()">Back to Search</button>
+    
+    <!-- Conditionally show the "Book Cab" button only if the cab is available -->
+    <button *ngIf="cab.available" (click)="book()">Book Cab</button>
+  </div>
+</div>
