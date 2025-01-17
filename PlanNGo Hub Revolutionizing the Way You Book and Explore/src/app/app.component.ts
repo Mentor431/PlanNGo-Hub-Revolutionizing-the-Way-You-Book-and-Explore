@@ -1,17 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MessageService } from 'primeng/api';
-import { ButtonModule } from 'primeng/button';
-import { ToastModule } from 'primeng/toast';
+import { HttpClient } from '@angular/common/http';
+import { FlightComponent } from '../app/flight/flight/flight.component';
+import { BookingComponent } from './flight/booking/booking.component';
+import { SeatComponent } from "./flight/seat/seat.component";
+
+
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, ButtonModule, ToastModule],
-  providers: [MessageService],
+  imports: [RouterOutlet, FlightComponent, BookingComponent, SeatComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrl: './app.component.css'
 })
-export class AppComponent {
-  title = 'angular-18-primeng-app';
+export class AppComponent{
+  title = 'PlanNGo';
+  
 }
+
