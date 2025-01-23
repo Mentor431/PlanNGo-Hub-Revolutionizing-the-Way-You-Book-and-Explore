@@ -74,8 +74,8 @@ export class TourPackagesService {
   }
 
   // Fetch tour types
-  getTourTypes(): Observable<TourType[]> {
-    return this.http.get<TourType[]>(this.tourTypeApiUrl);
+  getTourTypes(): Observable<any[]> {
+    return this.http.get<any[]>(this.tourTypeApiUrl);
   }
   // Fetch all bookings
   getAllBookings(): Observable<TourBooking[]> {
@@ -112,11 +112,6 @@ export class TourPackagesService {
       })
     );
   }
-  
-  updateBookingStatus(bookingId: string, booking: TourBooking) {
-    return this.http.put(`${this.bookingApiUrl}/${bookingId}`, booking);
-  }
-  
 
   // Function to add a new payment
   addNewPayment(paymentData: any): Observable<any> {
@@ -307,9 +302,23 @@ export class TourPackagesService {
     return this.http.get<TourPackage[]>(this.toursApiUrl);
   }
 
+     // Add a new tour
+  addTour(newTour: any): Observable<any> {
+    return this.http.post(this.toursApiUrl, newTour);
+  }
+
   // Delete an agency
   deletePackage(id: string): Observable<void> {
     return this.http.delete<void>(`${this.toursApiUrl}/${id}`);
+  }
+
+  // Update an existing tour
+  updateTour(id: string, tourData: any): Observable<any> {
+    return this.http.put<any>(`${this.toursApiUrl}/${id}`, tourData);
+  }
+
+  updateBookingStatus(bookingId: string, booking: TourBooking) {
+    return this.http.put(`${this.bookingApiUrl}/${bookingId}`, booking);
   }
 
   // Fetch bookings for a specific user
@@ -327,4 +336,18 @@ export class TourPackagesService {
         })
       );
   }
+
+  // generateId(): Observable<string> {
+  //   return this.http.get<TourBooking[]>(this.bookingApiUrl).pipe(
+  //     map(data => {
+  //       const existingIds = data.map(item => item.id);
+  //       const maxId = existingIds.length > 0 
+  //         ? Math.max(...existingIds.map(id => parseInt(id.slice(5)))) 
+  //         : 0; 
+  //       const incrementedId = 'BKNG' + ('00000' + (maxId + 1)).slice(-5); 
+
+  //       return incrementedId;
+  //     })
+  //   );
+  // }
 }

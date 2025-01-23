@@ -9,7 +9,6 @@ import { AgencyAdminManagementComponent } from './tour/components/agency-admin-m
 import { DemopageComponent } from "./tour/components/demopage/demopage.component";
 
 export const routes: Routes = [
-  // end users
   { path: "", component: DemopageComponent },
 
   {
