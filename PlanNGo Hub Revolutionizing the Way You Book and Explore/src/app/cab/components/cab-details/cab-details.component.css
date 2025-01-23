@@ -1,60 +1,175 @@
-body {
-  background: linear-gradient(135deg, #f0f4f7, #c9e1e8);
-  font-family: 'Arial', sans-serif; /* Ensure the font family is consistent */
-  margin: 0;
-  padding: 0;
+/* Container for cab details */
+.cab-details-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  max-width:1600px;
+  background:#6d9ac2;
+  /* border-radius: 12px; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height:100vh; /* Ensures the container covers the full height of the viewport */
+  box-sizing: border-box; /* Ensures padding is included in the height calculation */
 }
 
+/* Loading and error messages */
+.loading,
+.error {
+  text-align: center;
+  font-size: 1.2em;
+  color: #e74c3c;
+}
+
+/* Cab details section */
 .cab-details {
-  background: rgb(70 130 180);
-  color: #ffffff;
-  padding: 20px;
+  display: flex;
+  gap:8px;
+  align-items: flex-start;
+  margin-bottom:10px;
+  background: white;
+  padding: 12px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  font-family: 'Arial', sans-serif;
-  max-width: 624px;
-  margin: 20px auto;
-  height: 30em;
-  margin-top: 88px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.cab-details h2 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-bottom: 2px solid #ffffff;
-  padding-bottom: 5px;
+.cab-info-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
 }
 
-.cab-details p {
-  font-size: 1rem;
-  margin: 19px 0;
+/* Cab image with hover box */
+.cab-image {
+  flex: 1;
+  max-width: 40%;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
 }
 
-.cab-details button {
-  background-color: #ff6f61;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.cab-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
   display: block;
-  margin: 20px auto 0;
+  transition: transform 0.3s ease;
 }
 
-.cab-details button:hover {
-  background-color: #ff5047;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+.cab-image:hover img {
+  transform: scale(1.1);
 }
-.cab-data {
+
+.cab-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.cab-image:hover::after {
+  opacity: 1;
+}
+
+/* Cab info styling */
+.cab-info h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;  /* Add space between name and image */
+}
+.cab-info {
+  flex: 2;
+  text-align: left;
+}
+
+.cab-info h3 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.cab-info p {
+  font-size: 1em;
+  margin: 5px 0;
+}
+
+/* Contact information section */
+.contact-info {
+  margin-top: 10px;
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3 {
   text-align: center;
+  margin-bottom: 10px;
+  font-size:1.5em;
 }
+
+/* Reviews section */
+.reviews-section {
+  margin-top: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.reviews-section h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.review {
+  background: white;
+  padding: 15px;
+  margin-bottom:8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.review p span {
+  color: gold; /* Set the color of the stars to gold */
+  font-size: 1.2rem; /* Adjust the size of the stars */
+  margin-right: 2px; /* Add some spacing between stars */
+}
+
+.review p {
+  margin: 8px 0; /* Adjust the margin for the paragraphs in the review */
+}
+
+/* Buttons section */
 .cab-buttons {
   display: flex;
-  justify-content: space-evenly;
-  margin-top: 55px;
+  justify-content: center;
+  gap: 20px;
 }
+
+.cab-buttons button {
+  padding: 12px 20px;
+  font-size: 1em;
+  background: rgb(68, 158, 68);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cab-buttons button:hover {
+  background: #b2eb9d;
+}
+
+ 

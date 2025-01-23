@@ -1,192 +1,399 @@
-body, html {
+ 
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
   margin: 0;
   padding: 0;
-  height: 100%;
-  width: 100%;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #cceeff, #ffcccc); /* Light blue to soft pink gradient */
+  height: 100vh; 
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-/* Container for the entire page */
-.page-container {
-  position: relative;
-  width: 100%;
-  height: 100%; /* Ensures the container matches the viewport height */
-  padding: 30px;
-  background:rgb(70 130 180);
-  /* background: linear-gradient(135deg, #cceeff, #ffcccc); */
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
+/* Header styling with logo and back button */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:35px;
+  background-color: #003366;
+  color: white;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 20px;
 }
 
-
-/* Logo styling */
-.logo {
-  /* position: absolute; */
-  /* top: 10px; */
-  /* left: 20px; */
+.logo-text {
+  position: absolute;
+  top: 20px;
+  left:8%;
+  transform: translateX(-50%);
+  font-size: 1.6em;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  letter-spacing: 1px;
   text-align: center;
-  font-size: 3em;
-  color: #242424;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  font-family: work sans;
-  letter-spacing: 2px;
-  color: #f2f2f2;
 }
 
+/* Back Button Styling */
+.back-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(145deg, #ff7f50, #ff4500);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
 
+/* Hover Effect */
+.back-button:hover {
+  background: linear-gradient(145deg, #ff4500, #ff7f50);
+  transform: translateY(-3px);
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2), -2px -2px 10px rgba(255, 255, 255, 0.3);
+}
 
-/* General styling for the cab search container */
-.cab-search {
-  max-width: 1200px;
-  margin: 10px auto;
+.back-button:focus {
+  outline: none;
+}
+
+/* Active state */
+.back-button:active {
+  transform: translateY(1px);
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+ 
+/* Page container covering the full page */
+.page-container {
+  width: 90%;
+  max-width: 1400px;
+  background-color:linear-gradient(to right, #004e92, #000428); /* Blue gradient background */
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  background: linear-gradient(135deg, #f3f4f7, #dfe6f0);
+  overflow: hidden;
+  margin: auto;
+  min-height: 80vh;
+}
+
+/* Cab Search Section */
+.cab-search {
+  padding: 40px;
+  background-color: #f1f5fc;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cab-search h1 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #0056b3;
+}
+
+.cab-search input, .cab-search button {
+  width: calc(100% - 20px);
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #cfd8e3;
+  font-size: 16px;
+}
+
+.cab-search button {
+  background-color: #265180;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cab-search button:hover {
+  background-color: #0056b3;
+}
+
+/* Cab List Section */
+.cab-list {
+  display: flex;
+  min-width: 1280px; 
+  max-width: 1400px;  
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.no-cabs-message {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  color: #555;
+}
+
+ 
+
+/* Cab Item Cards */
+.cab-item {
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure each card has equal height */
+.cab-card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  padding: 20px;
+  flex-grow: 1; /* Ensures cards fill the space evenly */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; 
+}
+
+.cab-image img {
+  width: 100%;
+  height: 200px; /* Fixed height for uniformity */
+  object-fit: cover; 
+  border-radius: 8px;  
+}
+
+/* Cab details should take up remaining space */
+.cab-details {
+  padding: 15px 0;
+  flex-grow: 1;
+}
+
+.cab-details h3 {
+  font-size: 20px;
+  margin: 10px 0;
   color: #333;
 }
 
-/* Styling for the header */
-.cab-search h1 {
-  text-align: center;
-  font-size: 1.5em;
-  margin-bottom: 20px;
-  color: #2c3e50;
-  margin-top: 0px !important;
+.cab-details p {
+  font-size: 16px;
+  color: #555;
+  margin: 5px 0;
 }
-
-/* Form styling */
-.cab-search form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.cab-search form input {
-  padding: 10px;
-  font-size: 1em;
-  border: 1px solid #bdc3c7;
-  border-radius: 6px;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.cab-search form input:focus {
-  border-color: #3498db;
-}
-
-.cab-search form button {
-  padding: 12px;
-  font-size: 1em;
-  background: #3498db;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.cab-search form button:hover {
-  background: #2980b9;
-}
-
-/* Cab item styling */
-.cab-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px;
-  margin-bottom: 10px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.cab-item:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Image styling */
-.cab-item img {
-  width: 60px;
-  height: 60px;
-  border-radius: 8px;
-  object-fit: cover;
-  margin-right: 15px;
-}
-
-/* Text content styling */
-.cab-item h3 {
-  font-size: 1.2em;
-  margin: 0;
-  color: #34495e;
-}
-
-.cab-item p {
-  font-size: 0.9em;
-  margin: 2px 0;
-  color: #7f8c8d;
-}
-
-.cab-item p:last-child {
+.available {
+  color: #28a745 !important; /* Green color */
   font-weight: bold;
-  color: #2ecc71;
 }
 
-.cab-item p:last-child:not(:first-child):not([class*="Available"]) {
-  color: #e74c3c;
+.unavailable {
+  color: #dc3545 !important; /* Red color */
+  font-weight: bold;
 }
 
-/* Status styling */
-.cab-item p:last-child.available {
-  color: #2ecc71;
-}
-
-.cab-item p:last-child.unavailable {
-  color: #e74c3c;
-}
+/* Popup Backdrop */
 .popup-backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
 }
 
+/* Popup Container */
 .popup-container {
-  background: white;
-  padding: 20px;
+  background-color: #fff;
+  padding: 30px;
   border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-
+/* Popup Button Styling */
 .popup-container button {
-  margin-top: 10px;
-  padding: 8px 12px;
-  background-color: #007bff;
-  color: white;
+  background-color: #28a745; /* Green background */
+  color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
+  padding: 10px 20px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .popup-container button:hover {
-  background-color: #0056b3;
+  background-color: #218838;
 }
- 
+
+
+/* FAB Menu */
+
+.fixed {
+  position: fixed;
+}
+
+.bottom-5 {
+  bottom: 1.25rem;  
+}
+
+.right-5 {
+  right: 1.25rem;  
+}
+
+.z-50 {
+  z-index: 50; 
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.space-y-reverse {
+  --tw-space-y-reverse: 1;
+}
+
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: calc(1rem * var(--tw-space-y-reverse));
+  margin-bottom: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+}
+
+.mb-4 {
+  margin-bottom: 1rem;  
+}
+
+.transition-all {
+  transition-property: all;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.translate-y-10 {
+  transform: translateY(2.5rem);  
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+.translate-y-0 {
+  transform: translateY(0);
+}
+
+.w-12 {
+  width: 3rem;  
+}
+
+.h-12 {
+  height: 3rem;  
+}
+
+.bg-white {
+  background-color:#c0d1e4;
+}
+
+.text-teal-600 {
+  color: #319795;  
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-teal-600 {
+  border-color: #003366;  
+}
+
+.hover\:bg-teal-600:hover {
+  background-color:  #003366;;
+}
+
+.hover\:text-white:hover {
+  color: white;
+}
+
+.transition-colors {
+  transition-property: color, background-color;
+}
+
+.w-16 {
+  width: 4rem;  
+}
+
+.h-16 {
+  height: 4rem; 
+}
+
+.bg-teal-600 {
+  background-color:  #113b64;;
+}
+
+.text-white {
+  color: white;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.text-3xl {
+  font-size: 1.875rem;  
+}
+
+.hover\:scale-110:hover {
+  transform: scale(1.1);  
+}
+
+.transition-transform {
+  transition-property: transform;
+}
+.text-emoji {
+  font-size: 1.5rem;  
+  line-height: 1;
+} 

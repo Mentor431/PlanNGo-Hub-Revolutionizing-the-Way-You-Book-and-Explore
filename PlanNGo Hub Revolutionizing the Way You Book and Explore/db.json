@@ -1,4 +1,3 @@
-
 {
   "cabs": [
     {
@@ -6,351 +5,883 @@
       "driverName": "Rajesh Kumar",
       "type": "Sedan",
       "fareEstimate": 315,
-      "location": "Downtown",
+      "location": "Delhi",
       "available": true,
       "seater": 4,
       "image": "assets/sedan.png",
-      "dropLocation": "Uptown",
+      "dropLocation": "Mumbai",
       "estimatedTime": "8-10 mins",
       "pinGenerated": "4456",
-      "contactNumber": "+91 9876543210"
+      "contactNumber": "+91 9876543210",
+      "reviews": [
+        {
+          "user": "Rakesh Sharma",
+          "comment": "Great service, very comfortable ride.",
+          "rating": 5
+        },
+        {
+          "user": "Shreya Singh",
+          "comment": "Driver was polite and professional.",
+          "rating": 4
+        }
+      ],
+      "rating": 4.5,
+      "carNumber": "AB123CD"
     },
     {
       "id": "CAB002",
       "driverName": "Amit Singh",
       "type": "SUV",
       "fareEstimate": 225,
-      "location": "Uptown",
+      "location": "Bengaluru",
       "available": false,
       "seater": 7,
       "image": "assets/suv.png",
-      "dropLocation": "Midtown",
+      "dropLocation": "Chennai",
       "estimatedTime": "5-7 mins",
       "pinGenerated": "2341",
-      "contactNumber": "+91 9876543211"
+      "contactNumber": "+91 9876543211",
+      "reviews": [
+        {
+          "user": "Priya Das",
+          "comment": "Spacious and clean SUV, very happy with the ride.",
+          "rating": 5
+        },
+        {
+          "user": "Aman Yadav",
+          "comment": "Could be better, AC was not working well.",
+          "rating": 3
+        }
+      ],
+      "rating": 4,
+      "carNumber": "EF456GH"
     },
     {
       "id": "CAB003",
       "driverName": "Suresh Patel",
       "type": "Hatchback",
       "fareEstimate": 180,
-      "location": "Midtown",
+      "location": "Hyderabad",
       "available": true,
       "seater": 4,
       "image": "assets/Hatchback.png",
-      "dropLocation": "Beachside",
+      "dropLocation": "Kolkata",
       "estimatedTime": "12-15 mins",
       "pinGenerated": "7890",
-      "contactNumber": "+91 9876543212"
+      "contactNumber": "+91 9876543212",
+      "reviews": [
+        {
+          "user": "Karan Singh",
+          "comment": "Affordable and quick ride, but less legroom.",
+          "rating": 4
+        },
+        {
+          "user": "Nisha Verma",
+          "comment": "Driver was very friendly and helpful.",
+          "rating": 5
+        }
+      ],
+      "rating": 4.5,
+      "carNumber": "IJ789KL"
     },
     {
       "id": "CAB004",
       "driverName": "Vikram Mehta",
       "type": "Wagnor",
       "fareEstimate": 450,
-      "location": "Beachside",
+      "location": "Pune",
       "available": true,
       "seater": 4,
       "image": "assets/car.png",
-      "dropLocation": "Airport",
+      "dropLocation": "Ahmedabad",
       "estimatedTime": "3-5 mins",
       "pinGenerated": "3456",
-      "contactNumber": "+91 9876543213"
+      "contactNumber": "+91 9876543213",
+      "reviews": [
+        {
+          "user": "Ravi Gupta",
+          "comment": "Prompt and professional service.",
+          "rating": 5
+        },
+        {
+          "user": "Anita Sharma",
+          "comment": "Car was clean but driver seemed in a rush.",
+          "rating": 4
+        }
+      ],
+      "rating": 4.5,
+      "carNumber": "MN012OP"
     },
     {
       "id": "CAB005",
-      "driverName": "riya Sharma",
+      "driverName": "Priya Sharma",
       "type": "Wagnor",
       "fareEstimate": 500,
-      "location": "Airport",
+      "location": "Mumbai",
       "available": false,
       "seater": 4,
       "image": "assets/car.png",
-      "dropLocation": "City Center",
+      "dropLocation": "Bengaluru",
       "estimatedTime": "10-12 mins",
       "pinGenerated": "6789",
-      "contactNumber": "+91 9876543214"
+      "contactNumber": "+91 9876543214",
+      "reviews": [
+        {
+          "user": "Ajay Mishra",
+          "comment": "Smooth ride, but fare seemed slightly high.",
+          "rating": 4
+        },
+        {
+          "user": "Rohini Desai",
+          "comment": "Driver was very professional.",
+          "rating": 5
+        }
+      ],
+      "rating": 4.5,
+      "carNumber": "QR345ST"
     },
     {
       "id": "CAB006",
       "driverName": "Ravi Verma",
       "type": "Minivan",
       "fareEstimate": 350,
-      "location": "Suburbs",
+      "location": "Chennai",
       "available": true,
       "seater": 8,
-      "image": "assets/suv.png",
-      "dropLocation": "Downtown",
+      "image": "assets/mini.png",
+      "dropLocation": "Hyderabad",
       "estimatedTime": "7-9 mins",
       "pinGenerated": "9012",
-      "contactNumber": "+91 9876543215"
+      "contactNumber": "+91 9876543215",
+      "reviews": [
+        {
+          "user": "Siddharth Nair",
+          "comment": "Ideal for group travel, driver was accommodating.",
+          "rating": 5
+        },
+        {
+          "user": "Pooja Iyer",
+          "comment": "Comfortable ride but slightly delayed.",
+          "rating": 4
+        }
+      ],
+      "rating": 4.5,
+      "carNumber": "UV567WX"
     },
     {
       "id": "CAB007",
       "driverName": "Anjali Desai",
       "type": "Sedan",
       "fareEstimate": 270,
-      "location": "City Center",
+      "location": "Kolkata",
       "available": true,
       "seater": 2,
       "image": "assets/sedan.png",
-      "dropLocation": "Industrial Park",
+      "dropLocation": "Pune",
       "estimatedTime": "4-6 mins",
       "pinGenerated": "2345",
-      "contactNumber": "+91 9876543216"
+      "contactNumber": "+91 9876543216",
+      "reviews": [
+        {
+          "user": "Neeraj Sinha",
+          "comment": "Compact and quick, suited for short trips.",
+          "rating": 4
+        },
+        {
+          "user": "Asha Patel",
+          "comment": "Driver was polite and courteous.",
+          "rating": 5
+        }
+      ],
+      "rating": 4.5,
+      "carNumber": "YZ678AB"
     },
     {
       "id": "CAB008",
       "driverName": "Karan Shah",
       "type": "SUV",
       "fareEstimate": 400,
-      "location": "Industrial Park",
+      "location": "Delhi",
       "available": false,
       "seater": 4,
       "image": "assets/suv.png",
-      "dropLocation": "Midtown",
+      "dropLocation": "Ahmedabad",
       "estimatedTime": "8-10 mins",
       "pinGenerated": "5678",
-      "contactNumber": "+91 9876543217"
+      "contactNumber": "+91 9876543217",
+      "reviews": [
+        {
+          "user": "Rohan Gupta",
+          "comment": "Excellent ride quality, felt premium.",
+          "rating": 5
+        },
+        {
+          "user": "Sneha Kapoor",
+          "comment": "Driver was professional but car was slightly messy.",
+          "rating": 3
+        }
+      ],
+      "rating": 4,
+      "carNumber": "CD890EF"
     },
     {
       "id": "CAB009",
       "driverName": "Arun Joshi",
       "type": "Sports Car",
       "fareEstimate": 600,
-      "location": "Downtown",
+      "location": "Kolkata",
       "available": true,
       "seater": 2,
       "image": "assets/sports.png",
-      "dropLocation": "Uptown",
+      "dropLocation": "Delhi",
       "estimatedTime": "2-4 mins",
       "pinGenerated": "8901",
-      "contactNumber": "+91 9876543218"
+      "contactNumber": "+91 9876543218",
+      "reviews": [
+        {
+          "user": "Megha Verma",
+          "comment": "Thrilling ride, loved the speed and style!",
+          "rating": 5
+        },
+        {
+          "user": "Karan Singh",
+          "comment": "Nice seats.",
+          "rating": 4
+        }
+      ],
+      "rating": 4.5,
+      "carNumber": "GH123IJ"
     },
     {
       "id": "CAB010",
-      "driverName": "Neha Gupta",
-      "type": "Sedan",
-      "fareEstimate": 340,
-      "location": "Mall Road",
+      "driverName": "Suman Gupta",
+      "type": "Hatchback",
+      "fareEstimate": 190,
+      "location": "Delhi",
       "available": true,
       "seater": 4,
-      "image": "assets/sedan.png",
-      "dropLocation": "Tech Park",
+      "image": "assets/Hatchback.png",
+      "dropLocation": "Mumbai",
       "estimatedTime": "6-8 mins",
-      "pinGenerated": "1234",
-      "contactNumber": "+91 9876543219"
+      "pinGenerated": "7789",
+      "contactNumber": "+91 9876543219",
+      "reviews": [
+        {
+          "user": "Pooja Sethi",
+          "comment": "Budget-friendly ride, good for short distances.",
+          "rating": 4
+        },
+        {
+          "user": "Ankit Kumar",
+          "comment": "Could be cleaner, but affordable.",
+          "rating": 3
+        }
+      ],
+      "rating": 3.5,
+      "carNumber": "KL234MN"
     },
     {
       "id": "CAB011",
-      "driverName": "Manoj Kumar",
+      "driverName": "Harsh Mehta",
       "type": "SUV",
-      "fareEstimate": 420,
-      "location": "Tech Park",
-      "available": true,
-      "seater": 6,
+      "fareEstimate": 380,
+      "location": "Mumbai",
+      "available": false,
+      "seater": 7,
       "image": "assets/suv.png",
-      "dropLocation": "Railway Station",
-      "estimatedTime": "10-12 mins",
-      "pinGenerated": "4567",
-      "contactNumber": "+91 9876543220"
+      "dropLocation": "Bengaluru",
+      "estimatedTime": "7-9 mins",
+      "pinGenerated": "1122",
+      "contactNumber": "+91 9876543220",
+      "reviews": [
+        {
+          "user": "Nisha Iyer",
+          "comment": "Great space and comfort.",
+          "rating": 5
+        },
+        {
+          "user": "Ajay Rajput",
+          "comment": "Good for long trips.",
+          "rating": 4
+        }
+      ],
+      "rating": 4.5,
+      "carNumber": "OP456QR"
     },
     {
       "id": "CAB012",
-      "driverName": "Sanjay Rao",
-      "type": "Hatchback",
-      "fareEstimate": 280,
-      "location": "Railway Station",
-      "available": false,
-      "seater": 4,
-      "image": "assets/Hatchback.png",
-      "dropLocation": "Mall Road",
-      "estimatedTime": "5-7 mins",
-      "pinGenerated": "7890",
-      "contactNumber": "+91 9876543221"
+      "driverName": "Vishal Bansal",
+      "type": "Minivan",
+      "fareEstimate": 450,
+      "location": "Bengaluru",
+      "available": true,
+      "seater": 8,
+      "image": "assets/mini.png",
+      "dropLocation": "Chennai",
+      "estimatedTime": "10-12 mins",
+      "pinGenerated": "2233",
+      "contactNumber": "+91 9876543221",
+      "reviews": [
+        {
+          "user": "Rohit Kumar",
+          "comment": "Perfect for family trips.",
+          "rating": 5
+        },
+        {
+          "user": "Deepika Sharma",
+          "comment": "Comfortable but a bit slow.",
+          "rating": 4
+        }
+      ],
+      "rating": 4.5,
+      "carNumber": "RS567TU"
     },
     {
       "id": "CAB013",
-      "driverName": "Deepak Sharma",
-      "type": "Minivan",
+      "driverName": "Ravi Kumar",
+      "type": "Sports Car",
       "fareEstimate": 550,
-      "location": "Hospital Zone",
+      "location": "Chennai",
       "available": true,
-      "seater": 8,
-      "image": "assets/suv.png",
-      "dropLocation": "Airport",
-      "estimatedTime": "12-15 mins",
-      "pinGenerated": "3456",
-      "contactNumber": "+91 9876543222"
+      "seater": 2,
+      "image": "assets/sports.png",
+      "dropLocation": "Kolkata",
+      "estimatedTime": "3-5 mins",
+      "pinGenerated": "6678",
+      "contactNumber": "+91 9876543222",
+      "reviews": [
+        {
+          "user": "Sushil Raj",
+          "comment": "Speed and comfort were excellent.",
+          "rating": 5
+        },
+        {
+          "user": "Deepak Chauhan",
+          "comment": "Excellent performance but high fare.",
+          "rating": 4
+        }
+      ],
+      "rating": 4.5,
+      "carNumber": "UV678WX"
     },
     {
       "id": "CAB014",
-      "driverName": "Meera Iyer",
-      "type": "Sports Car",
-      "fareEstimate": 650,
-      "location": "Beach Road",
-      "available": true,
-      "seater": 2,
-      "image": "assets/sports.png",
-      "dropLocation": "City Center",
-      "estimatedTime": "4-6 mins",
-      "pinGenerated": "6789",
-      "contactNumber": "+91 9876543223"
+      "driverName": "Neeraj Yadav",
+      "type": "Minivan",
+      "fareEstimate": 500,
+      "location": "Delhi",
+      "available": false,
+      "seater": 8,
+      "image": "assets/mini.png",
+      "dropLocation": "Chennai",
+      "estimatedTime": "10-12 mins",
+      "pinGenerated": "4412",
+      "contactNumber": "+91 9876543223",
+      "reviews": [
+        {
+          "user": "Madhuri Singh",
+          "comment": "Great family car, lots of space.",
+          "rating": 5
+        },
+        {
+          "user": "Vinay Sinha",
+          "comment": "Could have been cleaner.",
+          "rating": 4
+        }
+      ],
+      "rating": 4.5,
+      "carNumber": "YZ890AB"
     },
     {
       "id": "CAB015",
-      "driverName": "Rohit Mishra",
-      "type": "Sedan",
-      "fareEstimate": 300,
-      "location": "Shopping District",
-      "available": false,
+      "driverName": "Priya Gupta",
+      "type": "SUV",
+      "fareEstimate": 400,
+      "location": "Bengaluru",
+      "available": true,
       "seater": 4,
-      "image": "assets/sedan.png",
-      "dropLocation": "Tech Hub",
+      "image": "assets/suv.png",
+      "dropLocation": "Delhi",
       "estimatedTime": "8-10 mins",
-      "pinGenerated": "9012",
-      "contactNumber": "+91 9876543224"
+      "pinGenerated": "3345",
+      "contactNumber": "+91 9876543224",
+      "reviews": [
+        {
+          "user": "Ramesh Gupta",
+          "comment": "Nice ride, fast and comfortable.",
+          "rating": 5
+        },
+        {
+          "user": "Suman Kumari",
+          "comment": "Driver was courteous, overall good experience.",
+          "rating": 5
+        }
+      ],
+      "rating": 5,
+      "carNumber": "CD012EF"
     },
     {
       "id": "CAB016",
-      "driverName": "Pooja Reddy",
-      "type": "SUV",
-      "fareEstimate": 480,
-      "location": "Tech Hub",
-      "available": true,
-      "seater": 7,
-      "image": "assets/suv.png",
-      "dropLocation": "Market Square",
+      "driverName": "Ajay Sharma",
+      "type": "Hatchback",
+      "fareEstimate": 200,
+      "location": "Kolkata",
+      "available": false,
+      "seater": 4,
+      "image": "assets/Hatchback.png",
+      "dropLocation": "Bengaluru",
       "estimatedTime": "6-8 mins",
-      "pinGenerated": "2345",
-      "contactNumber": "+91 9876543225"
+      "pinGenerated": "4567",
+      "contactNumber": "+91 9876543225",
+      "reviews": [
+        {
+          "user": "Sunita Raj",
+          "comment": "Quick and affordable, but car needs cleaning.",
+          "rating": 3
+        },
+        {
+          "user": "Neha Kumari",
+          "comment": "Good service, would use again.",
+          "rating": 4
+        }
+      ],
+      "rating": 3.5,
+      "carNumber": "GH234IJ"
     },
     {
       "id": "CAB017",
-      "driverName": "Ganesh Nair",
-      "type": "Hatchback",
-      "fareEstimate": 250,
-      "location": "Market Square",
+      "driverName": "Harsh Kapoor",
+      "type": "Wagnor",
+      "fareEstimate": 380,
+      "location": "Mumbai",
       "available": true,
       "seater": 4,
-      "image": "assets/Hatchback.png",
-      "dropLocation": "College Campus",
-      "estimatedTime": "3-5 mins",
-      "pinGenerated": "5678",
-      "contactNumber": "+91 9876543226"
+      "image": "assets/car.png",
+      "dropLocation": "Kolkata",
+      "estimatedTime": "9-11 mins",
+      "pinGenerated": "1987",
+      "contactNumber": "+91 9876543226",
+      "reviews": [
+        {
+          "user": "Amit Kumar",
+          "comment": "Ride was comfortable and fast.",
+          "rating": 5
+        },
+        {
+          "user": "Maya Thakur",
+          "comment": "Driver was friendly, but car had minor issues.",
+          "rating": 4
+        }
+      ],
+      "rating": 4.5,
+      "carNumber": "KL345MN"
     },
     {
       "id": "CAB018",
-      "driverName": "Rakesh Tiwari",
-      "type": "Wagnor",
-      "fareEstimate": 380,
-      "location": "College Campus",
-      "available": false,
+      "driverName": "Vikram Yadav",
+      "type": "SUV",
+      "fareEstimate": 420,
+      "location": "Chennai",
+      "available": true,
       "seater": 4,
-      "image": "assets/car.png",
-      "dropLocation": "Sports Complex",
-      "estimatedTime": "7-9 mins",
-      "pinGenerated": "8901",
-      "contactNumber": "+91 9876543227"
+      "image": "assets/suv.png",
+      "dropLocation": "Mumbai",
+      "estimatedTime": "6-8 mins",
+      "pinGenerated": "0987",
+      "contactNumber": "+91 9876543227",
+      "reviews": [
+        {
+          "user": "Ravi Rajput",
+          "comment": "Comfortable ride, driver was helpful.",
+          "rating": 4
+        },
+        {
+          "user": "Simran Kaur",
+          "comment": "Great ride, highly recommended!",
+          "rating": 5
+        }
+      ],
+      "rating": 4.5,
+      "carNumber": "ST456UV"
     },
     {
       "id": "CAB019",
-      "driverName": "Sunita Menon",
-      "type": "Minivan",
-      "fareEstimate": 520,
-      "location": "Sports Complex",
-      "available": true,
-      "seater": 8,
-      "image": "assets/suv.png",
-      "dropLocation": "Business Park",
-      "estimatedTime": "10-12 mins",
-      "pinGenerated": "1234",
-      "contactNumber": "+91 9876543228"
+      "driverName": "Sandeep Chauhan",
+      "type": "Sports Car",
+      "fareEstimate": 650,
+      "location": "Delhi",
+      "available": false,
+      "seater": 2,
+      "image": "assets/sports.png",
+      "dropLocation": "Bengaluru",
+      "estimatedTime": "2-3 mins",
+      "pinGenerated": "5555",
+      "contactNumber": "+91 9876543228",
+      "reviews": [
+        {
+          "user": "Riya Mehta",
+          "comment": "Fantastic car, smooth ride.",
+          "rating": 5
+        },
+        {
+          "user": "Rajesh Kumar",
+          "comment": "Expensive but worth it for the experience.",
+          "rating": 4
+        }
+      ],
+      "rating": 4.5,
+      "carNumber": "WX123YZ"
     },
     {
       "id": "CAB020",
-      "driverName": "Vivek Malhotra",
-      "type": "Sports Car",
-      "fareEstimate": 700,
-      "location": "Business Park",
+      "driverName": "Priya Shah",
+      "type": "SUV",
+      "fareEstimate": 300,
+      "location": "Mumbai",
       "available": true,
-      "seater": 2,
-      "image": "assets/sports.png",
-      "dropLocation": "Convention Center",
-      "estimatedTime": "4-6 mins",
-      "pinGenerated": "4567",
-      "contactNumber": "+91 9876543229"
+      "seater": 7,
+      "image": "assets/suv.png",
+      "dropLocation": "Chennai",
+      "estimatedTime": "5-7 mins",
+      "pinGenerated": "1443",
+      "contactNumber": "+91 9876543229",
+      "reviews": [
+        {
+          "user": "Sumit Sharma",
+          "comment": "Spacious and affordable, great for family rides.",
+          "rating": 5
+        },
+        {
+          "user": "Shreya Kapoor",
+          "comment": "Comfortable but could have been cleaner.",
+          "rating": 4
+        }
+      ],
+      "rating": 4.5,
+      "carNumber": "YZ567AB"
     },
     {
       "id": "CAB021",
-      "driverName": "Kritika Sinha",
-      "type": "Sedan",
-      "fareEstimate": 330,
-      "location": "Convention Center",
-      "available": false,
-      "seater": 4,
-      "image": "assets/sedan.png",
-      "dropLocation": "Shopping Mall",
-      "estimatedTime": "8-10 mins",
-      "pinGenerated": "7890",
-      "contactNumber": "+91 9876543230"
-    },
-    {
-      "id": "CAB022",
-      "driverName": "Nikhil Kapoor",
-      "type": "SUV",
-      "fareEstimate": 445,
-      "location": "Metro Station",
-      "available": true,
-      "seater": 6,
-      "image": "assets/suv.png",
-      "dropLocation": "Golf Course",
-      "estimatedTime": "6-8 mins",
-      "pinGenerated": "3344",
-      "contactNumber": "+91 9876543231"
-    },
-    {
-      "id": "CAB023",
-      "driverName": "Arjun Mathur",
+      "driverName": "Aman Soni",
       "type": "Hatchback",
-      "fareEstimate": 290,
-      "location": "Golf Course",
+      "fareEstimate": 180,
+      "location": "Chennai",
       "available": true,
       "seater": 4,
       "image": "assets/Hatchback.png",
-      "dropLocation": "Botanical Garden",
-      "estimatedTime": "9-11 mins",
-      "pinGenerated": "5566",
-      "contactNumber": "+91 9876543232"
+      "dropLocation": "Delhi",
+      "estimatedTime": "5-6 mins",
+      "pinGenerated": "9087",
+      "contactNumber": "+91 9876543230",
+      "reviews": [
+        {
+          "user": "Rahul Bansal",
+          "comment": "Quick and economical ride, will use again.",
+          "rating": 4
+        },
+        {
+          "user": "Mita Joshi",
+          "comment": "Great service, friendly driver.",
+          "rating": 5
+        }
+      ],
+      "rating": 4.5,
+      "carNumber": "DE678FG"
+    },
+    {
+      "id": "CAB022",
+      "driverName": "Neha Desai",
+      "type": "Sedan",
+      "fareEstimate": 320,
+      "location": "Bengaluru",
+      "available": true,
+      "seater": 4,
+      "image": "assets/sedan.png",
+      "dropLocation": "Kolkata",
+      "estimatedTime": "6-8 mins",
+      "pinGenerated": "1234",
+      "contactNumber": "+91 9876543231",
+      "reviews": [
+        {
+          "user": "Asha Singh",
+          "comment": "Very comfortable, but could be more timely.",
+          "rating": 4
+        },
+        {
+          "user": "Bhuvanesh Sharma",
+          "comment": "Good service, pleasant ride.",
+          "rating": 5
+        }
+      ],
+      "rating": 4.5,
+      "carNumber": "GH234IJ"
+    },
+    {
+      "id": "CAB023",
+      "driverName": "Pooja Mehta",
+      "type": "Minivan",
+      "fareEstimate": 400,
+      "location": "Delhi",
+      "available": true,
+      "seater": 8,
+      "image": "assets/mini.png",
+      "dropLocation": "Mumbai",
+      "estimatedTime": "6-8 mins",
+      "pinGenerated": "4321",
+      "contactNumber": "+91 9876543232",
+      "reviews": [
+        {
+          "user": "Karan Sharma",
+          "comment": "Great minivan for group trips.",
+          "rating": 5
+        },
+        {
+          "user": "Neelam Reddy",
+          "comment": "Car was clean, driver was courteous.",
+          "rating": 4
+        }
+      ],
+      "rating": 4.5,
+      "carNumber": "AB345CD"
     },
     {
       "id": "CAB024",
-      "driverName": "Kavita Krishnan",
-      "type": "Minivan",
-      "fareEstimate": 580,
-      "location": "Botanical Garden",
-      "available": false,
-      "seater": 8,
-      "image": "assets/suv.png",
-      "dropLocation": "Zoo Park",
-      "estimatedTime": "11-13 mins",
-      "pinGenerated": "7788",
-      "contactNumber": "+91 9876543233"
-    },
-    {
-      "id": "CAB025",
-      "driverName": "Rahul Khanna",
-      "type": "Sports Car",
-      "fareEstimate": 680,
-      "location": "Zoo Park",
+      "driverName": "Sumit Agarwal",
+      "type": "SUV",
+      "fareEstimate": 350,
+      "location": "Mumbai",
       "available": true,
-      "seater": 2,
-      "image": "assets/sports.png",
-      "dropLocation": "Science Museum",
+      "seater": 4,
+      "image": "assets/suv.png",
+      "dropLocation": "Bengaluru",
       "estimatedTime": "5-7 mins",
-      "pinGenerated": "9900",
-      "contactNumber": "+91 9876543234"
+      "pinGenerated": "4567",
+      "contactNumber": "+91 9876543233",
+      "reviews": [
+        {
+          "user": "Shivani Kapoor",
+          "comment": "Comfortable and spacious ride.",
+          "rating": 4
+        },
+        {
+          "user": "Arvind Patel",
+          "comment": "Could be quicker, but overall decent.",
+          "rating": 3
+        }
+      ],
+      "rating": 3.5,
+      "carNumber": "EF678GH"
     }
   ],
-"bookings": []
+  "faqs": [
+    {
+      "question": "What is your cancellation policy?",
+      "answer": "You can cancel your booking up to 24 hours before the scheduled pickup time without any charges.",
+      "id": "1299"
+    },
+    {
+      "question": "Is there a way to rate and review my ride?",
+      "answer": "Yes, after completing your ride, you can rate and review your driver through our app.",
+      "id": "b606"
+    },
+    {
+      "question": "Are there any additional charges for luggage?",
+      "answer": "There are no additional charges for standard luggage, but oversized or extra luggage may incur additional fees.",
+      "id": "d3a0"
+    },
+    {
+      "question": "Do you offer child seats in your cabs?",
+      "answer": "Yes, child seats are available upon request. Please specify your requirement at the time of booking.",
+      "id": "eba0"
+    },
+    {
+      "question": "Can I book a cab for someone else?",
+      "answer": "Yes, you can book a cab for someone else by entering their pickup and contact details during the booking process.",
+      "id": "018d"
+    },
+    {
+      "question": "What payment methods do you accept?",
+      "answer": "We accept various payment methods including credit/debit cards, digital wallets, and cash payments.",
+      "id": "096c"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "7285",
+      "cab": [
+        {
+          "id": "CAB024",
+          "driverName": "Sumit Agarwal",
+          "type": "SUV",
+          "fareEstimate": 350,
+          "location": "Mumbai",
+          "available": true,
+          "seater": 4,
+          "image": "assets/suv.png",
+          "dropLocation": "Bengaluru",
+          "estimatedTime": "5-7 mins",
+          "pinGenerated": "4567",
+          "contactNumber": "+91 9876543233",
+          "reviews": [
+            {
+              "user": "Shivani Kapoor",
+              "comment": "Comfortable and spacious ride.",
+              "rating": 4
+            },
+            {
+              "user": "Arvind Patel",
+              "comment": "Could be quicker, but overall decent.",
+              "rating": 3
+            }
+          ],
+          "rating": 3.5,
+          "carNumber": "EF678GH"
+        }
+      ],
+      "users": [
+        {
+          "id": "f4c8x7p7g",
+          "firstname": "Debasmita",
+          "midname": "",
+          "lastname": "Sarkar",
+          "gender": "female",
+          "contactNumber": "8974316688",
+          "date": "2025-01-21"
+        }
+      ]
+    },
+    {
+      "id": "d5e2",
+      "cab": [
+        {
+          "id": "CAB001",
+          "driverName": "Rajesh Kumar",
+          "type": "Sedan",
+          "fareEstimate": 315,
+          "location": "Delhi",
+          "available": true,
+          "seater": 4,
+          "image": "assets/sedan.png",
+          "dropLocation": "Mumbai",
+          "estimatedTime": "8-10 mins",
+          "pinGenerated": "4456",
+          "contactNumber": "+91 9876543210",
+          "reviews": [
+            {
+              "user": "Rakesh Sharma",
+              "comment": "Great service, very comfortable ride.",
+              "rating": 5
+            },
+            {
+              "user": "Shreya Singh",
+              "comment": "Driver was polite and professional.",
+              "rating": 4
+            }
+          ],
+          "rating": 4.5,
+          "carNumber": "AB123CD"
+        }
+      ],
+      "users": [
+        {
+          "id": "3lqbjjhho",
+          "firstname": "de",
+          "midname": "",
+          "lastname": "s",
+          "gender": "female",
+          "contactNumber": "1234567899",
+          "date": "2025-02-01"
+        }
+      ],
+      "status": "Cancelled"
+    },
+    {
+      "id": "0a29",
+      "cab": [
+        {
+          "id": "CAB001",
+          "driverName": "Rajesh Kumar",
+          "type": "Sedan",
+          "fareEstimate": 315,
+          "location": "Delhi",
+          "available": true,
+          "seater": 4,
+          "image": "assets/sedan.png",
+          "dropLocation": "Mumbai",
+          "estimatedTime": "8-10 mins",
+          "pinGenerated": "4456",
+          "contactNumber": "+91 9876543210",
+          "reviews": [
+            {
+              "user": "Rakesh Sharma",
+              "comment": "Great service, very comfortable ride.",
+              "rating": 5
+            },
+            {
+              "user": "Shreya Singh",
+              "comment": "Driver was polite and professional.",
+              "rating": 4
+            }
+          ],
+          "rating": 4.5,
+          "carNumber": "AB123CD"
+        }
+      ],
+      "users": [
+        {
+          "id": "hawumqc08",
+          "firstname": "dee",
+          "midname": "",
+          "lastname": "cccccde",
+          "gender": "female",
+          "contactNumber": "1234567563",
+          "date": "2025-01-31"
+        }
+      ]
+    },
+    {
+      "id": "6fab",
+      "cab": [
+        {
+          "id": "CAB018",
+          "driverName": "Vikram Yadav",
+          "type": "SUV",
+          "fareEstimate": 420,
+          "location": "Chennai",
+          "available": true,
+          "seater": 4,
+          "image": "assets/suv.png",
+          "dropLocation": "Mumbai",
+          "estimatedTime": "6-8 mins",
+          "pinGenerated": "0987",
+          "contactNumber": "+91 9876543227",
+          "reviews": [
+            {
+              "user": "Ravi Rajput",
+              "comment": "Comfortable ride, driver was helpful.",
+              "rating": 4
+            },
+            {
+              "user": "Simran Kaur",
+              "comment": "Great ride, highly recommended!",
+              "rating": 5
+            }
+          ],
+          "rating": 4.5,
+          "carNumber": "ST456UV"
+        }
+      ],
+      "users": [
+        {
+          "id": "APU1",
+          "firstname": "shreyan",
+          "midname": "",
+          "lastname": "sharma",
+          "gender": "male",
+          "contactNumber": "8753245677",
+          "date": "2025-01-25"
+        }
+      ]
+    }
+  ]
 }

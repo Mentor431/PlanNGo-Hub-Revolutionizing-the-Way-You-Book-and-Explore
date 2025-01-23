@@ -4,11 +4,12 @@ import { CabService } from '../../services/cab.service'; // Adjust the path as n
 import { CommonModule } from '@angular/common'; // Import CommonModule for ngIf/ngFor
 import { RouterModule } from '@angular/router'; // Import RouterModule for navigation
 import { HttpClientModule } from '@angular/common/http'; // Ensure HttpClientModule is imported for HTTP requests
+ 
 
 @Component({
   selector: 'app-cab-details',
   templateUrl: './cab-details.component.html',
-  styleUrls: ['./cab-details.component.css'],
+  styleUrls: ['./cab-details.component.css'],  
   standalone: true, // Mark this component as standalone
   imports: [CommonModule, HttpClientModule, RouterModule], // Required for CommonModule, HTTP requests, and routing
   providers: [CabService]
@@ -29,6 +30,7 @@ export class CabDetailsComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.cabId = params['id']; // Keep 'cabId' as a string
       this.loadCabDetails();
+      
     });
   }
 
@@ -51,10 +53,10 @@ export class CabDetailsComponent implements OnInit {
   }
 
   goBack(): void {
-    this.router.navigate(['/']); // Navigate back to the search page
+    this.router.navigate(['/cab-search']); // Navigate back to the search page
   }
 
-  book():void{
-    this.router.navigate(['/cab-booking', this.cabId]);
+  book(): void {
+    this.router.navigate(['/manage-bookings', this.cabId]); // Navigate to manage bookings with cabId as a parameter
   }
 }

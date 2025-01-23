@@ -24,6 +24,10 @@ export class CabSearchComponent implements OnInit {
   cabs: any[] = [];
   isPopupVisible: boolean = false;
   popupMessage: string = '';
+  dropdownOptions: string[] = [];
+  dropdownOpen: boolean = false;
+  isFabMenuOpen = false;
+
 
   constructor(private cabService: CabService, private router: Router) {}
 
@@ -63,9 +67,19 @@ export class CabSearchComponent implements OnInit {
     this.isPopupVisible = true;
   }
 
+  toggleDropdown(): void {
+    this.dropdownOpen = !this.dropdownOpen;
+  }
+  toggleFabMenu(): void {
+    this.isFabMenuOpen = !this.isFabMenuOpen;
+  }
+
   onSelectCab(cabId: number): void {
     this.router.navigate(['/cab-details', cabId]);
   }
+
+   // Method to navigate to the previous page
+   goBack(): void {
+    this.router.navigate(['/']); 
+   }
 }
-
-
