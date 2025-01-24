@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 export interface Flight {
   id: string;
@@ -30,7 +31,11 @@ export class FlightService {
   private seatsApiUrl = 'http://localhost:3002/seats'; // Changed to match JSON server endpoint
   private userApiUrl = 'http://localhost:3001/users';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
+
+  navigateToRoute(route: string): void {
+    this.router.navigate([`/${route}`]);
+  }
 
   getFlights(): Observable<Flight[]> {
     return this.http.get<Flight[]>(this.apiUrl);
@@ -58,5 +63,21 @@ export class FlightService {
 
   getUserData(): Observable<any[]> {
     return this.http.get<any[]>(this.userApiUrl);
+  }
+
+  // Add this to your FlightService class
+  updateAllUsers(users: any[]): Observable<any> {
+    return this.http.put(this.userApiUrl, users);
+  }
+
+  updateSeats(flightSeatsId: string, seats: any[]): Observable<any> {
+    return this.http.patch(`${this.seatsApiUrl}/${flightSeatsId}`, { seats });
+  }
+  
+  updateUserStatus(userId: number | null, userData: any): Observable<any> {
+    if (userId === null) {
+      throw new Error('User ID cannot be null');
+    }
+    return this.http.put(`${this.userApiUrl}/${userId}`, userData);
   }
 }

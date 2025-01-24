@@ -3,13 +3,12 @@
   <div *ngIf="selectedFlight">
     <div class="Flightdetail">
       <h2 id="flightcol" style="color: #00aaff; font-size: 3rem;
-  margin-bottom: 2rem;
-  color: #00aaff;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
-  animation: fadeIn 1s ease-out;">Flight Details</h2>
+        margin-bottom: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+        animation: fadeIn 1s ease-out;">Flight Details</h2>
       <hr />
       <div class="flight-details-row">
         <p><strong>Flight Number:</strong> {{ selectedFlight.id }}</p>
@@ -19,6 +18,9 @@
         <p><strong>Price (Per Passenger):</strong> {{ selectedFlight.price | currency: 'INR' }}</p>
         <p><strong>Total Price:</strong> {{ totalPrice | currency: 'INR' }}</p>
         <p><strong>Airline:</strong> {{ selectedFlight.airline }}</p>
+        <p><strong>Departure Time:</strong> {{ selectedFlight.fromTime }}</p>
+        <p><strong>Arrival Time:</strong> {{ selectedFlight.toTime }}</p>
+        <p><strong>Duration:</strong> {{ selectedFlight.duration }}</p>
       </div>
 
       <div *ngIf="validationMessage" [ngClass]="notificationClass" class="notification">
@@ -72,10 +74,7 @@
                   name="middleName{{ i }}"
                   required
                 />
-                <label for="middleName">Middle Name *</label>
-                <span class="error" *ngIf="validationErrors[i]?.middleName">
-                  {{ validationErrors[i]?.middleName }}
-                </span>
+                <label for="middleName">Middle Name </label>
               </div>
 
               <div class="form full-column">

@@ -1,4 +1,3 @@
-/* Global Styles */
 body {
   margin: 0;
   padding: 0;
@@ -10,13 +9,12 @@ body {
   min-height: 100vh;
   color: #333;
   box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
   transition: all 0.5s ease;
   animation: fadeInBackground 2s ease-out;
+  overflow-y: auto;  /* Enable vertical scrolling */
+  display: block;    /* Use block instead of flex */
 }
+
 
 @keyframes fadeInBackground {
   0% { opacity: 0; transform: scale(1.1); }
@@ -35,6 +33,16 @@ body {
   justify-content: center;
   align-items: center;
   padding: 4rem 2rem;
+  animation: backgroundAnimation 4s infinite alternate;
+}
+/* Animation for background to add subtle movement */
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
 }
 
 /* Main Form Container */
@@ -295,4 +303,26 @@ input:focus, select:focus {
   .heading {
     font-size: 1.8rem;
   }
+}
+
+.error-message-date{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 300px; /* Keeps the width consistent */
+  height: 80px; /* Reduced height */
+  padding: 15px; /* Adjusted padding */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Slightly lighter shadow */
+  z-index: 1000;
+  font-size: 14px; /* Slightly smaller font size */
+  font-weight: bold;
+  text-align: left; /* Align text to the left */
+  display: flex;
+  align-items: center; /* Center text vertically */
+  justify-content: flex-start;
+  animation: fadeInOut 4s ease-in-out;
+  background-color: #f8d7da; /* Light red */
+  color: #721c24; /* Dark red text */
+  border: 1px solid #f5c6cb; /* Subtle border */
 }
