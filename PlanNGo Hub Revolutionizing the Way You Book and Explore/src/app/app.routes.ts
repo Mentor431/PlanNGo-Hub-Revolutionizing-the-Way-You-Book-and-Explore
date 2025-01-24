@@ -5,30 +5,55 @@ import { CabBookingComponent } from './cab/components/cab-booking/cab-booking.co
 import {CabHomeComponent} from './cab/components/cab-home/cab-home.component';
 import{CabManageComponent}from './cab/components/cab-manage/cab-manage.component';
 import{BookingHistoryComponent}from './cab/components/cab-history/cab-history.component';
+import{DemoComponent}from './cab/components/demo/demo.component';
+// import { AdminDriverCommunicationComponent}from './cab/components/admin-driver-communication/admin-driver-communication.component';
 
-
-export const routes: Routes = [
-  { path: "", 
-    component: CabHomeComponent 
-  },
-
-  { path: 'cab-search',
-     component: CabSearchComponent
-  },
-
-  { path: 'cab-details/:id',
-     component: CabDetailsComponent 
-  },
-
-  { path: 'manage-bookings/:id', 
-    component: CabManageComponent 
-  },
-
-  { path: 'booking-history',
-     component: BookingHistoryComponent
-  }, 
-  
-  { path: 'cab-booking/:id', 
-    component: CabBookingComponent
-  },
-];  
+export const routes: Routes =[
+{
+  path: "",
+  component: DemoComponent
+},
+{
+  path: 'cab',
+  children: [
+    {
+      path: 'home',
+      component: CabHomeComponent
+    },
+    {
+      path: 'cab-search',
+      component: CabSearchComponent
+    },
+    {
+      path: 'cab-details/:id',
+      component: CabDetailsComponent
+    },
+    {
+      path: 'manage-bookings/:id',
+      component: CabManageComponent
+    },
+    {
+      path: 'booking-history',
+      component: BookingHistoryComponent
+    },
+    {
+      path: 'cab-booking/:id',
+      component: CabBookingComponent
+    }
+  ]
+},
+// {
+//   path: 'admin',
+//   children: [
+//     {
+//       path: '',
+//       redirectTo: 'communication',
+//       pathMatch: 'full'
+//     },
+//     {
+//       path: 'communication',
+//       component: AdminDriverCommunicationComponent
+//     }
+//   ]
+// }
+]
