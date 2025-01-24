@@ -2,76 +2,144 @@
   font-family: poppins;
 }
 
+
 .container {
+  width: 100%;
+  margin: 0 auto;
   display: flex;
-  gap: 20px; /* Space between filters and cards */
-  padding: 20px;
+  gap: 20px;
 }
 
 .filters-section {
-  width: 250px; /* Fixed width for the filters section */
-  background-color: #f9f9f9;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  height:600px;
+  background-color: #FFEBCC;
+  padding: 20px;
+  padding-top: 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
-.filters-section h3 {
-  margin-bottom: 15px;
+.filters-section h2 {
+  margin-bottom: 20px;
+  font-size: 24px; /* Increased font size */
+  font-weight: 700; /* Bold font weight */
+  text-align: left;
+  color: #333;
+}
+
+.btns {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filters-section .filter-btn, .filters-section .reset-btn {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600; /* Medium font weight for better readability */
+  font-size: 14px; /* Slightly larger font size for buttons */
+  cursor: pointer;
+}
+
+.filters-section .filter-btn {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.filters-section .filter-btn:hover {
+  background-color: #218838;
+}
+
+.filters-section .reset-btn {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.filters-section .reset-btn:hover {
+  background-color: #5a6268;
+}
+
+.filter-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .filter-row {
   margin-bottom: 15px;
 }
 
-.amenity-checkbox {
-  display: block; /* Display one amenity per line */
-  margin-bottom: 10px; /* Add space between amenities */
-  font-size: 14px;
+.price-inputs {
+  display: flex;
+  gap: 10px;
 }
 
-.amenity-checkbox input {
-  margin-right: 8px;  /* Space between checkbox and label */
-  cursor: pointer;
-}
-
-.amenity-checkbox label {
-  color: #333;
-  font-size: 14px;
-  cursor: pointer;
+.price-inputs div {
+  flex: 1;
 }
 
 input[type="number"] {
-  width: 100%; /* Full width for the number input box */
-  padding: 10px; /* Add padding for a comfortable input area */
-  border: 1px solid #ccc; /* Light border */
-  border-radius: 5px; /* Rounded corners */
-  font-size: 14px; /* Set font size */
-  color: #333; /* Dark color for text */
-  background-color: #fff; /* White background */
-  margin-top: 5px;
-  margin-bottom: 15px; /* Space below input box */
-  box-sizing: border-box; /* Include padding in the width calculation */
+  width: 80%; /* Reduced width */
+  padding: 4px; /* Reduced padding */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 13px; /* Adjusted font size for better readability */
+  font-weight: 500; /* Medium weight for input text */
+  background-color: #fff;
+  margin: 5px 0; /* Added space around inputs */
 }
 
-input[type="number"]:focus {
-  border-color: #007bff; /* Border color changes on focus */
-  outline: none; /* Remove default outline */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2); /* Soft glow effect on focus */
+select {
+  width: 80%; /* Reduced width */
+  padding: 4px; /* Reduced padding */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 13px; /* Adjusted font size */
+  font-weight: 500; /* Medium weight */
+  margin: 5px 0;
 }
+
+.amenity-scroll {
+  max-height: 120px; /* Limit height of the amenities div */
+  overflow-y: auto; /* Add scrolling to the amenities only */
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.amenity-checkbox {
+  margin-bottom: 8px;
+  font-size: 14px; /* Maintain readability for amenity labels */
+  font-weight: 500; /* Medium weight for clarity */
+}
+
+.amenity-checkbox input {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+
 
 .card-container {
-  flex-grow: 1; /* Take the remaining space for cards */
-  display: flex;
-  flex-wrap: wrap; /* Wrap cards to a new row if necessary */
-  gap: 15px; /* Space between cards */
-  justify-content: flex-start; /* Align cards to the left */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Display 3 cards per row */
+  gap: 20px; /* Maintain spacing between cards */
+  justify-items: center; /* Center align cards within the grid */
 }
 
 .card {
-  width: 295px; /* Fixed width for each card */
+  width: 295px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  padding: 10px;
   overflow: hidden;
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -83,13 +151,13 @@ input[type="number"]:focus {
 
 .card-img {
   width: 100%;
-  height: 150px; /* Adjusted height for smaller cards */
+  height: 150px;
   object-fit: cover;
 }
 
 .card-content {
-  padding: 15px;  /* Increased padding for a better visual balance */
-  background-color: #fafafa;  /* Light background for card content */
+  padding: 15px;
+  background-color: #fafafa;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -97,24 +165,46 @@ input[type="number"]:focus {
 }
 
 .card-content h3 {
-  font-size: 18px;  /* Slightly larger font for hotel name */
+  font-size: 18px;
   margin: 8px 8px;
-  color: #333;  /* Darker color for better readability */
-  font-weight: bold;  /* Make hotel name stand out */
+  color: #333;
+  font-weight: bold;
 }
 
 .card-content p {
-  font-size: 14px;  /* Slightly smaller font for the details */
+  font-size: 14px;
   margin: 5px 8px;
-  color: #555;  /* Softer color for details */
+  color: #555;
 }
 
 .card-content p strong {
-  color: #007bff;  /* Blue color for labels (Location, Price, etc.) */
+  color: #007bff;
+}
+
+.name-star
+{
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  width:100%;
+}
+
+.name-star h3{
+  margin: 0;
+  padding: 0;
+  width: 60%;
+}
+
+.rating-label, .location-price {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #555;
 }
 
 .know-more-btn {
-  background: linear-gradient(135deg, #ff7f50, #ff6347);  /* Vibrant gradient color */
+  background: linear-gradient(135deg, #ff7f50, #ff6347);
   color: #fff;
   font-size: 14px;
   padding: 12px;
@@ -129,30 +219,52 @@ input[type="number"]:focus {
 }
 
 .know-more-btn:hover {
-  background: linear-gradient(135deg, #ff6347, #ff4500);  /* Darker gradient on hover */
-  transform: scale(1.05);  /* Slight scale effect for interaction */
+  background: linear-gradient(135deg, #ff6347, #ff4500);
+  transform: scale(1.05);
 }
 
 .know-more-btn:active {
-  transform: scale(1);  /* Reset the scale when the button is clicked */
+  transform: scale(1);
 }
 
-.filters-section .filter-btn {
-  background-color: #28a745; /* Green background */
-  color: #fff;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
+
+.location-price
+{
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.price-offer {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.price
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  transition: background-color 0.3s ease;
 }
 
-.filters-section .filter-btn:hover {
-  background-color: #218838; /* Darker green on hover */
+.original-price {
+  text-decoration: line-through;
+  color: gray;
 }
 
-.filters-section .filter-btn:active {
-  background-color: #1e7e34; /* Even darker green on active state */
+.discounted-price {
+  font-size: 1.5em;
+  color: red !important;
+  font-weight: bold;
 }
+
+.description p {
+  color: green;
+  font-weight: 500;
+}
+
+
+
+

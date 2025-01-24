@@ -1,6 +1,11 @@
 
 //hotel.model.ts
 
+export interface specialOffers {
+  discount: number;
+  description: string;
+}
+
 export interface Room {
   type: string;
   bed: string;
@@ -16,6 +21,8 @@ export interface Room {
   };
 }
 
+
+
 export interface Hotel {
     id: number;
     name: string;
@@ -26,7 +33,9 @@ export interface Hotel {
     amenities: string[];
     description: string;
     nearbyAttractions: string[];//
-    specialOffers: string[]; //
+    specialOffers: specialOffers[]; //
+    discountedPrice: number;
+    offerDescription: string;
     rooms: Room[];
     surroundings: {
       'Airport':string;
@@ -47,5 +56,35 @@ export interface Hotel {
         answer: string;
       }
     ];
+  }
+  
+  export interface Guest {
+    name: string;
+    age: number;
+    gender: string;
+  }
+  
+  export interface Booking {
+    id: string;
+    hotelid: string;
+    hotelName: string;
+    hotelImage: string;
+    location: string;
+    name: string;
+    age: number;
+    gender: string;
+    email: string;
+    phone: string;
+    guests: Guest[];
+    roomType: string;
+    roomPrice: number;
+    noOfrooms: number;
+    stayDuration: number;
+    noOfGuests: number;
+    totalPrice: number;
+    totalPayable: number;
+    checkIn: string;
+    checkOut: string;
+    status: string;
   }
   

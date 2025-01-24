@@ -1,10 +1,14 @@
-
 //hotel.service.ts
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject} from 'rxjs';
 import { Hotel } from '../models/hotel.model';
+
+import { switchMap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+
+
 
 @Injectable({
   providedIn: 'root',
@@ -39,30 +43,6 @@ getHotels(): Observable<Hotel[]> {
 
   /*** Hotel Results Component ***/
 
-  /**
-   * Fetch hotels filtered by location
-   * @param location Location to filter hotels
-   * @returns Observable<Hotel[]>
-   */
-  getHotelsByLocation(location?: string): Observable<Hotel[]> {
-    const trimmedLocation = location?.trim();
-    const url = trimmedLocation
-      ? `${this.apiUrl}?location=${encodeURIComponent(trimmedLocation)}`
-      : this.apiUrl;
-  
-    console.log('API URL:', url); // Debugging the API endpoint
-    return this.http.get<Hotel[]>(url);
-  }
-  
-  
-
-  /**
-   * Filter hotels based on price and amenities
-   * @param hotels The list of hotels to filter
-   * @param filters Object containing filter criteria
-   * @returns Filtered list of hotels
-   */
-
   filterHotels(hotels: Hotel[], filters: { price: number; minPrice: number; amenities: string[] }): Hotel[] {
     return hotels.filter((hotel) => {
       const matchesMaxPrice = filters.price ? hotel.price <= filters.price : true;
@@ -75,7 +55,8 @@ getHotels(): Observable<Hotel[]> {
     });
   }
 
-  /*** Hotel Details Component ***/
+
+/*** Hotel Details Component ***/
 
 // Save selected hotel
 setSelectedHotel(hotel: Hotel): void {
@@ -102,6 +83,51 @@ getSelectedRoom(): Observable<any> {
 bookHotel(bookingData: any): Observable<any> {
   const url = `http://localhost:3000/bookings`; // Booking endpoint in db.json
   return this.http.post<any>(url, bookingData);
+}
+
+
+getBookings(): Observable<any[]> {
+  return this.http.get<any[]>(`http://localhost:3000/bookings`);
+}
+
+cancelBooking(id: string, updatedBooking: any): Observable<any> {
+  const url = `http://localhost:3000/bookings/${id}`;
+  return this.http.put(url, updatedBooking);
+}
+
+addReviewToHotel(hotelId: number, review: any): Observable<any> {
+  const url = `${this.apiUrl}/${hotelId}`;
+  return this.http.get<Hotel>(url).pipe(
+    switchMap((hotel) => {
+      const updatedReviews = hotel.reviews ? [...hotel.reviews, review] : [review];
+      const updatedHotel = { ...hotel, reviews: updatedReviews };
+      return this.http.put<any>(url, updatedHotel);
+    })
+  );
+}
+
+
+updateBookingStatus(booking: any): Observable<any> {
+  const url = `http://localhost:3000/bookings/${booking.id}`;
+  return this.http.put(url, booking); // Updates the booking status
+}
+
+
+getRoomTypesByHotelId(hotelId: string): Observable<any[]> {
+  return this.http.get<any>(`${this.apiUrl}/${hotelId}`).pipe(
+    map((hotel) => hotel.rooms || []) // Extract room types or return an empty array
+  );
+}
+
+getSpecialOffersByHotelId(hotelId: string): Observable<any[]> {
+  return this.http.get<any>(`${this.apiUrl}/${hotelId}`).pipe(
+    map((hotel) => hotel.specialOffers || []) // Extract special offers or return an empty array
+  );
+}
+ 
+editBooking(booking: any): Observable<any> {
+  const url = `http://localhost:3000/bookings/${booking.id}`;
+  return this.http.put<any>(url, booking);
 }
 
 }

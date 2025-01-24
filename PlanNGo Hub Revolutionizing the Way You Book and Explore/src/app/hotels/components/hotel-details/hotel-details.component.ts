@@ -4,21 +4,25 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { IconDefinition,faStar,faSwimmingPool,faSpa,faDumbbell, faCocktail, faHandSparkles, faUtensils, faBaby, faWifi, faMicrophone,faFutbol, faParking, faElevator, faHotTub, faChild, faSuitcase, faChalkboardTeacher, faChargingStation, faBroom, faTableTennis, faOm, faSmokingBan, faSmoking, faShower, faBath, faWind, faArchway, faWater, faSeedling, faConciergeBell, faCity, faMountain, faTree,faBed,faMapMarkerAlt,faHotel,faMapPin,faPlane,faTrain,faBus,faRulerCombined,faUser,faChildren,} from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition,faStar,faSwimmingPool,faSpa,faDumbbell, faCocktail, faHandSparkles, faUtensils, faBaby, faWifi, faMicrophone,faFutbol, faParking, faElevator, faHotTub, faChild, faSuitcase, faChalkboardTeacher, faChargingStation, faBroom, faTableTennis, faOm, faSmokingBan, faSmoking, faShower, faBath, faWind, faArchway, faWater, faSeedling, faConciergeBell, faCity, faMountain, faTree,faBed,faMapMarkerAlt,faHotel,faMapPin,faPlane,faTrain,faBus,faRulerCombined,faUser,faChildren,faCalendarCheck,faCalendarMinus} from '@fortawesome/free-solid-svg-icons';
 
 import { HotelService } from '../../services/hotel.service';
 import { Hotel } from '../../models/hotel.model';
 
+import { NavigationToggleComponent } from '../navigation-toggle/navigation-toggle.component';
+
 @Component({
   selector: 'app-hotel-details',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule],
+  imports: [CommonModule, FontAwesomeModule, NavigationToggleComponent, FormsModule],
   templateUrl: './hotel-details.component.html',
   styleUrls: ['./hotel-details.component.css'],
 })
 export class HotelDetailsComponent implements OnInit {
+
   hotel: Hotel | null = null;
   faStar = faStar;
   faSwimmingPool = faSwimmingPool;
@@ -63,11 +67,15 @@ export class HotelDetailsComponent implements OnInit {
   faRulerCombined = faRulerCombined;
   faUser = faUser;
   faChildren = faChildren;
-  constructor(
-    private route: ActivatedRoute,
-    private hotelService: HotelService,
-    private router: Router
-  ) {}
+  faCalendarCheck = faCalendarCheck;
+  faCalendarMinus = faCalendarMinus;
+
+  minCheckinDate: string;
+  constructor(private route: ActivatedRoute, private hotelService: HotelService,private router: Router) 
+  {
+    const today = new Date();
+    this.minCheckinDate = today.toISOString().split('T')[0];
+  }
 
   ngOnInit(): void {
     this.hotelService.getSelectedHotel().subscribe((data) => {
@@ -89,6 +97,10 @@ export class HotelDetailsComponent implements OnInit {
   }
 
 
+  calculateOfferPrice(originalPrice: number, discount: number): number {
+    return Math.round(originalPrice - (originalPrice * discount) / 100);
+  }
+  
 
   getAmenityIcon(amenity: string): IconDefinition {
     const icons: Record<string, IconDefinition> = {
@@ -194,10 +206,87 @@ export class HotelDetailsComponent implements OnInit {
     }
   }
 
+
   navigateToBooking(room: any): void {
   {
     this.hotelService.setSelectedRoom(room);
-    this.router.navigate(['/hotel-booking']);
+    this.hotelService.getSearchDetails().subscribe((details) => {
+      
+      this.details = details;
+      const isIncomplete = 
+      !details?.startDate || 
+      !details?.endDate || 
+      !details?.rooms || 
+      details?.adults < 1;
+      
+
+    if (isIncomplete) {
+      // Open the popup if search details are incomplete
+      this.openDetailsUpdateForm();
+    } else {
+      // Save the selected hotel and navigate to details page
+      this.hotelService.setSelectedRoom(room);
+      this.router.navigate(['/hotels/hotel-booking']);
+
+    }
+    });
+    
   }
 }
+
+detailsUpdateForm = {
+
+  startDate: '',
+  endDate: '',
+  adults: 1,
+  children: 0,
+  rooms: 1
+};
+
+details = {
+  location: '',
+  startDate: '',
+  endDate: '',
+  adults: 1,
+  children: 0,
+  rooms: 1
+};
+
+showDetailsUpdateForm = false;
+  openDetailsUpdateForm(): void {
+    this.showDetailsUpdateForm = true;
+  }
+
+  closeDetailsUpdateForm(): void {
+    this.showDetailsUpdateForm = false;
+  }
+
+  submitUpdatedDetails(): void {
+
+    this.detailsUpdateForm = {
+      ...this.details,
+      startDate: this.detailsUpdateForm.startDate,
+      endDate: this.detailsUpdateForm.endDate,
+      adults: this.detailsUpdateForm.adults,
+      children: this.detailsUpdateForm.children,
+      rooms: this.detailsUpdateForm.rooms
+
+    }
+    this.hotelService.setSearchDetails(this.detailsUpdateForm);
+    this.showDetailsUpdateForm = false;
+    console.log(this.detailsUpdateForm);
+  }
+
+
+  //for getting next date for checkout date
+  getNextDate(date: string | null): string {
+    if (!date) {
+      return ''; // Return empty string if date is not provided
+    }
+    const selectedDate = new Date(date);
+    const nextDate = new Date(selectedDate);
+    nextDate.setDate(selectedDate.getDate() + 1); // Add one day
+    return nextDate.toISOString().split('T')[0]; // Format as 'YYYY-MM-DD'
+  }
+
 }

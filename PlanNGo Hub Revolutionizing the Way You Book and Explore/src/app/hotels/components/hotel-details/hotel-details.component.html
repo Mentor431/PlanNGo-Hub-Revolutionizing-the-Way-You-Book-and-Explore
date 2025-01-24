@@ -1,5 +1,4 @@
 <!-- hotel-details.component.html -->
-
 <div *ngIf="hotel" class="hotel-details-container">
 
     <!-- Hotel Header Section -->
@@ -11,7 +10,36 @@
           <p><i><fa-icon [icon]="faHotel"></fa-icon></i> {{ hotel['description'] }}</p>
         </div>
     
-        <h2>₹{{ hotel['price'] }}</h2>
+        <div>
+
+          <!-- If specialOffers are available -->
+          <div  class="hotel-pricing" *ngIf="hotel?.specialOffers && hotel.specialOffers.length > 0">
+
+           <div class="prices">
+            <p class="original-price">₹{{ hotel.price }}</p>
+            <p class="offer-price">
+              ₹{{ calculateOfferPrice(hotel.price, hotel.specialOffers[0].discount) }}
+            </p>
+           </div>
+
+           <div class="desc">
+            <p class="offer-description">{{ hotel.specialOffers[0].description }}</p>
+            <p class="discount">Save {{ hotel.specialOffers[0].discount }}%!</p>
+           </div>
+            
+          </div>
+
+        
+          <!-- If no specialOffers -->
+          <div *ngIf="!hotel?.specialOffers || hotel.specialOffers.length === 0">
+            <p class="regular-price">₹{{ hotel.price }}</p>
+          </div>
+
+        </div>
+        
+
+
+
     
         <button class="select-rooms-btn" (click)="scrollToRooms()">Select Rooms</button>
     
@@ -75,35 +103,64 @@
     <div #rooms class="rooms">
       <h1>Rooms</h1>
       <div *ngFor="let room of hotel['rooms']" class="room-card">
-          
-          <div class="room-type-img">
-            <h3>{{ room['type'] }}
-            <img [src]="room.image" alt="{{ room.type }} photo"/>
+        <div class="room-type-img">
+          <h3>{{ room['type'] }}</h3>
+          <img [src]="room.image" alt="{{ room.type }} photo" />
+        </div>
+
+        <div class="details">
+          <ul class="room-details">
+            <li>
+              <i><fa-icon [icon]="faBed"></fa-icon></i> {{ room['bed'] }}
+            </li>
+            <li>
+              <i><fa-icon [icon]="faRulerCombined"></fa-icon></i> {{ room['size'] }}
+            </li>
+            <li *ngFor="let amenity of room['amenities']" class="amenity-item">
+              <i><fa-icon [icon]="getAmenityIcon(amenity)"></fa-icon></i> {{ amenity }}
+            </li>
+          </ul>
+        </div>
+
+        <div class="capacity">
+          <h3>
+            <i><fa-icon [icon]="faUser"></fa-icon></i> {{ room['capacity'].adults }}
           </h3>
-          </div>       
+          <h3>
+            <i><fa-icon [icon]="faChild"></fa-icon></i> {{ room['capacity'].children }}
+          </h3>
+        </div>
 
-          <div class="details">
-            <ul class="room-details">
-              <li><i><fa-icon [icon]="faBed"></fa-icon></i> {{ room['bed'] }}</li>
-              <li><i><fa-icon [icon]="faRulerCombined"></fa-icon></i> {{ room['size'] }}</li>
-              <li *ngFor="let amenity of room['amenities']" class="amenity-item"><i><fa-icon [icon]="getAmenityIcon(amenity)"></fa-icon></i> {{ amenity }}</li>
-            </ul>
+        <div class="room-price">
+          <!-- If specialOffers are available -->
+          <div *ngIf="hotel?.specialOffers && hotel.specialOffers.length > 0">
+
+            <div class="prices-room">
+              <h2 class="original-price">₹{{ room['price'] }}</h2>
+            <h2 class="offer-price">
+              ₹{{ calculateOfferPrice(room.price, hotel.specialOffers[0].discount) }}
+            </h2>
+            </div>
+
+            <div class="desc-room">
+              <p class="offer-description">{{ hotel.specialOffers[0].description }}</p>
+            <p class="discount">Save {{ hotel.specialOffers[0].discount }}%!</p>
+            </div>
           </div>
 
-          <div class="capacity">
-            <h3> <i><fa-icon [icon]="faUser"></fa-icon></i> {{ room['capacity'].adults }}</h3>
-            <h3><i><fa-icon [icon]="faChild"></fa-icon></i> {{ room['capacity'].children }}</h3>
-          </div>
-      
-          <div class="room-price">
-            <h2> ₹{{ room['price'] }}</h2>
-            <p>price per night</p>
-            <p>incl. of taxes</p>
-            <button class="reserve-btn" (click)="navigateToBooking(room)">Reserve</button>
+          <!-- If no specialOffers -->
+          <div *ngIf="!hotel?.specialOffers || hotel.specialOffers.length === 0">
+            <h2 class="regular-price">₹{{ room['price'] }}</h2>
           </div>
 
+          <p>per night + taxes</p>
+          <button class="reserve-btn" (click)="navigateToBooking(room)">
+            Reserve
+          </button>
+        </div>
       </div>
     </div>
+
 
     <!-- reviews -->
     <div #reviews class="reviews">
@@ -141,6 +198,108 @@
 <div *ngIf="!hotel">
     <p>Loading hotel details...</p> 
 </div>
+
+<!-- Details Update Popup -->
+<div class="popup" *ngIf="showDetailsUpdateForm">
+  <div class="popup-content">
+    <h3>Enter the Details</h3>
+    <form #detailsUpdateFormRef="ngForm" (ngSubmit)="submitUpdatedDetails()" novalidate>
+      <!-- Check-in Date -->
+      <div class="form-group">
+        <label for="startDate">
+          <i><fa-icon [icon]="faCalendarCheck"></fa-icon></i> Check-in
+        </label>
+        <input
+          type="date"
+          id="startDate"
+          [(ngModel)]="detailsUpdateForm.startDate"
+          [min]="minCheckinDate"
+          name="startDate"
+          required
+          #startDate="ngModel"
+          [ngClass]="{ 'invalid': startDate.invalid && startDate.touched }"
+        />
+        <div *ngIf="startDate.invalid && startDate.touched" class="error">
+          Check-in date is required.
+        </div>
+      </div>
+
+      <!-- Check-out Date -->
+      <div class="form-group">
+        <label for="endDate">
+          <i><fa-icon [icon]="faCalendarMinus"></fa-icon></i> Check-out
+        </label>
+        <input
+          type="date"
+          id="endDate"
+          [(ngModel)]="detailsUpdateForm.endDate"
+          [min]="getNextDate(detailsUpdateForm.startDate || minCheckinDate)"
+          name="endDate"
+          required
+          #endDate="ngModel"
+          [ngClass]="{ 'invalid': endDate.invalid && endDate.touched }"
+        />
+        <div *ngIf="endDate.invalid && endDate.touched" class="error">
+          Check-out date is required.
+        </div>
+      </div>
+
+      <!-- Rooms -->
+      <div class="form-group">
+        <label for="rooms">
+          <i><fa-icon [icon]="faBed"></fa-icon></i> Rooms
+        </label>
+        <input
+          type="number"
+          id="rooms"
+          min="1"
+          [(ngModel)]="detailsUpdateForm.rooms"
+          name="rooms"
+        />
+      </div>
+
+      <!-- Adults -->
+      <div class="form-group">
+        <label for="adults">
+          <i><fa-icon [icon]="faUser"></fa-icon></i> Adults
+        </label>
+        <input
+          type="number"
+          id="adults"
+          min="1"
+          [(ngModel)]="detailsUpdateForm.adults"
+          name="adults"
+        />
+      </div>
+
+      <!-- Children -->
+      <div class="form-group">
+        <label for="children">
+          <i><fa-icon [icon]="faChild"></fa-icon></i> Children
+        </label>
+        <input
+          type="number"
+          id="children"
+          min="0"
+          [(ngModel)]="detailsUpdateForm.children"
+          name="children"
+        />
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="detailsUpdateFormRef.invalid" class="btn-submit">
+        Proceed
+      </button>
+      <button type="button" (click)="closeDetailsUpdateForm()" class="btn-cancel">
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>
+
+
+
+<app-navigation-toggle></app-navigation-toggle>
 
 
   
