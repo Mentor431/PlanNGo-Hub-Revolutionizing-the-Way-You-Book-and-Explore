@@ -1,4 +1,9 @@
 /* Modal Animations (optional) */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .modal-enter {
     transform: scale(0.9);
     opacity: 0;

@@ -7,7 +7,6 @@ import { RegisterComponent } from './authentication/components/register/register
 import { HomeComponent } from './authentication/components/home/home.component';
 import { authGuard } from './authentication/services/auth.guard';
 import { ForgotPasswordComponent } from './authentication/components/forgotpassword/forgotpassword.component';
-import { RouterModule  } from '@angular/router';
 import { AdminDashboardComponent } from './authentication/components/admin-dashboard/admin-dashboard.component';
 
 // tours
@@ -28,13 +27,13 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [authGuard] },
   { path: 'admin-dashboard', component: AdminDashboardComponent }, 
   { path: 'forgotpassword', component: ForgotPasswordComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '**', redirectTo: '/login' },
+  // { path: '', redirectTo: '/login', pathMatch: 'full' },
+  // { path: '**', redirectTo: '/login' },
   
   // tours  
+  { path : 'tour', component: DemopageComponent },
   {
     path: 'tours',
-    component: DemopageComponent,
     children: [
       {
         path: 'home',

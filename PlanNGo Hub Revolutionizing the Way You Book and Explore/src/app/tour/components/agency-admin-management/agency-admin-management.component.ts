@@ -5,7 +5,7 @@ import { TourPackagesService } from '../../services/tour-packages.service'; // I
 import { HttpClient } from '@angular/common/http';
 // Import any necessary Angular modules for standalone components
 import { CommonModule } from '@angular/common';
-import { error } from 'node:console';
+// import { error } from 'node:console';
 
 @Component({
   selector: 'app-agency-admin-management',

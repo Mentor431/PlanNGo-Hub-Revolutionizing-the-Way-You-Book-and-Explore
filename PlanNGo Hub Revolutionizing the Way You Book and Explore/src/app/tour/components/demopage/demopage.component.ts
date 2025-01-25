@@ -7,26 +7,34 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './demopage.component.html',
-  styleUrl: './demopage.component.css'
+  styleUrl: './demopage.component.css',
 })
 export class DemopageComponent {
   selectedRole: string = 'end-user'; // Default role
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    const user = sessionStorage.getItem('role');
+    this.checkUser(user);
+  }
 
-  onLogin(): void {
-    switch (this.selectedRole) {
-      case 'end-user':
+  private sleep(ms: number): Promise<void> {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  async checkUser(user: String | null): Promise<void>{
+    await this.sleep(1500);
+    switch (user) {
+      case 'User':
         this.router.navigate(['/tours/home']);
         break;
-      case 'admin':
+      case 'SubAdmin':
         this.router.navigate(['tours/agencyadmin/AG001/dashboard/packages']);
         break;
-      case 'super-admin':
+      case 'Admin':
         this.router.navigate(['tours/superadmin/dashboard']);
         break;
-      default:
-        console.error('Invalid role selected');
+      case null:
+        history.back();
     }
   }
 }
