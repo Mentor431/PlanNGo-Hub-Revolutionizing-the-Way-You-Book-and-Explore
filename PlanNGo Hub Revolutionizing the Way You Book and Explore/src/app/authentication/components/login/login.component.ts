@@ -8,10 +8,8 @@ import { PasswordModule } from 'primeng/password';
 import { AuthService } from '../../services/auth.service';
 import { MessageService } from 'primeng/api';
 import { CommonModule } from '@angular/common';
-import { DropdownModule } from 'primeng/dropdown';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faUserLock, faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
-// import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login',
@@ -21,20 +19,14 @@ import { faUserLock, faEnvelope, faLock } from '@fortawesome/free-solid-svg-icon
     InputTextModule,
     FormsModule,
     PasswordModule,
-    DropdownModule, // Add this
     CommonModule,
     FontAwesomeModule,
     ButtonModule,
-    // BrowserModule,
   ],
   templateUrl: './login.component.html',
 })
 export class LoginComponent {
-  login = { email: '', password: '', role: '' }; // Added role property
-  roles = [
-    { label: 'User', value: 'user' },
-    { label: 'Admin', value: 'admin' },
-  ]; // Array for dropdown options
+  login = { email: '', password: '' };
 
   private authService = inject(AuthService);
   private router = inject(Router);
@@ -45,10 +37,10 @@ export class LoginComponent {
   faLock = faLock;
 
   onLogin() {
-    const { email, password, role } = this.login;
+    const { email, password } = this.login;
 
     // Log the login attempt for debugging
-    console.log('Login initiated:', { email, password, role });
+    console.log('Login initiated:', { email, password });
 
     this.authService.getUserDetails(email, password).subscribe({
       next: (response) => {
@@ -59,15 +51,15 @@ export class LoginComponent {
 
           // Save user details in sessionStorage
           sessionStorage.setItem('userId', user.id);
-          sessionStorage.setItem('role', role); // Save role in sessionStorage
+          sessionStorage.setItem('role', user.role); // Save role from server response
           sessionStorage.setItem('email', user.email);
 
           console.log("user", user);
-          console.log("role", role);
-          console.log("email", email);
+          console.log("role", user.role);
+          console.log("email", user.email);
 
           // Redirect based on role
-          if (role === 'admin') {
+          if (user.role === 'Admin') {
             this.router.navigate(['/admin-dashboard']).then((success) => {
               if (success) console.log('Navigation to Admin Dashboard successful');
               else console.error('Navigation to Admin Dashboard failed');
@@ -96,7 +88,6 @@ export class LoginComponent {
       },
     });
   }
-
 
   navigateToRegister() {
     this.router.navigate(['/register']);

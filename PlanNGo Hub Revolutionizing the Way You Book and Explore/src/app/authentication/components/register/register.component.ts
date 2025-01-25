@@ -18,7 +18,7 @@ import { RegisterPostData } from '../../models/auth';
 import { MessageService } from 'primeng/api';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import { faUser}  from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { faBirthdayCake } from '@fortawesome/free-solid-svg-icons';
@@ -45,17 +45,17 @@ export class RegisterComponent {
   private registerService = inject(AuthService);
   private messageService = inject(MessageService);
   private router = inject(Router);
-faUser=faUser;
-faLock = faLock;
-faBirthdayCake=faBirthdayCake;
-faEnvelope=faEnvelope;
-faVenusMars=faVenusMars;
-faMapMarkerAlt=faMapMarkerAlt;
+  faUser = faUser;
+  faLock = faLock;
+  faBirthdayCake = faBirthdayCake;
+  faEnvelope = faEnvelope;
+  faVenusMars = faVenusMars;
+  faMapMarkerAlt = faMapMarkerAlt;
   // Simulated list of existing users (can be replaced with an API call)
   existingUsers = [
     { email: 'xyz@gmail.com', password: '4321' },
     { email: 'user@example.com', password: 'userpass' },
-    { email: 'pqr@gmail.com', password:'2001'},
+    { email: 'pqr@gmail.com', password: '2001' },
   ];
 
   // Define the registerForm group with controls and validation
@@ -89,16 +89,16 @@ faMapMarkerAlt=faMapMarkerAlt;
     { label: 'Other', value: 'Other' },
   ];
 
-   // Role options for the dropdown
-   roleOptions = [
+  // Role options for the dropdown
+  roleOptions = [
     { label: 'User', value: 'User' },
     { label: 'Admin', value: 'Admin' },
   ];
 
   // Method to handle registration
   onRegister() {
-    const email = this.registerForm.get('email')?.value??'';
-    const password = this.registerForm.get('password')?.value??'';
+    const email = this.registerForm.get('email')?.value ?? '';
+    const password = this.registerForm.get('password')?.value ?? '';
 
     // Check for email duplication
     const duplicateUser = this.existingUsers.find(
@@ -174,9 +174,9 @@ faMapMarkerAlt=faMapMarkerAlt;
   get location() {
     return this.registerForm.get('location');
   }
-    // Navigation to Login Page
-    navigateToLogin() {
-      this.router.navigate(['/login']);
-    }
-  
+  // Navigation to Login Page
+  navigateToLogin() {
+    this.router.navigate(['/login']);
+  }
+
 }
