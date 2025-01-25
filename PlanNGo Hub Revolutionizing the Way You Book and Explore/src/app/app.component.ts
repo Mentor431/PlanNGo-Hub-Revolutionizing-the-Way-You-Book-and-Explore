@@ -13,5 +13,5 @@ import { ToastModule } from 'primeng/toast';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'angular-18-primeng-app';
+  title = "PlanNGo-Hub";
 }
