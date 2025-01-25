@@ -1,4 +1,16 @@
+
 import { Routes } from "@angular/router";
+
+// authentication
+import { LoginComponent } from './authentication/components/login/login.component';
+import { RegisterComponent } from './authentication/components/register/register.component';
+import { HomeComponent } from './authentication/components/home/home.component';
+import { authGuard } from './authentication/services/auth.guard';
+import { ForgotPasswordComponent } from './authentication/components/forgotpassword/forgotpassword.component';
+import { RouterModule  } from '@angular/router';
+import { AdminDashboardComponent } from './authentication/components/admin-dashboard/admin-dashboard.component';
+
+// tours
 import { HomepageComponent } from "./tour/components/homepage/homepage.component";
 import { TourInfoComponent } from "./tour/components/tour-info/tour-info.component";
 import { BookingFormComponent } from "./tour/components/tour-booking/tour-booking.component";
@@ -9,10 +21,20 @@ import { AgencyAdminManagementComponent } from './tour/components/agency-admin-m
 import { DemopageComponent } from "./tour/components/demopage/demopage.component";
 
 export const routes: Routes = [
-  { path: "", component: DemopageComponent },
-
+  
+  // authentication
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'home', component: HomeComponent, canActivate: [authGuard] },
+  { path: 'admin-dashboard', component: AdminDashboardComponent }, 
+  { path: 'forgotpassword', component: ForgotPasswordComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/login' },
+  
+  // tours  
   {
     path: 'tours',
+    component: DemopageComponent,
     children: [
       {
         path: 'home',
