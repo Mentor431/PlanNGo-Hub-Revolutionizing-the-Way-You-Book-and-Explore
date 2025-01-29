@@ -34,9 +34,11 @@
       </div>
 
       <ul class="menu-list">
-        <li><a href="#"><fa-icon [icon]="faCalendarCheck"></fa-icon>My Bookings</a></li>
+        <p-button label="📅 My Bookings " (onClick)="navigateToBookings()" styleClass="p-button-text">
+        </p-button>
         <li><a href="#"><fa-icon [icon]="faHeart"></fa-icon>Saved Tours</a></li>
-        <li><a href="#"><fa-icon [icon]="faMoneyBillAlt"></fa-icon>Payment History</a></li>
+        <p-button label="💳 Payment History" (onClick)="navigateToPayments()" styleClass="p-button-text">
+        </p-button>
         <li><a href="#"><fa-icon [icon]="faCog"></fa-icon>Settings</a>
           <button (click)="toggleTheme()">
             Switch to {{ isDarkTheme ? 'Light' : 'Dark' }} Theme
