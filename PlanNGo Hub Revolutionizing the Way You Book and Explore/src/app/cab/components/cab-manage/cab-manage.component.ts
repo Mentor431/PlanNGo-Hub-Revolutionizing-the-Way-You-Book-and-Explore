@@ -181,7 +181,7 @@ export class CabManageComponent implements OnInit {
   }
 
   goBack(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/cab/home']);
   }
 }
 

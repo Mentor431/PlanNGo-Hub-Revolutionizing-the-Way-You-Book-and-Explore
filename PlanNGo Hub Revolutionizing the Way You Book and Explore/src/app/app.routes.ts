@@ -6,7 +6,9 @@ import {CabHomeComponent} from './cab/components/cab-home/cab-home.component';
 import{CabManageComponent}from './cab/components/cab-manage/cab-manage.component';
 import{BookingHistoryComponent}from './cab/components/cab-history/cab-history.component';
 import{DemoComponent}from './cab/components/demo/demo.component';
-// import { AdminDriverCommunicationComponent}from './cab/components/admin-driver-communication/admin-driver-communication.component';
+import { AdminDriverCommunicationComponent}from './cab/components/admin-driver-communication/admin-driver-communication.component';
+import{AdminManageBookingsComponent}from './cab/components/admin-manage-bookings/admin-manage-bookings.component';
+import{AdminDashboardComponent}from './cab/components/admin-dashboard/admin-dashboard.component';
 
 export const routes: Routes =[
 {
@@ -42,18 +44,26 @@ export const routes: Routes =[
     }
   ]
 },
-// {
-//   path: 'admin',
-//   children: [
-//     {
-//       path: '',
-//       redirectTo: 'communication',
-//       pathMatch: 'full'
-//     },
-//     {
-//       path: 'communication',
-//       component: AdminDriverCommunicationComponent
-//     }
-//   ]
-// }
+{
+  path: 'admin',
+  children: [
+    {
+      path: '',
+      redirectTo: 'dashboard',
+      pathMatch: 'full'
+    },
+    {
+      path: 'dashboard',
+      component: AdminDashboardComponent
+    },
+    {
+      path: 'communication',
+      component: AdminDriverCommunicationComponent
+    },
+    {
+      path: 'admin-manage',
+      component: AdminManageBookingsComponent
+    }
+  ]
+}
 ]

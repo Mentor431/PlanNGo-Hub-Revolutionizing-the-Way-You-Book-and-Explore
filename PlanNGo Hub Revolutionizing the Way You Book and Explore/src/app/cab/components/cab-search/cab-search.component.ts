@@ -27,7 +27,7 @@ export class CabSearchComponent implements OnInit {
   dropdownOptions: string[] = [];
   dropdownOpen: boolean = false;
   isFabMenuOpen = false;
-
+  cities: string[] = ['Delhi', 'Mumbai', 'Bengaluru', 'Chennai', 'Hyderabad', 'Kolkata', 'Pune', 'Ahmedabad'];
 
   constructor(private cabService: CabService, private router: Router) {}
 
@@ -56,7 +56,8 @@ export class CabSearchComponent implements OnInit {
 
     // Filter cabs based on location and ride type
     const filteredCabs = this.cabs.filter((cab) =>
-      (this.location ? cab.location.includes(this.location) : true) &&
+      (this.location ? cab.location.includes(this.location) : true) && 
+      (this.dropLocation ? cab.dropLocation.includes(this.dropLocation): true)&&
       (this.rideType ? cab.type.includes(this.rideType) : true)
     );
 
@@ -75,11 +76,11 @@ export class CabSearchComponent implements OnInit {
   }
 
   onSelectCab(cabId: number): void {
-    this.router.navigate(['/cab-details', cabId]);
+    this.router.navigate(['/cab/cab-details', cabId]);
   }
 
    // Method to navigate to the previous page
    goBack(): void {
-    this.router.navigate(['/']); 
+    this.router.navigate(['/cab/home']); 
    }
 }

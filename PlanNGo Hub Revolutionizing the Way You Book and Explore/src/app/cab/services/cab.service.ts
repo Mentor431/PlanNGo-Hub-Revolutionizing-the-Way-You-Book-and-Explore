@@ -11,6 +11,7 @@ export class CabService {
   private apiUrl = 'http://localhost:3000/cabs'; // Mock API URLfor cabs
   private faqsApiUrl ='http://localhost:3000/faqs'; //Mock API for faqs
   private bookingApiUrl = 'http://localhost:3000/bookings'; //Mock APi for bookings
+  private reviewUrl='http://localhost:3000/reviews';
 
   constructor(private http: HttpClient) {}
 
@@ -47,6 +48,25 @@ getBookingById(id: string): Observable<any> {
 // Method to update booking
 updateBooking(booking: any, bookingId: string): Observable<any> {
   return this.http.put(`${this.bookingApiUrl}/${bookingId}`, booking);
+}
+
+ // Add review
+ addReview(review: any): Observable<any> {
+  return this.http.post(`${this.reviewUrl}`, review);   
+}
+
+ // get review 
+getReviews(): Observable<any[]> {
+  return this.http.get<any[]>(`${this.reviewUrl}`);
+}
+
+//delete booking
+deleteBooking(bookingId: string): Observable<any> {
+  return this.http.delete<any>(`${this.bookingApiUrl}/${bookingId}`);
+}
+
+updateBookingStatus(id: number, status: string): Observable<any> {
+  return this.http.patch(`${this.bookingApiUrl}/${id}`, { status });
 }
 
 }

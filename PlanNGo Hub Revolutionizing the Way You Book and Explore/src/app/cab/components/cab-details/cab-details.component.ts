@@ -53,10 +53,10 @@ export class CabDetailsComponent implements OnInit {
   }
 
   goBack(): void {
-    this.router.navigate(['/cab-search']); // Navigate back to the search page
+    this.router.navigate(['/cab/cab-search']); // Navigate back to the search page
   }
 
   book(): void {
-    this.router.navigate(['/manage-bookings', this.cabId]); // Navigate to manage bookings with cabId as a parameter
+    this.router.navigate(['/cab/manage-bookings', this.cabId]); // Navigate to manage bookings with cabId as a parameter
   }
 }

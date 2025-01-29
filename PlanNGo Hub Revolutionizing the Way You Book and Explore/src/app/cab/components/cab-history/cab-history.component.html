@@ -8,12 +8,54 @@
 <div class="booking-history">
   <h2>Booking History</h2>
 
-  <div *ngIf="bookings.length === 0">No bookings available.</div>
 
-  <div *ngFor="let booking of bookings" class="booking-card">
+  <div class="filters-container">
+    <!-- Dropdown for Status -->
+    <label for="statusFilter" class="status-label">Status:</label>
+    <select
+      id="statusFilter"
+      [(ngModel)]="statusFilter"
+      (change)="filterBookings()"
+      class="status-dropdown"
+    >
+      <option value="">All</option>
+      <option value="Completed">Completed</option>
+      <option value="Upcoming">Upcoming</option>
+      <option value="Cancelled">Cancelled</option>
+    </select>
+  </div>
+  
+  <!-- Enhanced Search Bar -->
+  <div class="search-bar-container">
+    <div class="search-bar">
+      <span class="search-icon">🔍</span>
+      <input
+        type="text"
+        placeholder="Search by location"
+        [(ngModel)]="searchQuery"
+        (input)="filterBookings()"
+        class="search-input"
+      />
+    </div>
+  </div>
+
+   
+
+<div *ngIf="bookings.length === 0">No bookings available.</div>
+<div *ngIf="filteredBookings.length === 0">No bookings found for the entered location.</div>
+
+<div *ngFor="let booking of filteredBookings" class="booking-card">
     <div class="card-header">
       <h3>{{ booking.cab?.[0]?.type }} - {{ booking.cab?.[0]?.location }}</h3>
       <div class="button-container">
+         
+         <button
+         *ngIf="getStatusClass(booking.users?.[0]?.date, booking.status) === 'Completed'"
+         (click)="openReviewPopup(booking)"
+         class="review-button"
+       >
+       Add Review
+       </button>
         <button
           *ngIf="getStatusClass(booking.users?.[0]?.date, booking.status) === 'Upcoming'"
           (click)="openEditPopup(booking)"
@@ -152,6 +194,39 @@
   </form>
 </div>
 
+
+<!-- Review Popup -->
+<div class="review-popup-overlay" *ngIf="isReviewPopupOpen" (click)="closeReviewPopup()"></div>
+<div class="review-popup" *ngIf="isReviewPopupOpen">
+  <div class="review-popup-header">
+    <h2>Submit Your Review</h2>
+  </div>
+  <form class="review-popup-form" (ngSubmit)="submitReview()">
+    <label for="comment">Comment</label>
+    <textarea
+      id="comment"
+      [(ngModel)]="review.comment"
+      name="comment"
+      placeholder="Write your review here..."
+      required
+      rows="4"
+    ></textarea>
+
+    <label for="rating">Rating</label>
+    <div class="rating-stars">
+      <span *ngFor="let star of [1, 2, 3, 4, 5]" (click)="setRating(star)" [ngClass]="{'selected': star <= review.rating}">
+        ★
+      </span>
+    </div>
+
+    <div class="edit-popup-buttons">
+      <button type="submit" [disabled]="!review.comment || !review.rating">Submit</button>
+      <button type="button" class="cancel-button" (click)="closeReviewPopup()">Cancel</button>
+    </div>
+  </form>
+</div>
+
+
 <!-- Floating Action Button -->
 <div class="fixed bottom-5 right-5 z-50 flex flex-col items-center">
   <!-- FAB Menu -->
@@ -165,7 +240,7 @@
 
     <li class="mb-3">
       <a
-        href=""
+        href="cab/home"
         class="w-12 h-12 bg-white text-teal-600 rounded-full shadow-md flex justify-center items-center border border-teal-600 hover:bg-teal-600 hover:text-white transition-colors"
         title="Home Page"
       >
@@ -174,7 +249,7 @@
     </li>
     <li class="mb-3">
       <a
-        href="cab-search"
+        href="cab/cab-search"
         class="w-12 h-12 bg-white text-teal-600 rounded-full shadow-md flex justify-center items-center border border-teal-600 hover:bg-teal-600 hover:text-white transition-colors"
         title="Search Cabs"
       >
@@ -183,7 +258,7 @@
     </li>
     <li class="mb-3">
       <a
-        href="booking-history"
+        href="cab/booking-history"
         class="w-12 h-12 bg-white text-teal-600 rounded-full shadow-md flex justify-center items-center border border-teal-600 hover:bg-teal-600 hover:text-white transition-colors"
         title="Booking History"
       >

@@ -16,10 +16,10 @@ export interface cabs{
         {
           user: string
           comment: string
-          rating: number
+          rating: string
         },
       ],
-      rating: number
+      rating: string
     }
 
 
@@ -33,8 +33,9 @@ export interface cabs{
       gender: string;
       type: string,
       location:string,
-      cab: cabs;  
-      users: User[]; 
+      cabs: cabs[];
+      users: User[];
+      reviews: []; 
     }
     
 
@@ -52,4 +53,23 @@ export interface cabs{
       date: string;
       contactNumber: string;
        
+    }
+
+    export interface drivers {
+      id:string;
+      cab: cabs;  
+      available: true;
+      location:string;
+      city:string;
+      driverName:string;
+      cabNumber:string;
+    }
+
+    export interface reviews{
+      id:string;
+      Bookingid: string;
+      Userid:string;
+      rating:string;
+      comment: string;
+     
     }

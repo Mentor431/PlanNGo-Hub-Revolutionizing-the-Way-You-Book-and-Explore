@@ -17,12 +17,20 @@ export class CabBookingComponent implements OnInit {
   error: string = '';
   showPopup: boolean = false;
   bookings: any[] = [];
+  minDate: string;
+  maxDate: string;
 
   constructor(
     private route: ActivatedRoute, 
     private router: Router, 
     private http: HttpClient
-  ) {}
+  ) {
+    const today = new Date();
+    this.minDate = today.toISOString().split('T')[0];  
+    const maxDate = new Date();
+    maxDate.setDate(today.getDate() + 20);  
+    this.maxDate = maxDate.toISOString().split('T')[0];
+  }
 
   ngOnInit(): void {
     const bookingId = this.route.snapshot.paramMap.get('id'); // Get the booking ID from the URL
@@ -53,20 +61,17 @@ export class CabBookingComponent implements OnInit {
       return 'Upcoming';
     }
   }
-  
-  
 
-  // Method to check if the booking date is in the past
   isPastBooking(bookingDate: string): boolean {
-    const today = new Date();
-    const booking = new Date(bookingDate);
+    const today = new Date().setHours(0, 0, 0, 0);  
+    const booking = new Date(bookingDate).setHours(0, 0, 0, 0);
     return booking < today;
   }
 
    
   
   back(): void {
-    this.router.navigate(['/booking-history']); // Navigate back to the booking history page
+    this.router.navigate(['/cab/booking-history']); // Navigate back to the booking history page
   }
 
   editBooking(bookingId: number) {
@@ -75,11 +80,11 @@ export class CabBookingComponent implements OnInit {
   }
 
   confirmCancel(): void {
-    this.showPopup = true; // Show the cancellation confirmation popup
+    this.showPopup = true;  
   }
 
   closePopup(): void {
-    this.showPopup = false; // Close the confirmation popup without cancelling
+    this.showPopup = false;  
   }
 
   cancelBooking(): void {

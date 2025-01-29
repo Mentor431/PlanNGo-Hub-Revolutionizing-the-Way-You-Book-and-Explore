@@ -18,13 +18,13 @@ export class DemoComponent {
   onLogin(): void {
     switch (this.selectedRole) {
       case 'user':
-        this.router.navigate(['/cab/home']); // Navigate to cab home for end-users
+        this.router.navigate(['/cab/home']);  
         break;
       case 'admin':
-        this.router.navigate(['/admin/communication']); // Corrected path for admin communication
+        this.router.navigate(['/admin/dashboard']);  
         break;
       default:
-        console.error('Invalid role selected'); // Handle unexpected roles
+        console.error('Invalid role selected');  
     }
   }
 }

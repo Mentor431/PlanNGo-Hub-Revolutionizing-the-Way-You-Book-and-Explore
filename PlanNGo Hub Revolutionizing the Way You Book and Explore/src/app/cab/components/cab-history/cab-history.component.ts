@@ -2,7 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { CabService } from '../../services/cab.service';  
 import { HttpClient } from '@angular/common/http';
-import { Booking ,User,cabs} from '../../models/cab-entities';
+import { Booking } from '../../models/cab-entities';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms'; 
 import { ChangeDetectorRef } from '@angular/core';
@@ -29,8 +29,11 @@ export class BookingHistoryComponent implements OnInit {
   currentBooking: any = {};
   isReviewPopupOpen = false;
   locationError = false;
-  review: { rating: number, comment: string } = { rating: 1, comment: '' };
-  
+  searchQuery: string = '';
+  filteredBookings = [...this.bookings];
+  statusFilter: string = '';  
+  review = { comment: '', rating:0 };
+  reviews: any[] = []; 
 
   openEditPopup(booking: any) {
     // this.currentBooking = { ...booking.users?.[0] }; 
@@ -58,6 +61,7 @@ export class BookingHistoryComponent implements OnInit {
   }
 
 
+   
   // Validate if the drop location and location are the same
   validateLocations() {
     if (this.currentBooking.cab[0].dropLocation.trim().toLowerCase() === this.currentBooking.cab[0].location.trim().toLowerCase()) {
@@ -69,24 +73,83 @@ export class BookingHistoryComponent implements OnInit {
 
   ngOnInit() {
     this.getBookings()
+    this.getReviews();
+  this.cabService.getBookings().subscribe(
+    (response: Booking[]) => {
+      this.bookings = response.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+      this.filteredBookings = [...this.bookings];  
+    },
+    (error) => {
+      console.error('Error fetching booking data:', error);
+    }
+  );
   }
   
-  openReviewPopup(booking: any): void {
-    this.currentBooking = booking;  
-    this.isReviewPopupOpen = true;   
-    this.review = { rating: 1, comment: '' };  
+   
+
+  // Fetch reviews from the service
+  getReviews() {
+    this.cabService.getReviews().subscribe(
+      (reviews) => {
+        this.reviews = reviews;  // Store fetched reviews in the reviews array
+        console.log('Fetched reviews:', this.reviews);  
+      },
+      (error) => {
+        console.error('Error fetching reviews:', error);
+      }
+    );
   }
-  closeReviewPopup(): void {
+   // Open review popup for a specific booking
+openReviewPopup(booking: Booking): void {
+  // Store the selected booking for review
+  this.currentBooking = booking;
+  
+   
+  this.isReviewPopupOpen = true;
+
+   
+  this.review = { comment: '', rating: 0 };
+  
+  console.log("Opening review popup for booking:", this.currentBooking);
+}
+
+
+  // Close review popup
+  closeReviewPopup() {
     this.isReviewPopupOpen = false;
   }
-  submitReview(): void {
-    if (this.review.rating && this.review.comment) {
-      console.log('Review Submitted:', this.review);
-      this.closeReviewPopup();  
-    } else {
-      console.error('Please fill both rating and comment');
+
+  setRating(star: number) {
+    this.review.rating = star;
+  }
+
+   // Submit the review
+   submitReview() {
+    if (this.review.comment && this.review.rating) {
+      // Prepare the review data
+      const reviewData = {
+        bookingId: this.currentBooking.id,   
+        rating: this.review.rating,
+        comment: this.review.comment,
+        date: new Date().toISOString()   
+      };
+  
+      // Call the addReview method from the service to post data to the server
+      this.cabService.addReview(reviewData).subscribe(
+        (response) => {
+          console.log('Review Submitted:', response);
+           
+          this.closeReviewPopup();
+        },
+        (error) => {
+          console.error('Error submitting review:', error);
+        }
+      );
     }
   }
+
+  
+  
   toggleDropdown(): void {
     this.dropdownOpen = !this.dropdownOpen;
   }
@@ -118,7 +181,7 @@ export class BookingHistoryComponent implements OnInit {
   
         this.validateLocations();
            if (this.locationError) {
-             return; // Prevent form submission if there's a validation error
+             return;  
             }
 
 
@@ -145,21 +208,11 @@ export class BookingHistoryComponent implements OnInit {
   }
   
 
-  // getBookings() {
-  //   this.cabService.getBookings().subscribe(
-  //     (response: Booking[]) => {
-  //       this.bookings = response.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  //       console.log('Sorted Bookings:', this.bookings);
-  //     },
-  //     (error) => {
-  //       console.error('Error fetching booking data:', error);
-  //     }
-  //   );
-  // }
+   
   getBookings() {
     this.cabService.getBookings().subscribe(
       (response: Booking[]) => {
-        // Log the entire booking data with cab details
+         
         this.bookings = response.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
         console.log('Bookings with cab details:', this.bookings);
   
@@ -191,19 +244,34 @@ export class BookingHistoryComponent implements OnInit {
   }
 
   isPastBooking(bookingDate: string): boolean {
-    const today = new Date().setHours(0, 0, 0, 0); // Reset time to compare only dates
+    const today = new Date().setHours(0, 0, 0, 0);  
     const booking = new Date(bookingDate).setHours(0, 0, 0, 0);
     return booking < today;
   }
   
+  // Method to filter bookings based on the search query
+  filterBookings(): void {
+    const query = this.searchQuery.trim().toLowerCase(); // Normalize query
+    const status = this.statusFilter; // Get selected status filter
+  
+    this.filteredBookings = this.bookings.filter((booking) => {
+      const locationMatch = booking.cab?.[0]?.location?.toLowerCase().includes(query);
+      const statusMatch =
+        !status || this.getStatusClass(booking.users?.[0]?.date, booking.status) === status;
+  
+      return locationMatch && statusMatch;
+    });
+  }
+  
+
   
   viewDetails(id: number): void {
-    this.router.navigate(['/cab-booking', id]);    
+    this.router.navigate(['/cab/cab-booking', id]);    
   }
    
 
  
   goBack(): void {
-    this.router.navigate(['/']);  
+    this.router.navigate(['/cab/home']);  
   }
 }
