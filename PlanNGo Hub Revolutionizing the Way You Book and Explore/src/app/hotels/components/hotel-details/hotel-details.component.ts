@@ -7,7 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { IconDefinition,faStar,faSwimmingPool,faSpa,faDumbbell, faCocktail, faHandSparkles, faUtensils, faBaby, faWifi, faMicrophone,faFutbol, faParking, faElevator, faHotTub, faChild, faSuitcase, faChalkboardTeacher, faChargingStation, faBroom, faTableTennis, faOm, faSmokingBan, faSmoking, faShower, faBath, faWind, faArchway, faWater, faSeedling, faConciergeBell, faCity, faMountain, faTree,faBed,faMapMarkerAlt,faHotel,faMapPin,faPlane,faTrain,faBus,faRulerCombined,faUser,faChildren,faCalendarCheck,faCalendarMinus} from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition,faStar,faSwimmingPool,faSpa,faDumbbell, faCocktail, faHandSparkles, faUtensils, faBaby, faWifi, faMicrophone,faFutbol, faParking, faBuilding, faHotTub, faChild, faSuitcase, faChalkboardTeacher, faChargingStation, faBroom, faTableTennis, faOm, faSmokingBan, faSmoking, faShower, faBath, faWind, faArchway, faWater, faSeedling, faConciergeBell, faCity, faMountain, faTree,faBed,faMapMarkerAlt,faHotel,faMapPin,faPlane,faTrain,faBus,faRulerCombined,faUser,faCalendarCheck,faCalendarMinus} from '@fortawesome/free-solid-svg-icons';
 
 import { HotelService } from '../../services/hotel.service';
 import { Hotel } from '../../models/hotel.model';
@@ -36,7 +36,7 @@ export class HotelDetailsComponent implements OnInit {
   faMicrophone = faMicrophone;
   faFutbol = faFutbol;
   faParking = faParking;
-  faElevator = faElevator;
+  faElevator = faBuilding;
   faHotTub = faHotTub;
   faChild = faChild;
   faSuitcase = faSuitcase;
@@ -66,7 +66,7 @@ export class HotelDetailsComponent implements OnInit {
   faBus = faBus;
   faRulerCombined = faRulerCombined;
   faUser = faUser;
-  faChildren = faChildren;
+  faChildren = faChild;
   faCalendarCheck = faCalendarCheck;
   faCalendarMinus = faCalendarMinus;
 
@@ -115,7 +115,7 @@ export class HotelDetailsComponent implements OnInit {
       "Karaoke": faMicrophone,
       "Playground": faFutbol,
       "Free Parking": faParking,
-      "Lift": faElevator,
+      "Lift": faBuilding,
       "Sauna": faHotTub,
       "Childcare service": faChild,
       "Luggage storage": faSuitcase,

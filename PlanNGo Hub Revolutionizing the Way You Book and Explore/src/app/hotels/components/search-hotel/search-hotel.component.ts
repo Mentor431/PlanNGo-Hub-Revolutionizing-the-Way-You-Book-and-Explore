@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faSearch, faStar, faCalendarCheck, faCalendarMinus, faUser, faLocation, faBed, faChild, faArrowRight, faMapMarkerAlt, faBars, faClipboardList, faHome } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faStar, faCalendarCheck, faCalendarMinus, faUser, faBed, faChild, faArrowRight, faMapMarkerAlt, faBars, faClipboardList, faHome } from '@fortawesome/free-solid-svg-icons';
 
 import { HotelService } from '../../services/hotel.service';
 import { Hotel } from '../../models/hotel.model';
@@ -39,7 +39,7 @@ export class SearchHotelComponent implements OnInit {
   faCalendarCheck = faCalendarCheck;
   faCalendarMinus = faCalendarMinus;
   faUser = faUser;
-  faLocation = faLocation;
+  // faLocation = faLocation;
   faBed = faBed;
   faChild = faChild;
   faArrowRight = faArrowRight;

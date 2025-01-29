@@ -18,7 +18,7 @@ import { Booking, Room, specialOffers } from '../../models/hotel.model';
   templateUrl: './my-bookings.component.html',
   styleUrls: ['./my-bookings.component.css']
 })
-export class MyBookingsComponent implements OnInit {
+export class MyBookings_Component implements OnInit {
   bookings: Booking[] = [];
   currentBookings: Booking[] = [];
   pastBookings: Booking[] = [];

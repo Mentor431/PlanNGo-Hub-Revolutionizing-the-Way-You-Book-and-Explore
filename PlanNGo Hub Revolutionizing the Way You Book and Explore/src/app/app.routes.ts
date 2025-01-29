@@ -16,9 +16,9 @@ import { SearchHotelComponent } from './hotels/components/search-hotel/search-ho
 import { HotelResultsComponent } from './hotels/components/hotel-results/hotel-results.component';
 import { HotelDetailsComponent } from './hotels/components/hotel-details/hotel-details.component';
 import { HotelBookingComponent } from './hotels/components/hotel-booking/hotel-booking.component';
-import { MyBookingsComponent } from './hotels/components/my-bookings/my-bookings.component';
+import { MyBookings_Component } from './hotels/components/my-bookings/my-bookings.component';
 import { AdminHotelsComponent } from './hotels/components/admin-hotels/admin-hotels.component';
-import { AdminDashboardComponent } from './hotels/components/admin-dashboard/admin-dashboard.component';
+import { AdminDashboard_Component } from './hotels/components/admin-dashboard/admin-dashboard.component';
 import { AdminBookingsComponent } from './hotels/components/admin-bookings/admin-bookings.component';
 
 // tours

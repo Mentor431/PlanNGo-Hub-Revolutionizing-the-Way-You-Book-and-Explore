@@ -3574,7 +3574,7 @@
       ]
     }
   ],
-  "bookings": [
+  "hotelbookings": [
     {
       "id": "8mxwsn5",
       "userid": "USER002",
@@ -5364,7 +5364,7 @@
       "id": "4fb0"
     }
   ],
-  "Bookings": [
+  "TourBookings": [
     
   ],
   "Payments": [],    
