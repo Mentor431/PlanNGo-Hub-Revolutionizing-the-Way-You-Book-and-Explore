@@ -1,9 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{html,ts}",
-    "./src/app/tour/component/**/*.{html,ts}",
-    "./src/app/authentication/component/**/*.{html,ts}",
+    "./src/app/**/*.{html,ts}", // Scans all app components
     "./public/index.html",
   ],
   theme: {
