@@ -89,12 +89,8 @@
           <!-- Tour Info -->
           <div>
             <h3 class="text-xl font-semibold text-gray-900">
-              {{ booking.tourName }}
-            </h3>
-            
-            <h4 class="text-l font-semibold text-gray-900">
               {{ booking.tourId }}
-            </h4>
+            </h3>
             <!-- Status -->
             <span
               [ngClass]="{
@@ -117,8 +113,7 @@
           <!-- Action Buttons -->
           <div class="flex flex-col space-y-3">
             <button
-              *ngIf="booking.status"
-              (click)="confirmModal(booking.id)"
+              (click)="updateBookingStatus(booking.id)"
               class="px-4 py-2 text-white bg-red-500 rounded-md hover:bg-red-600"
             >
               Withdraw
@@ -168,51 +163,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- Confirmation Modal -->
-  <div
-    *ngIf="showModal"
-    class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50"
-  >
-    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
-      <h2 class="text-lg font-semibold text-gray-800">
-        {{ modalTitle }}
-      </h2>
-      <p class="text-gray-600 my-4">{{ modalMessage }}</p>
-      <div class="flex justify-end gap-4">
-        <button
-          class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
-          (click)="cancelModal()"
-        >
-          Cancel
-        </button>
-        <button
-          class="px-4 py-2 bg-teal-600 text-white rounded hover:bg-teal-700"
-          (click)="modalAction?.()"
-        >
-          Confirm
-        </button>
-      </div>
-    </div>
-  </div>
-  <!-- Success Popup -->
-  <div
-    *ngIf="showSuccessPopup"
-    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-  >
-    <div class="bg-white rounded-lg shadow-lg w-full max-w-sm p-6 text-center">
-      <h3 class="text-xl font-semibold text-teal-600">
-        {{ successHeader }}
-      </h3>
-      <p class="mt-2 text-gray-600">{{ successMessage }}</p>
-      <button
-        (click)="closeSuccessPopup()"
-        class="mt-4 bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-teal-700"
-      >
-        Close
-      </button>
     </div>
   </div>
 </div>

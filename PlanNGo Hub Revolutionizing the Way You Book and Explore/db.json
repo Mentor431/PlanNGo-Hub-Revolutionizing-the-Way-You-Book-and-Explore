@@ -705,7 +705,7 @@
       "id": "096c"
     }
   ],
-  "bookings": [
+  "cabbookings": [
     {
       "id": "7285",
       "cab": [
@@ -6575,7 +6575,7 @@
       "password": "444",
       "age": 22,
       "gender": "Male",
-      "role": "SubAdmin",
+      "role": "ServiceProvider",
       "location": "Madurai",
       "profilePic": "",
       "agencyId": "AG001"

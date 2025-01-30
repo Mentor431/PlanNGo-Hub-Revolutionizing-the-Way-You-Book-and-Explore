@@ -22,7 +22,7 @@ export class TourPackagesService {
   private locationsApiUrl = "http://localhost:3000/Locations";
   private agenciesApiUrl = "http://localhost:3000/Agencies";
   private tourTypeApiUrl = "http://localhost:3000/TourType";
-  private bookingApiUrl = "http://localhost:3000/TourBookings";
+  private bookingApiUrl = "http://localhost:3000/Bookings";
   private paymentApiUrl = "http://localhost:3000/Payments";
 
   bookTour: any;
@@ -336,18 +336,4 @@ export class TourPackagesService {
         })
       );
   }
-
-  // generateId(): Observable<string> {
-  //   return this.http.get<TourBooking[]>(this.bookingApiUrl).pipe(
-  //     map(data => {
-  //       const existingIds = data.map(item => item.id);
-  //       const maxId = existingIds.length > 0 
-  //         ? Math.max(...existingIds.map(id => parseInt(id.slice(5)))) 
-  //         : 0; 
-  //       const incrementedId = 'BKNG' + ('00000' + (maxId + 1)).slice(-5); 
-
-  //       return incrementedId;
-  //     })
-  //   );
-  // }
 }

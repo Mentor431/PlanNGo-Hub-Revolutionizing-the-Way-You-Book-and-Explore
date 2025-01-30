@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { TourPackagesService } from "../../services/tour-packages.service";
 import {
   Agencies,
@@ -16,6 +16,7 @@ import { ActivatedRoute, RouterModule } from "@angular/router";
   providers: [TourPackagesService],
   templateUrl: "./tour-info.component.html",
   styleUrl: "./tour-info.component.css",
+  encapsulation: ViewEncapsulation.None
 })
 export class TourInfoComponent implements OnInit {
   tourId: string | null = null;

@@ -10,10 +10,10 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./cab-booking.component.css'],
   standalone: true,
   providers: [CabService],
-  imports:[CommonModule]
+  imports: [CommonModule],
 })
 export class CabBookingComponent implements OnInit {
-  booking: any;  // Changed 'cab' to 'booking'
+  booking: any; // Changed 'cab' to 'booking'
   error: string = '';
   showPopup: boolean = false;
   bookings: any[] = [];
@@ -21,28 +21,29 @@ export class CabBookingComponent implements OnInit {
   maxDate: string;
 
   constructor(
-    private route: ActivatedRoute, 
-    private router: Router, 
+    private route: ActivatedRoute,
+    private router: Router,
     private http: HttpClient
   ) {
     const today = new Date();
-    this.minDate = today.toISOString().split('T')[0];  
+    this.minDate = today.toISOString().split('T')[0];
     const maxDate = new Date();
-    maxDate.setDate(today.getDate() + 20);  
+    maxDate.setDate(today.getDate() + 20);
     this.maxDate = maxDate.toISOString().split('T')[0];
   }
 
   ngOnInit(): void {
     const bookingId = this.route.snapshot.paramMap.get('id'); // Get the booking ID from the URL
     if (bookingId) {
-      this.fetchBookingDetails(bookingId);  // Updated method name to 'fetchBookingDetails'
+      this.fetchBookingDetails(bookingId); // Updated method name to 'fetchBookingDetails'
     } else {
       this.error = 'Booking not found';
     }
   }
 
-  fetchBookingDetails(id: string): void {  // Updated method name to 'fetchBookingDetails'
-    this.http.get<any>(`http://localhost:3000/bookings/${id}`).subscribe(
+  fetchBookingDetails(id: string): void {
+    // Updated method name to 'fetchBookingDetails'
+    this.http.get<any>(`http://localhost:3000/cabbookings/${id}`).subscribe(
       (data) => {
         this.booking = data; // Populate the booking details from the API response
       },
@@ -63,13 +64,11 @@ export class CabBookingComponent implements OnInit {
   }
 
   isPastBooking(bookingDate: string): boolean {
-    const today = new Date().setHours(0, 0, 0, 0);  
+    const today = new Date().setHours(0, 0, 0, 0);
     const booking = new Date(bookingDate).setHours(0, 0, 0, 0);
     return booking < today;
   }
 
-   
-  
   back(): void {
     this.router.navigate(['/cab/booking-history']); // Navigate back to the booking history page
   }
@@ -80,25 +79,30 @@ export class CabBookingComponent implements OnInit {
   }
 
   confirmCancel(): void {
-    this.showPopup = true;  
+    this.showPopup = true;
   }
 
   closePopup(): void {
-    this.showPopup = false;  
+    this.showPopup = false;
   }
 
   cancelBooking(): void {
-    if (this.booking && this.booking.id) {   
+    if (this.booking && this.booking.id) {
       // Update the status to "Cancelled" rather than deleting the booking
       const updatedBooking = { ...this.booking, status: 'Cancelled' };
-      this.http.put(`http://localhost:3000/bookings/${this.booking.id}`, updatedBooking).subscribe(
-        () => {
-          this.router.navigate(['/booking-history']);  
-        },
-        (error) => {
-          this.error = 'Error canceling booking';
-        }
-      );
+      this.http
+        .put(
+          `http://localhost:3000/cabbookings/${this.booking.id}`,
+          updatedBooking
+        )
+        .subscribe(
+          () => {
+            this.router.navigate(['/booking-history']);
+          },
+          (error) => {
+            this.error = 'Error canceling booking';
+          }
+        );
     }
   }
 }
