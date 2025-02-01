@@ -1,31 +1,59 @@
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background: url(https://i.pinimg.com/736x/e8/92/f4/e892f4096519fe6a693423720cfd22c1.jpg) no-repeat center center fixed;
+  background-image: url(https://thumbs.dreamstime.com/b/famous-landmarks-around-world-travel-background-ai-generative-famous-landmarks-around-world-travel-background-design-324007031.jpg) no-repeat center center fixed; 
   background-size: cover;
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  opacity: 1;
   align-items: center;
 }
 
+.header {
+  position: absolute;
+  font-family: 'Dancing Script', cursive; /* A more elegant, cursive font */
+  font-size: 3rem; /* Larger size */
 
+  font-weight: bold;
+  color: #ff8c00; /* A vibrant color for the text */
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Softer, more dramatic text shadow */
+  letter-spacing: 2px; /* Adds a bit of spacing between the letters */
+  text-transform: uppercase; /* Uppercase styling for a stronger presence */
+  transition: transform 0.3s ease; /* Smooth transition effect */
+}
 
 .header:hover {
-  transform: translateY(-5px);
-  /* Adds a subtle hover effect */
-  color: #fff;
-  /* Changes color on hover */
+  transform: translateY(-5px); /* Adds a subtle hover effect */
+  color: #fff; /* Changes color on hover */
 }
 
 
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
 
+.min-h-screen {
+  min-height: 100vh;
+}
 
-/* p-card:hover {
+p-card {
+  background: rgba(255, 255, 255, 0.1); 
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37); 
+  backdrop-filter: blur(10px); 
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  border-radius: 15px; 
+  padding: 2rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+p-card:hover {
   transform: scale(1.05);
-} */
+}
 
 .field {
   margin-bottom: 1.5rem;
@@ -35,7 +63,7 @@ body {
   display: block;
   font-size: 1rem;
   font-weight: bold;
-  color: #130404;
+  color: #130404; 
   margin-bottom: 0.5rem;
 
 }
@@ -62,7 +90,7 @@ body {
 
 .block.p-error {
   font-size: 0.85rem;
-  color: #ff6b6b;
+  color: #ff6b6b; 
 }
 
 p-button {
@@ -107,7 +135,6 @@ a:hover {
     font-size: 0.9rem;
   }
 }
-
-mt-2.text-center {
+mt-2.text-center{
   margin-right: 20px;
 }

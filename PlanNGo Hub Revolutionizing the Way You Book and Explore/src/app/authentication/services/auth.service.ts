@@ -12,47 +12,6 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  /////////////////////////////////////for 1 admin only/////////////////////////////////////////////////////////
-  // registerUser(postData: RegisterPostData): Observable<any> {
-  //   return new Observable((observer) => {
-  //     console.log('Received postData:', postData); // Debug log
-  //     const role = postData.role;
-  //     const idPrefix = role === 'Admin' ? 'AD' : 'PG';
-  //     console.log(`Role: ${role}, ID Prefix: ${idPrefix}`); // Debug log
-
-  //     this.http.get<User[]>(`${this.baseUrl}/users`).subscribe(
-  //       (users) => {
-  //         console.log('Existing users:', users); // Debug log
-  //         const filteredUsers = users.filter(user => user.id.startsWith(idPrefix));
-  //         const ids = filteredUsers
-  //           .map((user) => (user.id ? parseInt(user.id.replace(idPrefix, ''), 10) : NaN))
-  //           .filter((num) => !isNaN(num));
-  //         const maxId = Math.max(0, ...ids);
-  //         const nextId = `${idPrefix}${(maxId + 1).toString().padStart(3, '0')}`;
-  //         console.log(`Next ID: ${nextId}`); // Debug log
-
-  //         if (role === 'min' && filteredUsers.length >= 1) {
-  //           observer.error('Admin already exists.');
-  //           return;
-  //         }
-
-  //         const userData = { ...postData, id: nextId };
-  //         console.log('User data to be posted:', userData); // Debug log
-
-  //         this.http.post(`${this.baseUrl}/users`, userData).subscribe(
-  //           (response) => {
-  //             observer.next(response);
-  //             observer.complete();
-  //           },
-  //           (error) => observer.error(error)
-  //         );
-  //       },
-  //       (error) => observer.error(error)
-  //     );
-  //   });
-  // }
-
-
   registerUser(postData: RegisterPostData): Observable<any> {
     return new Observable((observer) => {
       const role = postData.role; // Get the role of the user

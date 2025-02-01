@@ -1,4 +1,3 @@
-
 import { Routes } from '@angular/router';
 
 // #region authentication
@@ -210,4 +209,3 @@ export const routes: Routes = [
     ],
   },
 ];
-
