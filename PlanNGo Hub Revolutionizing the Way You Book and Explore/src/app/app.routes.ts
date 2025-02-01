@@ -1,3 +1,4 @@
+
 import { Routes } from '@angular/router';
 
 // authentication
@@ -173,3 +174,4 @@ export const routes: Routes = [
     ],
   },
 ];
+

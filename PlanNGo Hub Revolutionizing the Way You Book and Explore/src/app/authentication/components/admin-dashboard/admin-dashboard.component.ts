@@ -7,6 +7,7 @@ import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
+
 import { faCar } from '@fortawesome/free-solid-svg-icons';
 import { faHotel } from '@fortawesome/free-solid-svg-icons';
 import { faPlane } from '@fortawesome/free-solid-svg-icons';
@@ -270,8 +271,10 @@ export class AdminDashboardComponent implements OnInit {
           backgroundColor: isDarkTheme ? lightThemeColor : darkThemeColor,
           borderColor: isDarkTheme ? '#0D47A1' : '#167cc9', // Adjust border colors for better contrast
           fill: false,
+      
         },
       ],
+      
     };
   }
 
