@@ -3,6 +3,7 @@ import {
   VirtualAction,
   VirtualTimeScheduler,
   animationFrame,
+  animationFrameScheduler,
   bindCallback,
   bindNodeCallback,
   forkJoin,
@@ -18,7 +19,7 @@ import {
   partition,
   range,
   using
-} from "./chunk-PGGC3C4X.js";
+} from "./chunk-UMOB4LYC.js";
 import {
   ArgumentOutOfRangeError,
   AsyncSubject,
@@ -39,7 +40,9 @@ import {
   TimeoutError,
   UnsubscriptionError,
   asap,
+  asapScheduler,
   async,
+  asyncScheduler,
   combineLatest,
   concat,
   config,
@@ -53,12 +56,14 @@ import {
   of,
   pipe,
   queue,
+  queueScheduler,
   race,
   scheduled,
   throwError,
   timer,
   zip
-} from "./chunk-RAN76ZFF.js";
+} from "./chunk-K5J6TFSH.js";
+import "./chunk-ASLTLD6L.js";
 export {
   ArgumentOutOfRangeError,
   AsyncSubject,
@@ -81,9 +86,12 @@ export {
   UnsubscriptionError,
   VirtualAction,
   VirtualTimeScheduler,
-  animationFrame as animationFrameScheduler,
-  asap as asapScheduler,
-  async as asyncScheduler,
+  animationFrame,
+  animationFrameScheduler,
+  asap,
+  asapScheduler,
+  async,
+  asyncScheduler,
   bindCallback,
   bindNodeCallback,
   combineLatest,
@@ -109,7 +117,8 @@ export {
   pairs,
   partition,
   pipe,
-  queue as queueScheduler,
+  queue,
+  queueScheduler,
   race,
   range,
   scheduled,

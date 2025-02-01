@@ -16,16 +16,18 @@ import {
   ɵɵdefineNgModule,
   ɵɵdirectiveInject,
   ɵɵinject
-} from "./chunk-R6INMIV4.js";
-import "./chunk-PGGC3C4X.js";
+} from "./chunk-P3S37FYW.js";
+import "./chunk-UMOB4LYC.js";
 import {
   distinctUntilChanged
-} from "./chunk-LK6JQZPM.js";
+} from "./chunk-GK724PJ5.js";
 import {
-  BehaviorSubject,
+  BehaviorSubject
+} from "./chunk-K5J6TFSH.js";
+import {
   __spreadProps,
   __spreadValues
-} from "./chunk-RAN76ZFF.js";
+} from "./chunk-ASLTLD6L.js";
 
 // node_modules/chart.js/dist/chunks/helpers.segment.mjs
 function noop() {
@@ -7855,7 +7857,7 @@ function needContext(proxy, names2) {
   }
   return false;
 }
-var version = "3.9.0";
+var version = "3.9.1";
 var KNOWN_POSITIONS = ["top", "bottom", "left", "right", "chartArea"];
 function positionIsHorizontal(position, axis) {
   return position === "top" || position === "bottom" || KNOWN_POSITIONS.indexOf(position) === -1 && axis === "x";
@@ -13180,6 +13182,12 @@ var scales = Object.freeze({
   TimeScale,
   TimeSeriesScale
 });
+var registerables = [
+  controllers,
+  elements,
+  plugins,
+  scales
+];
 
 // node_modules/lodash-es/_freeGlobal.js
 var freeGlobal = typeof global == "object" && global && global.Object === Object && global;
@@ -21307,7 +21315,6 @@ ThemeService.ɵprov = ɵɵdefineInjectable({
 })();
 var BaseChartDirective = class {
   constructor(element, zone, themeService) {
-    this.element = element;
     this.zone = zone;
     this.themeService = themeService;
     this.type = "bar";
@@ -21327,8 +21334,12 @@ var BaseChartDirective = class {
       const config = this.getChartConfiguration();
       if (this.chart) {
         Object.assign(this.chart.config.data, config.data);
-        Object.assign(this.chart.config.plugins, config.plugins);
-        Object.assign(this.chart.config.options, config.options);
+        if (this.chart.config.plugins) {
+          Object.assign(this.chart.config.plugins, config.plugins);
+        }
+        if (this.chart.config.options) {
+          Object.assign(this.chart.config.options, config.options);
+        }
       }
       this.update();
     }
@@ -21344,6 +21355,7 @@ var BaseChartDirective = class {
     if (this.chart) {
       this.chart.destroy();
     }
+    Chart.register(...this.plugins);
     return this.zone.runOutsideAngular(() => this.chart = new Chart(this.ctx, this.getChartConfiguration()));
   }
   update(duration) {
@@ -21366,26 +21378,31 @@ var BaseChartDirective = class {
   themeChanged(options) {
     this.themeOverrides = options;
     if (this.chart) {
-      Object.assign(this.chart.config.options, this.getChartOptions());
+      if (this.chart.config.options) {
+        Object.assign(this.chart.config.options, this.getChartOptions());
+      }
       this.update();
     }
   }
   getChartOptions() {
     return merge_default({
       onHover: (event, active) => {
-        if (active && !active.length) {
+        if (!this.chartHover.observed && !this.chartHover.observers?.length) {
           return;
         }
-        this.chartHover.emit({
+        this.zone.run(() => this.chartHover.emit({
           event,
           active
-        });
+        }));
       },
       onClick: (event, active) => {
-        this.chartClick.emit({
+        if (!this.chartClick.observed && !this.chartClick.observers?.length) {
+          return;
+        }
+        this.zone.run(() => this.chartClick.emit({
           event,
           active
-        });
+        }));
       }
     }, this.themeOverrides, this.options, {
       plugins: {
@@ -21399,7 +21416,6 @@ var BaseChartDirective = class {
     return {
       type: this.type,
       data: this.getChartData(),
-      plugins: this.plugins,
       options: this.getChartOptions()
     };
   }
@@ -21536,7 +21552,25 @@ function getRandomColor() {
 function generateColor(index2 = 0) {
   return baseColors[index2] || getRandomColor();
 }
-Chart.register(plugin_title, plugin_tooltip, index, plugin_legend, LineController, LineElement, PointElement, LinearScale, CategoryScale, BarController, BarElement, DoughnutController, ArcElement, RadarController, RadialLinearScale, PieController, PolarAreaController, BubbleController, ScatterController, TimeSeriesScale);
+var NgChartsConfiguration = class {
+};
+NgChartsConfiguration.ɵfac = function NgChartsConfiguration_Factory(t) {
+  return new (t || NgChartsConfiguration)();
+};
+NgChartsConfiguration.ɵprov = ɵɵdefineInjectable({
+  token: NgChartsConfiguration,
+  factory: NgChartsConfiguration.ɵfac,
+  providedIn: "root"
+});
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgChartsConfiguration, [{
+    type: Injectable,
+    args: [{
+      providedIn: "root"
+    }]
+  }], null, null);
+})();
+Chart.register(...registerables);
 var NgChartsModule = class _NgChartsModule {
   constructor(config) {
     if (config?.plugins)
@@ -21582,24 +21616,6 @@ NgChartsModule.ɵinj = ɵɵdefineInjector({
     }];
   }, null);
 })();
-var NgChartsConfiguration = class {
-};
-NgChartsConfiguration.ɵfac = function NgChartsConfiguration_Factory(t) {
-  return new (t || NgChartsConfiguration)();
-};
-NgChartsConfiguration.ɵprov = ɵɵdefineInjectable({
-  token: NgChartsConfiguration,
-  factory: NgChartsConfiguration.ɵfac,
-  providedIn: "root"
-});
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgChartsConfiguration, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
-})();
 export {
   BaseChartDirective,
   NgChartsConfiguration,
@@ -21611,7 +21627,7 @@ export {
 
 chart.js/dist/chunks/helpers.segment.mjs:
   (*!
-   * Chart.js v3.9.0
+   * Chart.js v3.9.1
    * https://www.chartjs.org
    * (c) 2022 Chart.js Contributors
    * Released under the MIT License
@@ -21627,7 +21643,7 @@ chart.js/dist/chunks/helpers.segment.mjs:
 
 chart.js/dist/chart.mjs:
   (*!
-   * Chart.js v3.9.0
+   * Chart.js v3.9.1
    * https://www.chartjs.org
    * (c) 2022 Chart.js Contributors
    * Released under the MIT License

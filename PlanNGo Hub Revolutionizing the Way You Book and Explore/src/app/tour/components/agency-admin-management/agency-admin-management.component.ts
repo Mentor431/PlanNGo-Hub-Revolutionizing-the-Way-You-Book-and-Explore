@@ -3,14 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms'; // Import FormsModule
 import { TourPackagesService } from '../../services/tour-packages.service'; // Import the service
 import { HttpClient } from '@angular/common/http';
-// Import any necessary Angular modules for standalone components
 import { CommonModule } from '@angular/common';
-import { error } from 'node:console';
 
 @Component({
   selector: 'app-agency-admin-management',
   standalone: true,
-  imports: [CommonModule, FormsModule],  // Import CommonModule to enable common Angular directives like ngIf, ngFor, etc.
+  imports: [CommonModule, FormsModule],
   templateUrl: './agency-admin-management.component.html',
   styleUrls: ['./agency-admin-management.component.css']
 })
@@ -18,7 +16,6 @@ export class AgencyAdminManagementComponent implements OnInit {
   agencyId!: string;
 
   tours: any[] = [];
-  dbUrl = 'path/to/db.json';
   filteredPackages: any[] = [];
   currentPage: number = 1;
   rowsPerPage: number = 10;
