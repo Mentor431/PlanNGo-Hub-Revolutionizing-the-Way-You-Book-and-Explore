@@ -4782,7 +4782,7 @@
       "totalPayable": 24072,
       "checkIn": "01/26/2025",
       "checkOut": "01/27/2025",
-      "status": "booked"
+      "status": "visited"
     },
     {
       "id": "2tedjd5",
@@ -4808,7 +4808,7 @@
       "totalPayable": 113280,
       "checkIn": "1/26/2025",
       "checkOut": "1/27/2025",
-      "status": "booked"
+      "status": "visited"
     },
     {
       "id": "3btw7ia",
@@ -4834,7 +4834,7 @@
       "totalPayable": 84960,
       "checkIn": "1/26/2025",
       "checkOut": "1/27/2025",
-      "status": "booked"
+      "status": "visited"
     },
     {
       "id": "fkalodl",
@@ -4860,7 +4860,7 @@
       "totalPayable": 17700,
       "checkIn": "1/30/2025",
       "checkOut": "1/31/2025",
-      "status": "booked"
+      "status": "visited"
     },
     {
       "id": "8mxwsk5",
@@ -4996,7 +4996,7 @@
       "totalPayable": 51920,
       "checkIn": "1/27/2025",
       "checkOut": "1/29/2025",
-      "status": "booked"
+      "status": "visited"
     },
     {
       "id": "z8tb98g",
@@ -5060,7 +5060,7 @@
       "totalPayable": 56640,
       "checkIn": "01/30/2025",
       "checkOut": "02/01/2025",
-      "status": "booked"
+      "status": "visited"
     },
     {
       "id": "fa17",
@@ -5086,7 +5086,7 @@
       "totalPayable": 283200,
       "checkIn": "01/29/2025",
       "checkOut": "01/31/2025",
-      "status": "booked"
+      "status": "visited"
     },
     {
       "id": "2c0c",
