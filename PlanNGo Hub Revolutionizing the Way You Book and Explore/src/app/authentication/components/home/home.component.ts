@@ -185,4 +185,12 @@ export class HomeComponent {
       });
     }
   }
+  navigateToBookings(): void {
+    this.router.navigate(['/user-dashboard'], { queryParams: { section: 'bookings' } });
+  }
+
+  navigateToPayments(): void {
+    this.router.navigate(['/user-dashboard'], { queryParams: { section: 'payments' } });
+  }
+
 }
