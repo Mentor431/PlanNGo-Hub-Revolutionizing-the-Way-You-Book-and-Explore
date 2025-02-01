@@ -16,7 +16,7 @@ import {
   ɵɵdefineNgModule,
   ɵɵdirectiveInject,
   ɵɵinject
-} from "./chunk-M3IJMTFG.js";
+} from "./chunk-P3S37FYW.js";
 import "./chunk-UMOB4LYC.js";
 import {
   distinctUntilChanged
@@ -27,7 +27,7 @@ import {
 import {
   __spreadProps,
   __spreadValues
-} from "./chunk-J4B6MK7R.js";
+} from "./chunk-ASLTLD6L.js";
 
 // node_modules/chart.js/dist/chunks/helpers.segment.mjs
 function noop() {

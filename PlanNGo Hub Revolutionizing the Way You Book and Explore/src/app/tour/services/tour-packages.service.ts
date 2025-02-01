@@ -22,7 +22,7 @@ export class TourPackagesService {
   private locationsApiUrl = "http://localhost:3000/Locations";
   private agenciesApiUrl = "http://localhost:3000/Agencies";
   private tourTypeApiUrl = "http://localhost:3000/TourType";
-  private bookingApiUrl = "http://localhost:3000/Bookings";
+  private bookingApiUrl = "http://localhost:3000/TourBookings";
   private paymentApiUrl = "http://localhost:3000/Payments";
 
   bookTour: any;
