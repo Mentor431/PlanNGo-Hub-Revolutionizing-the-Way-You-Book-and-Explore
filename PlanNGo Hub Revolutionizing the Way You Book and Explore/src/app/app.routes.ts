@@ -56,6 +56,7 @@ import { SuperAdminAgencyManagementComponent } from './tour/components/super-adm
 import { AgencyAdminManagementComponent } from './tour/components/agency-admin-management/agency-admin-management.component';
 import { AgencyAdminDashboardComponent } from "./tour/components/agency-admin-dashboard/agency-admin-dashboard.component";
 import { DemopageComponent } from './tour/components/demopage/demopage.component';
+import { Cab_Demo_Component } from './cab/components/demo/demo.component';
 //#endregion
 
 export const routes: Routes = [
@@ -71,6 +72,10 @@ export const routes: Routes = [
   {
     path: 'cab',
     children: [
+      {
+        path: 'load',
+        component: Cab_Demo_Component,
+      },
       {
         path: 'home',
         component: CabHomeComponent,

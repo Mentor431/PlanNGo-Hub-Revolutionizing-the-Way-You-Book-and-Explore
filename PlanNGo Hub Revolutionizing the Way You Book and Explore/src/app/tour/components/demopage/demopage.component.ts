@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   styleUrl: './demopage.component.css',
 })
 export class DemopageComponent {
-  selectedRole: string = 'end-user'; // Default role
   constructor(private router: Router) {
     const user = sessionStorage.getItem('role');
     this.checkUser(user);
