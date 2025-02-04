@@ -26,7 +26,7 @@ export class MyBookings_Component implements OnInit {
   specialOffers: specialOffers[] = [];
 
   //userid of logged in user
-  userid: string = "USER001";
+  userid: string = sessionStorage.getItem('userId') || 'USER001';
 
 
   //icons
@@ -47,6 +47,7 @@ export class MyBookings_Component implements OnInit {
   
    selectedBooking: Booking = {} as Booking;
   
+    
    reviewForm = {
      username: '',
      rating: null,

@@ -54,7 +54,7 @@
 <h2>Past Bookings</h2>
 <div *ngIf="pastBookings.length; else noPastBookings">
   <div *ngFor="let booking of pastBookings">
-    <div  class="booking-card">
+    <div *ngIf="booking.userid === userid"  class="booking-card">
       <!-- Image column -->
       <div class="booking-image">
         <img src="{{ booking.hotelImage }}" alt="{{ booking.hotelName }}">

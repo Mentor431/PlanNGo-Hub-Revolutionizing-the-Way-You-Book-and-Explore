@@ -21,7 +21,6 @@ import { AdminManageBookingsComponent } from './cab/components/admin-manage-book
 // #endregion
 
 //#region Hotels
-import { LoginPageComponent } from './hotels/components/login-page/login-page.component';
 import { SearchHotelComponent } from './hotels/components/search-hotel/search-hotel.component';
 import { HotelResultsComponent } from './hotels/components/hotel-results/hotel-results.component';
 import { HotelDetailsComponent } from './hotels/components/hotel-details/hotel-details.component';
@@ -30,6 +29,8 @@ import { MyBookings_Component } from './hotels/components/my-bookings/my-booking
 import { AdminHotelsComponent } from './hotels/components/admin-hotels/admin-hotels.component';
 import { AdminDashboard_Component } from './hotels/components/admin-dashboard/admin-dashboard.component';
 import { AdminBookingsComponent } from './hotels/components/admin-bookings/admin-bookings.component';
+import { ServiceProviderHotelComponent } from './hotels/components/service-provider-hotel/service-provider-hotel.component';
+import { ServiceProviderDashboardComponent } from './hotels/components/service-provider-dashboard/service-provider-dashboard.component';
 //#endregion
 
 // #region Tours
@@ -123,6 +124,12 @@ export const routes: Routes = [
           { path: 'dashboard', component: AdminDashboard_Component },
           { path: 'bookings', component: AdminBookingsComponent },
         ],
+      },
+      { path: 'service-provider',
+        children: [
+          { path: 'hotels', component: ServiceProviderHotelComponent },
+          { path: 'dashboard', component: ServiceProviderDashboardComponent },
+        ]
       },
     ],
   },
