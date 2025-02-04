@@ -23,8 +23,8 @@ export class DemopageComponent {
       case 'User':
         this.router.navigate(['/tours/home']);
         break;
-      case 'SubAdmin':
-        this.router.navigate(['tours/agencyadmin/AG001/dashboard/packages']);
+      case 'ServiceProvider':
+        this.router.navigate(['tours/agencyadmin/AG001/dashboard']);
         break;
       case 'Admin':
         this.router.navigate(['tours/superadmin/dashboard']);

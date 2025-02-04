@@ -53,6 +53,8 @@ export class LoginComponent {
           sessionStorage.setItem('userId', user.id);
           sessionStorage.setItem('role', user.role); // Save role from server response
           sessionStorage.setItem('email', user.email);
+          sessionStorage.setItem('name', user.fullName);
+
 
           console.log("user", user);
           console.log("role", user.role);

@@ -7819,6 +7819,7 @@
     {
       "userId": "USR001",
       "tourId": "TRPKG003",
+      "agencyId": "AG003",
       "tourName": "Swiss Alps Glacier Trek",
       "adults": 1,
       "children": 0,
@@ -7833,16 +7834,70 @@
       "bookingDate": "2025-02-01T12:23:52.641Z",
       "status": true,
       "id": "d723"
+    },
+    {
+      "id": "1afe",
+      "userId": "USR001",
+      "tourId": "TRPKG001",
+      "agencyId": "AG001",
+      "tourName": "Himalayas Adventure Trek",
+      "adults": 1,
+      "children": 0,
+      "rooms": 1,
+      "departureDate": "2025-02-05T19:46",
+      "arrivalDate": "2025-02-14T19:46",
+      "freePickup": "yes",
+      "paymentStatus": false,
+      "paymentId": "",
+      "amount": "INR 4050.00",
+      "specialRequest": "",
+      "bookingDate": "2025-02-04T14:16:07.529Z",
+      "status": true
+    },
+    {
+      "id": "9927",
+      "userId": "USR001",
+      "tourId": "TRPKG002",
+      "tourName": "Inca Trail Trekking",
+      "agencyId": "AG002",
+      "adults": 1,
+      "children": 0,
+      "rooms": 1,
+      "departureDate": "2025-02-08T20:00",
+      "arrivalDate": "2025-02-09T20:00",
+      "freePickup": "yes",
+      "paymentStatus": false,
+      "paymentId": "",
+      "amount": "INR 800.00",
+      "specialRequest": "",
+      "bookingDate": "2025-02-04T14:30:29.682Z",
+      "status": true
+    },
+    {
+      "id": "d1a2",
+      "userId": "PG001",
+      "tourId": "TRPKG005",
+      "tourName": "Jaipur Cultural Exploration",
+      "agencyId": "AG001",
+      "adults": 1,
+      "children": 0,
+      "rooms": 1,
+      "departureDate": "2025-02-06T20:05",
+      "arrivalDate": "2025-02-15T20:05",
+      "freePickup": "no",
+      "paymentStatus": false,
+      "paymentId": "",
+      "amount": "INR 2700.00",
+      "specialRequest": "",
+      "bookingDate": "2025-02-04T14:35:53.738Z",
+      "status": true
     }
   ],
   "Payments": [
-    {
-      "id": "50a4",
-      "nameOnCard": "Noorul",
-      "cardNumber": "967856453647980",
-      "expDate": "05/30",
-      "cvv": "970"
-    }
+    
+  ],
+  "Reviews": [
+    
   ],
   "users": [
     {

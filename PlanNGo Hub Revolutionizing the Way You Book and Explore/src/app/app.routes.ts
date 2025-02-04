@@ -53,6 +53,7 @@ import { MyBookingsComponent } from './tour/components/my-bookings/my-bookings.c
 import { SuperAdminDashboardComponent } from './tour/components/super-admin-dashboard/super-admin-dashboard.component';
 import { SuperAdminAgencyManagementComponent } from './tour/components/super-admin-agency-management/super-admin-agency-management.component';
 import { AgencyAdminManagementComponent } from './tour/components/agency-admin-management/agency-admin-management.component';
+import { AgencyAdminDashboardComponent } from "./tour/components/agency-admin-dashboard/agency-admin-dashboard.component";
 import { DemopageComponent } from './tour/components/demopage/demopage.component';
 //#endregion
 
@@ -200,6 +201,10 @@ export const routes: Routes = [
       {
         path: 'agencyadmin',
         children: [
+          {
+            path: ':agencyId/dashboard',
+            component: AgencyAdminDashboardComponent,
+          },
           {
             path: ':agencyId/dashboard/packages',
             component: AgencyAdminManagementComponent,
