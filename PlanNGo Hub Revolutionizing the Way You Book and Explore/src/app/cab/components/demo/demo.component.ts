@@ -23,6 +23,9 @@ export class DemoComponent {
       case 'admin':
         this.router.navigate(['/admin/dashboard']);  
         break;
+        case 'service':
+          this.router.navigate(['/service/cab-service']);  
+          break; 
       default:
         console.error('Invalid role selected');  
     }
