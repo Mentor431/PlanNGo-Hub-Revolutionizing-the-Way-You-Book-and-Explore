@@ -116,6 +116,7 @@ export class BookingFormComponent implements OnInit {
         userId: ["", Validators.required],
         tourId: ["", Validators.required],
         tourName: ["", Validators.required],
+        agencyId: ["", Validators.required],
         adults: [1, [Validators.required, Validators.min(1)]],
         children: [0, [Validators.min(0)]],
         rooms: [1, [Validators.required, Validators.min(1)]],
@@ -199,6 +200,7 @@ export class BookingFormComponent implements OnInit {
           this.packages = data.find((pkg) => pkg.TourId === tourId);
           this.bookingForm.patchValue({
             tourName: this.packages.Name,
+            agencyId: this.packages.AgencyId,
             bookingDate: new Date()
           })
           if (!this.packages) alert("Tour package not found.");
