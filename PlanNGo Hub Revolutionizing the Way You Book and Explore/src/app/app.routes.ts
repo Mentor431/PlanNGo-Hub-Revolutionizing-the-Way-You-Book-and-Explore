@@ -17,7 +17,8 @@ import { CabManageComponent } from './cab/components/cab-manage/cab-manage.compo
 import { BookingHistoryComponent } from './cab/components/cab-history/cab-history.component';
 import { AdminDriverCommunicationComponent } from './cab/components/admin-driver-communication/admin-driver-communication.component';
 import { AdminManageBookingsComponent } from './cab/components/admin-manage-bookings/admin-manage-bookings.component';
-// import { CabAdminDashboardComponent } from './cab/components/admin-dashboard/admin-dashboard.component';
+import { CabAdminDashboardComponent } from './cab/components/admin-dashboard/admin-dashboard.component';
+import{CabServiceProviderComponent}from './cab/components/cab-service-provider/cab-service-provider.component'
 // #endregion
 
 //#region Hotels
@@ -91,10 +92,10 @@ export const routes: Routes = [
         redirectTo: 'dashboard',
         pathMatch: 'full',
       },
-      // {
-      //   path: 'dashboard',
-      //   component: CabAdminDashboardComponent,
-      // },
+      {
+        path: 'dashboard',
+        component: CabAdminDashboardComponent,
+      },
       {
         path: 'communication',
         component: AdminDriverCommunicationComponent,
@@ -105,6 +106,15 @@ export const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'service',
+    children: [
+      {
+        path: 'cab-service',
+        component: CabServiceProviderComponent
+      }
+      ]
+    },
 
   // hotels
   // { path: '', component: LoginPageComponent },
