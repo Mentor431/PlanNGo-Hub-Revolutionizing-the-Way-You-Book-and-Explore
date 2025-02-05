@@ -7,6 +7,7 @@ import { HomeComponent } from './authentication/components/home/home.component';
 import { authGuard } from './authentication/services/auth.guard';
 import { ForgotPasswordComponent } from './authentication/components/forgotpassword/forgotpassword.component';
 import { AdminDashboardComponent } from './authentication/components/admin-dashboard/admin-dashboard.component';
+import { UserDashboardComponent } from './authentication/components/user-dashboard/user-dashboard.component';
 // #endregion
 
 // #region Cabs
@@ -23,7 +24,6 @@ import{CabServiceProviderComponent}from './cab/components/cab-service-provider/c
 // #endregion
 
 //#region Hotels
-import { LoginPageComponent } from './hotels/components/login-page/login-page.component';
 import { SearchHotelComponent } from './hotels/components/search-hotel/search-hotel.component';
 import { HotelResultsComponent } from './hotels/components/hotel-results/hotel-results.component';
 import { HotelDetailsComponent } from './hotels/components/hotel-details/hotel-details.component';
@@ -70,7 +70,7 @@ export const routes: Routes = [
   { path: 'cab-service-provider', component: HomeComponent, canActivate: [authGuard] },
   { path: 'hotel-service-provider', component: HomeComponent, canActivate: [authGuard] },
   { path: 'flight-service-provider', component: HomeComponent, canActivate: [authGuard] },
-  { path: '   tour-service-provider', component: HomeComponent, canActivate: [authGuard] },
+  { path: 'tour-service-provider', component: HomeComponent, canActivate: [authGuard] },
 
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 //   { path: '**', redirectTo: '/login' },

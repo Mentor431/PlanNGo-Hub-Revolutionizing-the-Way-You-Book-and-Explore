@@ -24,6 +24,7 @@ import { faUserLock, faEnvelope, faLock } from '@fortawesome/free-solid-svg-icon
     ButtonModule,
   ],
   templateUrl: './login.component.html',
+  styleUrl: './login.component.css'
 })
 export class LoginComponent {
   login = { email: '', password: '' };
@@ -52,8 +53,6 @@ export class LoginComponent {
           sessionStorage.setItem('userId', user.id);
           sessionStorage.setItem('role', user.role);
           sessionStorage.setItem('email', user.email);
-          sessionStorage.setItem('name', user.fullName);
-
 
           console.log("User:", user);
           console.log("Role:", user.role);
