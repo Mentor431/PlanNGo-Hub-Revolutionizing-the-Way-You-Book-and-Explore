@@ -66,7 +66,14 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [authGuard] },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
   { path: 'forgotpassword', component: ForgotPasswordComponent },
+  { path: 'user-dashboard', component: UserDashboardComponent },
+  { path: 'cab-service-provider', component: HomeComponent, canActivate: [authGuard] },
+  { path: 'hotel-service-provider', component: HomeComponent, canActivate: [authGuard] },
+  { path: 'flight-service-provider', component: HomeComponent, canActivate: [authGuard] },
+  { path: '   tour-service-provider', component: HomeComponent, canActivate: [authGuard] },
+
   { path: '', redirectTo: '/login', pathMatch: 'full' },
+//   { path: '**', redirectTo: '/login' },
 
   // cabs
   {

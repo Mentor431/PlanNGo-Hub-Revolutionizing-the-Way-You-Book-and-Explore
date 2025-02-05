@@ -66,20 +66,28 @@
           placeholder="Enter your location"
         />
 
-        <p *ngIf="!isEditing">Gender: {{ profileData?.gender }}</p>
-        <select *ngIf="isEditing" [(ngModel)]="profileData!.gender">
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Other">Other</option>
-        </select>
-        <button (click)="toggleTheme()">
-          Switch to {{ isDarkTheme ? "Light" : "Dark" }} Theme
-        </button>
-        <button *ngIf="!isEditing" (click)="editProfile()">Edit Profile</button>
-        <div *ngIf="isEditing">
-          <button (click)="saveProfile()">Save</button>
-          <button (click)="cancelEdit()">Cancel</button>
-          <button (click)="triggerFileUpload()">Change Profile Picture</button>
+                <p *ngIf="!isEditing">Gender: {{ profileData?.gender }}</p>
+                <select *ngIf="isEditing" [(ngModel)]="profileData!.gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+                <button (click)="toggleTheme()">
+                    Switch to {{ isDarkTheme ? 'Light' : 'Dark' }} Theme
+                </button>
+                <button *ngIf="!isEditing" (click)="editProfile()">Edit Profile</button>
+                <div *ngIf="isEditing">
+                    <button (click)="saveProfile()">Save</button>
+                    <button (click)="cancelEdit()">Cancel</button>
+                    <button (click)="triggerFileUpload()">Change Profile Picture</button>
+
+                </div>
+            </div>
+            <ul class="menu-list">
+                <p-button label="↩️ Logout" (onClick)="navigateToLogin()" styleClass="p-button-text">
+                </p-button>
+            </ul>
+
         </div>
       </div>
     </div>
@@ -111,6 +119,60 @@
       </h2>
       <canvas baseChart [data]="ageDistribution" [type]="'bar'"> </canvas>
     </div>
+    <div class="search-container">
+        <h2>Search & Delete User</h2>
+
+        <input type="text" [(ngModel)]="searchUserId" placeholder="Enter User ID" />
+        <button class="search-btn" (click)="searchUser()">Search</button>
+
+        <div *ngIf="searchedUser" class="user-card">
+            <h3>User Found:</h3>
+            <p><strong>ID:</strong> {{ searchedUser.id }}</p>
+            <p><strong>Name:</strong> {{ searchedUser.fullName }}</p>
+            <p><strong>Email:</strong> {{ searchedUser.email }}</p>
+            <p><strong>Location:</strong> {{ searchedUser.location }}</p>
+
+            <button class="delete-btn" (click)="deleteUser()">
+                <fa-icon [icon]="faTrash"></fa-icon> Delete User
+            </button>
+        </div>
+    </div>
+
+    <h2>User Change Requests</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Requested Name</th>
+                <th>Requested Location</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let request of changeRequests">
+                <td>{{ request.userId }}</td>
+                <td>{{ request.fullName }}</td>
+                <td>{{ request.location }}</td>
+                <td>{{ request.status }}</td>
+                <td>
+                    <button (click)="approveRequest(request)">Approve</button>
+                    <button (click)="rejectRequest(request.id)">Reject</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>About Us</h3>
+            <p>At PlanNGoHub, we are redefining the way people travel. By connecting users with a range of trusted
+                travel
+                providers, we aim to make travel planning as easy as a few clicks. Our mission is to provide exceptional
+                service, transparent pricing, and unforgettable experiences.
+
 
     <!-- Location Line Chart -->
     <div class="chart">

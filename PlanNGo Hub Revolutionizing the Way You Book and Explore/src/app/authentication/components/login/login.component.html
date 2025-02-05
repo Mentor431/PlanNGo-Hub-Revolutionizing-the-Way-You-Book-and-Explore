@@ -9,7 +9,11 @@
   margin: 5px;
   width: 590px;
   height: 50px;
-  margin-top: 10px;
+  margin-top: 1px;
+  margin-bottom: 550px;
+  margin-left: 110px;
+  display:flex;
+  justify-content: center;
 ">
   PlanNGoHub
 </header>
@@ -53,61 +57,28 @@
         </small>
       </div>
 
-      <!-- Role Dropdown Field -->
-      <!-- <div class="field">
-      <label for="role" style="margin-right: 5px;">
-        <fa-icon
-          [icon]="faUserLock"
-          style="color: #007bff;"
-        ></fa-icon>
-        Role
-      </label>
-      <p-dropdown
- [options]="roles"
- [(ngModel)]="login.role"
- name="role"
- placeholder="Select Role"
- id="role"
- styleClass="w-full"
- [style]="{ 'background': 'rgba(255,255,255,0.3)', 'color': 'black' }"
- #role="ngModel"
- required
-></p-dropdown>
 
-      <small
-        *ngIf="role.invalid && (role.dirty || role.touched)"
-        class="block p-error"
-      >
-        Role is required
-      </small>
-    </div> -->
-
-      <!-- Sign-In Button -->
-      <p-button 
-            label="SIGN IN" 
-            styleClass="w-full" 
-            type="submit"
-            [disabled]="loginForm.invalid"
-            >
-          </p-button>
-
-      <!-- Links to Register and Forgot Password -->
-      <div class="mt-2 text-center">
-        <span style="
+        <p-button label="SIGN IN" styleClass="w-full" type="submit" [disabled]="loginForm.invalid">
+        </p-button>
+        <!-- Links to Register and Forgot Password -->
+        <div class="mt-2 text-center">
+          <span style="
           font-family: 'Poppins', sans-serif;
           font-size: 18px;
           margin-right: 200px;
           line-height: 2.0;
         ">Not a member?</span>
-        <p-button label="Register" class="p-button-text" (onClick)="navigateToRegister()" [style]="{
-          background: 'none',
-          color: 'black',
+          <p-button label="Register" class="p-button-text" (onClick)="navigateToRegister()" [style]="{
+          background: '#0091ff',
+          color: '#fff',
           marginTop: '20px',
           marginRight: '8px'
         }"></p-button>
-        <p-button label="Forgotpassword" class="p-button-text" (onClick)="navigateToForgotpassword()"
-          [style]="{ background: 'none', color: 'black', marginTop: '20px' }"></p-button>
-      </div>
-    </form>
-  </p-card>
-</div>
+          <p-button label="Forgotpassword" class="p-button-text" (onClick)="navigateToForgotpassword()"
+            [style]="{ background: '#0091ff', color: '#fff', marginTop: '20px' }"></p-button>
+        </div>
+      </form>
+    </p-card>
+  </div>
+</body>
+

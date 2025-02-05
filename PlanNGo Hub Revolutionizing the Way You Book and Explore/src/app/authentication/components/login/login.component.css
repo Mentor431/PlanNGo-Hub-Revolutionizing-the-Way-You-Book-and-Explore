@@ -16,6 +16,7 @@ body {
   font-family: 'Dancing Script', cursive; /* A more elegant, cursive font */
   font-size: 3rem; /* Larger size */
 
+/*   resolved */
   font-weight: bold;
   color: #ff8c00; /* A vibrant color for the text */
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Softer, more dramatic text shadow */
@@ -104,10 +105,7 @@ p-button {
   transition: all 0.3s ease;
 }
 
-/* p-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-} */
+
 
 a {
   color: #31065f;
