@@ -1,5 +1,4 @@
-<body>
-  <header style="
+<header style="
   background-color: #007bff;
   padding: 20px;
   text-align: center;
@@ -7,6 +6,7 @@
   font-size: 24px;
   font-weight: bold;
   border-radius: 6px;
+  margin: 5px;
   width: 590px;
   height: 50px;
   margin-top: 1px;
@@ -15,47 +15,47 @@
   display:flex;
   justify-content: center;
 ">
-    PlanNGoHub
-  </header>
-  <div class="flex justify-content-center align-items-center min-h-screen">
-    <p-card header="Login" [style]="{
+  PlanNGoHub
+</header>
+<div class="flex justify-content-center align-items-center min-h-screen">
+  <p-card header="Login" [style]="{
     width: '450px',
     color: 'black',
     background: 'rgba(255, 255, 255, 0.4)',
-    marginRight: '780px',
-    marginBottom: '0px'
+    marginRight: '280px',
+    marginBottom: '50px'
   }">
-      <form #loginForm="ngForm" (ngSubmit)="onLogin()">
-        <!-- Email Field -->
-        <div class="field">
-          <label for="email">
-            <fa-icon [icon]="faEnvelope" style="margin-right: 5px; color: #007bff;"></fa-icon>
-            Email
-          </label>
-          <input type="text" pInputText [(ngModel)]="login.email" class="w-full" id="email"
-            style="background: rgba(255, 255, 255, 0.3);" name="email" #email="ngModel" required
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
-          <small *ngIf="email.invalid && (email.dirty || email.touched)" class="block p-error">
-            <span *ngIf="email.hasError('required')">Email is required</span>
-            <span *ngIf="email.hasError('pattern')">Email is invalid</span>
-          </small>
-        </div>
+    <form #loginForm="ngForm" (ngSubmit)="onLogin()">
+      <!-- Email Field -->
+      <div class="field">
+        <label for="email">
+          <fa-icon [icon]="faEnvelope" style="margin-right: 5px; color: #007bff;"></fa-icon>
+          Email
+        </label>
+        <input type="text" pInputText [(ngModel)]="login.email" class="w-full" id="email"
+          style="background: rgba(255, 255, 255, 0.3);" name="email" #email="ngModel" required
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
+        <small *ngIf="email.invalid && (email.dirty || email.touched)" class="block p-error">
+          <span *ngIf="email.hasError('required')">Email is required</span>
+          <span *ngIf="email.hasError('pattern')">Email is invalid</span>
+        </small>
+      </div>
 
-        <!-- Password Field -->
-        <div class="field">
-          <label for="password">
-            <fa-icon [icon]="faLock" style="margin-right: 5px; color: #007bff;"></fa-icon>
-            Password
-          </label>
-          <p-password [(ngModel)]="login.password" [feedback]="false" [toggleMask]="true" inputId="password"
-            name="password" #password="ngModel" inputStyleClass="w-full" styleClass="w-full" [inputStyle]="{
+      <!-- Password Field -->
+      <div class="field">
+        <label for="password">
+          <fa-icon [icon]="faLock" style="margin-right: 5px; color: #007bff;"></fa-icon>
+          Password
+        </label>
+        <p-password [(ngModel)]="login.password" [feedback]="false" [toggleMask]="true" inputId="password"
+          name="password" #password="ngModel" inputStyleClass="w-full" styleClass="w-full" [inputStyle]="{
           background: 'rgba(255,255,255,0.3)',
           color: 'black'
         }" required></p-password>
-          <small *ngIf="password.invalid && (password.dirty || password.touched)" class="block p-error">
-            Password is required
-          </small>
-        </div>
+        <small *ngIf="password.invalid && (password.dirty || password.touched)" class="block p-error">
+          Password is required
+        </small>
+      </div>
 
 
         <p-button label="SIGN IN" styleClass="w-full" type="submit" [disabled]="loginForm.invalid">
@@ -81,3 +81,4 @@
     </p-card>
   </div>
 </body>
+

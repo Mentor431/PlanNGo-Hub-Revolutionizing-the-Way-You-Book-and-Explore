@@ -9,7 +9,6 @@ import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { Router } from '@angular/router';
 
-
 import { faCar } from '@fortawesome/free-solid-svg-icons';
 import { faHotel } from '@fortawesome/free-solid-svg-icons';
 import { faPlane } from '@fortawesome/free-solid-svg-icons';
