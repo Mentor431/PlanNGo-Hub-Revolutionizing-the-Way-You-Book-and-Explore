@@ -60,6 +60,8 @@ import { AgencyAdminManagementComponent } from './tour/components/agency-admin-m
 import { AgencyAdminDashboardComponent } from "./tour/components/agency-admin-dashboard/agency-admin-dashboard.component";
 import { DemopageComponent } from './tour/components/demopage/demopage.component';
 import { Cab_Demo_Component } from './cab/components/demo/demo.component';
+import { DemopageForFlightComponent } from './flight/components/demopage-for-flight/demopage-for-flight.component';
+import { FlightServiceProviderDashboardComponent } from './flight/components/flight-service-provider/flight-service-provider.component';
 //#endregion
 
 export const routes: Routes = [
@@ -173,7 +175,7 @@ export const routes: Routes = [
   },
 
   // Flight Routes
-  // { path: '', component: DemopageForFlightComponent },
+  { path: 'flights', component: DemopageForFlightComponent },
   {
     path: 'flight',
     children: [
@@ -182,6 +184,7 @@ export const routes: Routes = [
       { path: 'seat/:id', component: SeatComponent },
       { path: 'flight-ticket', component:TicketComponent },
       { path: 'history', component: HistoryComponent },
+      { path: 'service-provider', component: FlightServiceProviderDashboardComponent },
     ],
   },
   {

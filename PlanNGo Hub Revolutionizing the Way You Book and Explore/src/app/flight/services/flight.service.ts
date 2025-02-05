@@ -80,4 +80,8 @@ export class FlightService {
     }
     return this.http.put(`${this.userApiUrl}/${userId}`, userData);
   }
+
+  getFlightsByAirline(airline: string): Observable<Flight[]> {
+    return this.http.get<Flight[]>(`${this.apiUrl}?airline=${airline}`);
+  }
 }
