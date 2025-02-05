@@ -1,5 +1,5 @@
 <div class="dashboard">
-    <h1>Admin Dashboard</h1>
+    <h1>Hotel Dashboard</h1>
   
     <!-- Metrics -->
     <div class="metrics">
@@ -15,19 +15,15 @@
         <h3>Total Visits</h3>
         <p>{{ totalVisits }}</p>
       </div>
-      <div class="metric">
-        <h3>Total Hotels</h3>
-        <p>{{ totalHotels }}</p>
-      </div>
     </div>
   
     <!-- Charts -->
     <div class="charts">
-      <!-- Popular Hotels Pie Chart -->
+      <!-- Popular Room Types Pie Chart -->
       <div class="chart">
-        <h3>Popular Hotels</h3>
+        <h3>Popular Room Types</h3>
         <canvas baseChart
-                [data]="popularHotelsData"
+                [data]="popularRoomTypesData"
                 [type]="'pie'">
         </canvas>
       </div>
@@ -42,7 +38,7 @@
       </div>
     </div>
   </div>
-
-
-<!-- Navigation -->
-<app-admin-navigation></app-admin-navigation>
+  
+  <!-- Navigation -->
+  <app-service-provider-navigation></app-service-provider-navigation>
+  
