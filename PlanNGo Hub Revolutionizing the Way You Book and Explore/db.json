@@ -7658,6 +7658,11 @@
       "LocationId": "L004",
       "Location": "Japan",
       "id": "e091"
+    },
+    {
+      "id": "6868",
+      "LocationId": "L005",
+      "Location": "California"
     }
   ],
   "Agencies": [
@@ -7939,6 +7944,16 @@
       "gender": "Male",
       "role": "Cab Service Provider",
       "location": "Andhra"
+    },
+    {
+      "id": "PG002",
+      "fullName": "Das",
+      "email": "das@gmail.com",
+      "password": "789456",
+      "age": 25,
+      "gender": "Male",
+      "role": "Tour Service Provider",
+      "location": "Bengal"
     }
   ]
 }
