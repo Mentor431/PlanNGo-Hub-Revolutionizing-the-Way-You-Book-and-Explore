@@ -1,13 +1,45 @@
-<header
+<body>
+  <header style="background-color: #007bff; 
+    padding: 20px; 
+    text-align: center; 
+    color: white;
+     font-size: 24px;
+      font-weight: bold;
+      border-radius: 6px;
+      margin: 5px;
+      width: 590px;
+      height: 50px;
+      margin-top: 1px;
+      margin-bottom: 1050px;
+      margin-left: 130px;">
+    PlanNGoHub
+  </header>
+  <div class="register-container">
+    <p-card header="Register"
+      [style]="{ width: '480px',color:'black', background: 'rgba(255, 255, 255, 0.5)' ,marginRight: '780px',marginBottom:'8px',marginTop:'70px' }">
+      <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+        <!-- Full Name Field -->
+        <div class="field">
+          <label for="fullName"> <fa-icon [icon]="faUser" style="margin-right: 5px; color: #007bff;"
+              class="icon"></fa-icon>Full Name</label>
+          <input pInputText class="w-full" id="fullName" formControlName="fullName"
+            style="background: rgba(255,255,255,0.1);" />
+          <small
+            *ngIf="registerForm.get('fullName')?.invalid && (registerForm.get('fullName')?.dirty || registerForm.get('fullName')?.touched)"
+            class="block p-error">
+            Full name is required
+          </small>
+        </div>
+<!-- <header
   style="background-color: #007bff; padding: 20px; text-align: center; color: white; font-size: 24px; font-weight: bold;border-radius: 6px;margin: 5px;width: 590px;height: 50px;">
   PlanNGoHub
 </header>
 <div class="register-container">
   <p-card header="Register"
     [style]="{ width: '600px',color:'black', background: 'rgba(255, 255, 255, 0.5)' ,marginRight: '280px',marginBottom:'50px' }">
-    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()"> -->
       <!-- Full Name Field -->
-      <div class="field">
+<!--       <div class="field">
         <label for="fullName"> <fa-icon [icon]="faUser" style="margin-right: 5px; color: #007bff;"
             class="icon"></fa-icon>Full Name</label>
         <input pInputText class="w-full" id="fullName" formControlName="fullName"
@@ -17,7 +49,7 @@
           class="block p-error">
           Full name is required
         </small>
-      </div>
+      </div> -->
 
       <!-- Email Field -->
       <div class="field">
@@ -89,8 +121,35 @@
       </div>
 
 
+        <!-- Service Provider Type Field (Visible only when 'Service Provider' is selected) -->
+        <div class="field" *ngIf="registerForm.get('role')?.value === 'Service Provider'">
+          <label for="serviceType">
+            <fa-icon [icon]="faBuilding" style="margin-right: 5px; color: #007bff;" class="icon"></fa-icon> Service Type
+          </label>
+          <!-- Update role directly with service type value -->
+          <p-dropdown [options]="serviceProviderOptions" formControlName="role" placeholder="Select Service Type"
+            class="w-full">
+          </p-dropdown>
+          <small
+            *ngIf="registerForm.get('role')?.invalid && (registerForm.get('role')?.dirty || registerForm.get('role')?.touched)"
+            class="block p-error">
+            Service Type is required
+          </small>
+        </div>
+        <!-- Age Field -->
+        <div class="field">
+          <label for="age"> <fa-icon [icon]="faBirthdayCake" style="margin-right: 5px; color: #007bff;"
+              class="icon"></fa-icon>Age</label>
+          <input type="number" pInputText class="w-full" id="age" formControlName="age"
+            style="background: rgba(255,255,255,0.1);" />
+          <small
+            *ngIf="registerForm.get('age')?.invalid && (registerForm.get('age')?.dirty || registerForm.get('age')?.touched)"
+            class="block p-error">
+            Age is required and must be a valid number
+          </small>
+        </div>
       <!-- Age Field -->
-      <div class="field">
+<!--       <div class="field">
         <label for="age"> <fa-icon [icon]="faBirthdayCake" style="margin-right: 5px; color: #007bff;"
             class="icon"></fa-icon>Age</label>
         <input type="number" pInputText class="w-full" id="age" formControlName="age"
@@ -100,7 +159,7 @@
           class="block p-error">
           Age is required and must be a valid number
         </small>
-      </div>
+      </div> -->
 
       <!-- Gender Field -->
       <div class="field">
@@ -131,13 +190,21 @@
       <!-- Submit Button -->
       <p-button type="submit" label="Register" styleClass="w-full" [disabled]="registerForm.invalid"></p-button>
 
+        <!-- Login Redirect -->
+        <div class="mt-2 text-center">
+          <span style="font-family: 'Poppins', sans-serif; font-size: 18px; margin-right: 5px;line-height:2.0;">Already
+            a
+            member?</span>
+          <p-button label="Login" class="p-button-text" (onClick)="navigateToLogin()"
+            [style]="{ background:'#0091ff',color:'#fff',marginTop:'20px'}"></p-button>
+        </div>
       <!-- Login Redirect -->
-      <div class="mt-2 text-center">
+<!--       <div class="mt-2 text-center">
         <span style="font-family: 'Poppins', sans-serif; font-size: 18px; margin-right: 5px;line-height:2.0;">Already a
           member?</span>
         <p-button label="Login" class="p-button-text" (onClick)="navigateToLogin()"
           [style]="{ background:'#007bff',color:'#fff',marginTop:'20px'}"></p-button>
-      </div>
+      </div> -->
 
     </form>
   </p-card>

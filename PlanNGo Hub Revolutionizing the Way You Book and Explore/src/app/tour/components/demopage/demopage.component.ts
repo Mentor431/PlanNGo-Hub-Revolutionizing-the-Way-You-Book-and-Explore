@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   styleUrl: './demopage.component.css',
 })
 export class DemopageComponent {
-  selectedRole: string = 'end-user'; // Default role
   constructor(private router: Router) {
     const user = sessionStorage.getItem('role');
     this.checkUser(user);
@@ -23,8 +22,8 @@ export class DemopageComponent {
       case 'User':
         this.router.navigate(['/tours/home']);
         break;
-      case 'SubAdmin':
-        this.router.navigate(['tours/agencyadmin/AG001/dashboard/packages']);
+      case 'ServiceProvider':
+        this.router.navigate(['tours/agencyadmin/AG001/dashboard']);
         break;
       case 'Admin':
         this.router.navigate(['tours/superadmin/dashboard']);
