@@ -5112,7 +5112,7 @@
       "totalPayable": 70800,
       "checkIn": "01/31/2025",
       "checkOut": "02/02/2025",
-      "status": "booked"
+      "status": "visited"
     },
     {
       "id": "65a1",
@@ -5144,7 +5144,7 @@
       "totalPayable": 84960,
       "checkIn": "01/31/2025",
       "checkOut": "02/03/2025",
-      "status": "booked"
+      "status": "visited"
     },
     {
       "id": "04f3",
@@ -5208,7 +5208,7 @@
       "totalPayable": 113280,
       "checkIn": "01/31/2025",
       "checkOut": "02/04/2025",
-      "status": "booked"
+      "status": "visited"
     }
   ],
   "flights": [
@@ -7893,12 +7893,8 @@
       "status": true
     }
   ],
-  "Payments": [
-    
-  ],
-  "Reviews": [
-    
-  ],
+  "Payments": [],
+  "Reviews": [],
   "users": [
     {
       "id": "AD001",
@@ -7933,6 +7929,16 @@
       "location": "Madurai",
       "profilePic": "",
       "agencyId": "AG001"
+    },
+    {
+      "id": "SPT001",
+      "fullName": "Nishanth",
+      "email": "nish@gmail.com",
+      "password": "123456",
+      "age": 20,
+      "gender": "Male",
+      "role": "Cab Service Provider",
+      "location": "Andhra"
     }
   ]
 }

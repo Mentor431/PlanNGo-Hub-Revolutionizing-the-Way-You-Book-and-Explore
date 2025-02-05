@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './demopage.component.html',
   styleUrl: './demopage.component.css',
 })
-export class DemopageComponent {
+export class Hotels_DemopageComponent {
   constructor(private router: Router) {
     const user = sessionStorage.getItem('role');
     this.checkUser(user);
@@ -20,13 +20,13 @@ export class DemopageComponent {
     await this.sleep(1500);
     switch (user) {
       case 'User':
-        this.router.navigate(['/tours/home']);
+        this.router.navigate(['hotels/search']);
         break;
-      case 'Tour Service Provider':
-        this.router.navigate(['tours/agencyadmin/AG001/dashboard']);
+      case 'Hotel Service Provider':
+        this.router.navigate(['hotels/service-provider/hotels']);
         break;
       case 'Admin':
-        this.router.navigate(['tours/superadmin/dashboard']);
+        this.router.navigate(['hotels/admin/hotels']);
         break;
       case null:
         history.back();

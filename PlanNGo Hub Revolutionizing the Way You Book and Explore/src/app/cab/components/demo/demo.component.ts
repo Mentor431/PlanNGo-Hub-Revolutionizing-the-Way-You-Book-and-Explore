@@ -25,7 +25,7 @@ export class Cab_Demo_Component {
       case 'User':
         this.router.navigate(['/cab/home']);  
         break;
-      case 'ServiceProvider':
+      case 'Cab Service Provider':
           this.router.navigate(['/service/cab-service']);  
           break;
       case 'Admin':

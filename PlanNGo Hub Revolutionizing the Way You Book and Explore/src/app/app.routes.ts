@@ -34,6 +34,7 @@ import { AdminDashboard_Component } from './hotels/components/admin-dashboard/ad
 import { AdminBookingsComponent } from './hotels/components/admin-bookings/admin-bookings.component';
 import { ServiceProviderHotelComponent } from './hotels/components/service-provider-hotel/service-provider-hotel.component';
 import { ServiceProviderDashboardComponent } from './hotels/components/service-provider-dashboard/service-provider-dashboard.component';
+import { Hotels_DemopageComponent } from './hotels/components/demopage/demopage.component';
 //#endregion
 
 // #region Flight
@@ -145,6 +146,7 @@ export const routes: Routes = [
 
   // hotels
   // { path: '', component: LoginPageComponent },
+  { path: 'hotel', component: Hotels_DemopageComponent },
   {
     path: 'hotels',
     children: [
