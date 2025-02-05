@@ -22,6 +22,9 @@ export class DemopageForFlightComponent {
       case 'admin':
         this.router.navigate(['/flight-admin/panel']);
         break;
+      case 'service-provider':
+        this.router.navigate(['/flight/service-provider']);
+        break;
       default:
         console.error('Invalid role selected');
     }
