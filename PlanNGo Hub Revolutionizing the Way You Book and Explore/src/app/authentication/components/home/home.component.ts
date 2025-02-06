@@ -198,6 +198,7 @@ export class HomeComponent {
     this.router.navigate(['/user-dashboard'], { queryParams: { section: 'savedTours' } });
   }
   navigateToLogin() {
+    sessionStorage.clear();
     this.router.navigate(['/login']);
   }
 }

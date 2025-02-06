@@ -85,10 +85,12 @@
               <td class="py-3 px-4">{{ booking.rooms }}</td>
               <td class="py-3 px-4">{{ booking.departureDate | date: 'short' }}</td>
               <td class="py-3 px-4">{{ booking.arrivalDate | date: 'short' }}</td>
-              <td class="py-3 px-4">
-                <span [ngClass]="{'text-green-600 font-bold': booking.paymentStatus === 'Paid', 'text-red-600 font-bold': booking.paymentStatus !== 'Paid'}">
-                  {{ booking.paymentStatus }}
-                </span>
+              <td class="py-3 px-4"><span [ngClass]="{
+                'text-green-600 font-bold': booking.paymentStatus === true,
+                'text-red-600 font-bold': booking.paymentStatus !== true
+              }">
+                {{ booking.paymentStatus === true ? 'Paid' : 'Unpaid' }}
+              </span>              
               </td>
               <td class="py-3 px-4">{{ booking.amount ? (booking.amount * 1 | currency:'INR') : 'N/A' }}</td>
             </tr>

@@ -53,6 +53,7 @@ export class LoginComponent {
           sessionStorage.setItem('userId', user.id);
           sessionStorage.setItem('role', user.role);
           sessionStorage.setItem('email', user.email);
+          sessionStorage.setItem('agencyId', user.agencyId ?? null);
 
           console.log("User:", user);
           console.log("Role:", user.role);

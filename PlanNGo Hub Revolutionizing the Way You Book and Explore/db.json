@@ -13730,7 +13730,7 @@
       "departureDate": "2025-02-08T20:00",
       "arrivalDate": "2025-02-09T20:00",
       "freePickup": "yes",
-      "paymentStatus": false,
+      "paymentStatus": true,
       "paymentId": "",
       "amount": "INR 800.00",
       "specialRequest": "",
@@ -13783,46 +13783,26 @@
       "profilePic": ""
     },
     {
-      "id": "SP001",
-      "fullName": "Ram",
-      "email": "ram@gmail.com",
-      "password": "444",
-      "age": 22,
-      "gender": "Male",
-      "role": "ServiceProvider",
-      "location": "Madurai",
-      "profilePic": "",
-      "agencyId": "AG001"
-    },
-    {
       "id": "SPT001",
       "fullName": "Nishanth",
       "email": "nish@gmail.com",
       "password": "123456",
       "age": 20,
       "gender": "Male",
-      "role": "Flight Service Provider",
-      "location": "Andhra"
+      "role": "Tour Service Provider",
+      "location": "Andhra",
+      "agencyId": "AG001"
     },
     {
-      "id": "PG002",
-      "fullName": "Das",
-      "email": "das@gmail.com",
-      "password": "789456",
-      "age": 25,
+      "id": "SPT002",
+      "fullName": "Noorul",
+      "email": "noor@gmail.com",
+      "password": "123456",
+      "age": 20,
       "gender": "Male",
       "role": "Tour Service Provider",
-      "location": "Bengal"
-    },
-    {
-      "id": "PG003",
-      "fullName": "Noorul",
-      "email": "noorul@gmail.com",
-      "password": "123456",
-      "age": 21,
-      "gender": "Male",
-      "role": "Service Provider",
-      "location": "Chennai"
+      "location": "Tamilnadu",
+      "agencyId": "AG002"
     }
   ]
 }
