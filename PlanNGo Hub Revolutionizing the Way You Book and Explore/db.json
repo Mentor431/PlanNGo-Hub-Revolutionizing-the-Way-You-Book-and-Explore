@@ -1037,9 +1037,7 @@
       "location": "Bengaluru",
       "available": false,
       "cabNumber": "EF456GH",
-      "chats": [
-        
-      ]
+      "chats": []
     },
     {
       "id": "E5F6",
@@ -1237,8 +1235,7 @@
       "location": "Mumbai",
       "available": true,
       "cabNumber": "EF678GH",
-      "chats": [
-      ]
+      "chats": []
     }
   ],
   "hotels": [
@@ -5274,6 +5271,32 @@
       "checkIn": "01/31/2025",
       "checkOut": "02/04/2025",
       "status": "visited"
+    },
+    {
+      "id": "tx21wg8",
+      "userid": "PG002",
+      "hotelid": "HOTEL010",
+      "hotelName": "The Oberoi Sukhvilas Resort & Spa",
+      "hotelImage": "assets/hotel/hotel-images/oberoi-sukhvilas-chandigarh.jpg",
+      "location": "Chandigarh",
+      "name": "Noorul Ashfaq A",
+      "age": 36,
+      "gender": "male",
+      "email": "noorulashfaq786@gmail.com",
+      "phone": "8870468660",
+      "guests": [],
+      "roomType": "Premier Room",
+      "roomPrice": 25000,
+      "noOfrooms": 1,
+      "stayDuration": 13,
+      "noOfGuests": 1,
+      "totalPrice": 325000,
+      "offer": 71500,
+      "netPrice": 253500,
+      "totalPayable": 299130,
+      "checkIn": "2/8/2025",
+      "checkOut": "2/21/2025",
+      "status": "cancelled"
     }
   ],
   "flights": [
@@ -6686,6 +6709,69 @@
       "totalPrice": 600,
       "seats": [
         "B6"
+      ],
+      "status": "booked"
+    },
+    {
+      "id": "29c2",
+      "flight": {
+        "id": "FL009",
+        "from": "Las Vegas",
+        "to": "Rome",
+        "departureDate": "02-02-2025",
+        "price": 650,
+        "airline": "Jet Airways",
+        "totalSeats": 200,
+        "availableSeats": "string[]",
+        "unavailableSeats": "string[]",
+        "fromTime": "01:00 PM",
+        "toTime": "09:00 AM",
+        "duration": "14h"
+      },
+      "passengers": [
+        {
+          "firstName": "Das",
+          "middleName": "",
+          "lastName": "Dhruv",
+          "dateOfBirth": "2024-11-07",
+          "gender": "male",
+          "nationality": "Indian",
+          "postalCode": "A86475714"
+        }
+      ],
+      "totalPrice": 650
+    },
+    {
+      "id": "29c2",
+      "flight": {
+        "id": "FL009",
+        "from": "Las Vegas",
+        "to": "Rome",
+        "departureDate": "02-02-2025",
+        "price": 650,
+        "airline": "Jet Airways",
+        "totalSeats": 200,
+        "availableSeats": "string[]",
+        "unavailableSeats": "string[]",
+        "fromTime": "01:00 PM",
+        "toTime": "09:00 AM",
+        "duration": "14h"
+      },
+      "passengers": [
+        {
+          "firstName": "Das",
+          "middleName": "",
+          "lastName": "Dhruv",
+          "dateOfBirth": "2024-11-07",
+          "gender": "male",
+          "nationality": "Indian",
+          "postalCode": "A86475714",
+          "uid": "0wmyjdy"
+        }
+      ],
+      "totalPrice": 650,
+      "seats": [
+        "C9"
       ],
       "status": "booked"
     }
@@ -12342,6 +12428,252 @@
           "status": "available"
         }
       ]
+    },
+    {
+      "id": "15ee",
+      "flightId": "FL009",
+      "seats": [
+        {
+          "id": "A1",
+          "status": "booked"
+        },
+        {
+          "id": "A2",
+          "status": "booked"
+        },
+        {
+          "id": "A3",
+          "status": "booked"
+        },
+        {
+          "id": "A4",
+          "status": "booked"
+        },
+        {
+          "id": "A5",
+          "status": "booked"
+        },
+        {
+          "id": "A6",
+          "status": "available"
+        },
+        {
+          "id": "A7",
+          "status": "available"
+        },
+        {
+          "id": "A8",
+          "status": "available"
+        },
+        {
+          "id": "A9",
+          "status": "available"
+        },
+        {
+          "id": "A10",
+          "status": "available"
+        },
+        {
+          "id": "B1",
+          "status": "available"
+        },
+        {
+          "id": "B2",
+          "status": "available"
+        },
+        {
+          "id": "B3",
+          "status": "available"
+        },
+        {
+          "id": "B4",
+          "status": "available"
+        },
+        {
+          "id": "B5",
+          "status": "available"
+        },
+        {
+          "id": "B6",
+          "status": "available"
+        },
+        {
+          "id": "B7",
+          "status": "available"
+        },
+        {
+          "id": "B8",
+          "status": "available"
+        },
+        {
+          "id": "B9",
+          "status": "available"
+        },
+        {
+          "id": "B10",
+          "status": "available"
+        },
+        {
+          "id": "C1",
+          "status": "available"
+        },
+        {
+          "id": "C2",
+          "status": "available"
+        },
+        {
+          "id": "C3",
+          "status": "available"
+        },
+        {
+          "id": "C4",
+          "status": "available"
+        },
+        {
+          "id": "C5",
+          "status": "available"
+        },
+        {
+          "id": "C6",
+          "status": "available"
+        },
+        {
+          "id": "C7",
+          "status": "available"
+        },
+        {
+          "id": "C8",
+          "status": "available"
+        },
+        {
+          "id": "C9",
+          "status": "booked"
+        },
+        {
+          "id": "C10",
+          "status": "available"
+        },
+        {
+          "id": "D1",
+          "status": "available"
+        },
+        {
+          "id": "D2",
+          "status": "available"
+        },
+        {
+          "id": "D3",
+          "status": "available"
+        },
+        {
+          "id": "D4",
+          "status": "available"
+        },
+        {
+          "id": "D5",
+          "status": "available"
+        },
+        {
+          "id": "D6",
+          "status": "available"
+        },
+        {
+          "id": "D7",
+          "status": "available"
+        },
+        {
+          "id": "D8",
+          "status": "available"
+        },
+        {
+          "id": "D9",
+          "status": "available"
+        },
+        {
+          "id": "D10",
+          "status": "available"
+        },
+        {
+          "id": "E1",
+          "status": "available"
+        },
+        {
+          "id": "E2",
+          "status": "available"
+        },
+        {
+          "id": "E3",
+          "status": "available"
+        },
+        {
+          "id": "E4",
+          "status": "available"
+        },
+        {
+          "id": "E5",
+          "status": "available"
+        },
+        {
+          "id": "E6",
+          "status": "available"
+        },
+        {
+          "id": "E7",
+          "status": "available"
+        },
+        {
+          "id": "E8",
+          "status": "available"
+        },
+        {
+          "id": "E9",
+          "status": "available"
+        },
+        {
+          "id": "E10",
+          "status": "available"
+        },
+        {
+          "id": "F1",
+          "status": "available"
+        },
+        {
+          "id": "F2",
+          "status": "available"
+        },
+        {
+          "id": "F3",
+          "status": "available"
+        },
+        {
+          "id": "F4",
+          "status": "available"
+        },
+        {
+          "id": "F5",
+          "status": "available"
+        },
+        {
+          "id": "F6",
+          "status": "available"
+        },
+        {
+          "id": "F7",
+          "status": "available"
+        },
+        {
+          "id": "F8",
+          "status": "available"
+        },
+        {
+          "id": "F9",
+          "status": "available"
+        },
+        {
+          "id": "F10",
+          "status": "available"
+        }
+      ]
     }
   ],
   "Tours": [
@@ -13755,10 +14087,75 @@
       "specialRequest": "",
       "bookingDate": "2025-02-04T14:35:53.738Z",
       "status": true
+    },
+    {
+      "id": "1a75",
+      "userId": "PG002",
+      "tourId": "TRPKG006",
+      "tourName": "Kyoto Cultural Highlights",
+      "agencyId": "AG002",
+      "adults": 1,
+      "children": 0,
+      "rooms": 1,
+      "departureDate": "2025-02-10T19:40",
+      "arrivalDate": "2025-02-20T19:40",
+      "freePickup": "yes",
+      "paymentStatus": false,
+      "paymentId": "",
+      "amount": "INR 6000.00",
+      "specialRequest": "",
+      "bookingDate": "2025-02-06T14:09:58.836Z",
+      "status": true
+    },
+    {
+      "id": "0a91",
+      "userId": "PG002",
+      "tourId": "TRPKG006",
+      "tourName": "Kyoto Cultural Highlights",
+      "agencyId": "AG002",
+      "adults": 1,
+      "children": 0,
+      "rooms": 1,
+      "departureDate": "2025-02-07T19:40",
+      "arrivalDate": "2025-02-12T19:40",
+      "freePickup": "yes",
+      "paymentStatus": false,
+      "paymentId": "",
+      "amount": "INR 3000.00",
+      "specialRequest": "",
+      "bookingDate": "2025-02-06T14:10:13.977Z",
+      "status": false
+    },
+    {
+      "id": "3955",
+      "userId": "PG002",
+      "tourId": "TRPKG006",
+      "tourName": "Kyoto Cultural Highlights",
+      "agencyId": "AG002",
+      "adults": 1,
+      "children": 0,
+      "rooms": 1,
+      "departureDate": "2025-02-11T19:40",
+      "arrivalDate": "2025-02-14T19:40",
+      "freePickup": "no",
+      "paymentStatus": false,
+      "paymentId": "",
+      "amount": "INR 1800.00",
+      "specialRequest": "",
+      "bookingDate": "2025-02-06T14:10:32.332Z",
+      "status": true
     }
   ],
   "Payments": [],
-  "Reviews": [],
+  "Reviews": [
+    {
+      "id": "8c5c",
+      "tourId": "TRPKG006",
+      "Reviewer": "Anonymous",
+      "Rating": 5,
+      "ReviewText": "Test review"
+    }
+  ],
   "users": [
     {
       "id": "AD001",
@@ -13794,7 +14191,7 @@
       "agencyId": "AG001"
     },
     {
-      "id": "SPT002",
+      "id": "SPH001",
       "fullName": "Noorul",
       "email": "noor@gmail.com",
       "password": "123456",
@@ -13803,6 +14200,16 @@
       "role": "Tour Service Provider",
       "location": "Tamilnadu",
       "agencyId": "AG002"
+    },
+    {
+      "id": "PG002",
+      "fullName": "Shubham Badlani",
+      "email": "shubham@gmail.com",
+      "password": "123456",
+      "age": 20,
+      "gender": "Male",
+      "role": "User",
+      "location": "Mumbai"
     }
   ]
 }
