@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminNavigationComponent } from '../admin-navigation/admin-navigation.component';
 import { NgChartsModule } from 'ng2-charts';
-import { Booking } from '../../models/hotel.model';
+import { Booking, Hotel } from '../../models/hotel.model';
 import { HotelService } from '../../services/hotel.service';
 import { ChartData } from 'chart.js';
 
@@ -17,8 +17,13 @@ export class AdminDashboard_Component {
   constructor(private hotelService: HotelService) {}
 
   bookings: Booking[] = [];
+  hotels: Hotel[] = [];
 
   ngOnInit() {
+
+    this.hotelService.getHotels().subscribe((data) => {
+      this.hotels = data;
+    })
     this.hotelService.getBookings().subscribe((data) => {
       this.bookings = data;
       this.calculateMetrics();
@@ -69,8 +74,8 @@ export class AdminDashboard_Component {
     this.totalVisits = this.bookings.filter(booking => booking.status === 'visited').length;
   
     // Total Hotels
-    const uniqueHotels = new Set(this.bookings.map(booking => booking.hotelid));
-    this.totalHotels = uniqueHotels.size;
+    
+    this.totalHotels = this.hotels.length;
   
     // Popular Hotels
     this.popularHotels = {};

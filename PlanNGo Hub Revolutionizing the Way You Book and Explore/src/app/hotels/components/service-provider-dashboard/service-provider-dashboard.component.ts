@@ -19,9 +19,12 @@ export class ServiceProviderDashboardComponent {
 
   bookings: Booking[] = [];
 
+  //userid of logged in user
+  userid: string = sessionStorage.getItem('userId') || 'USER001';
+
   ngOnInit() {
     this.hotelService.getBookings().subscribe((data) => {
-      this.hotelService.getHotelIdByhspId(sessionStorage.getItem('userId') || 'USER001').subscribe((hotelId) => {
+      this.hotelService.getHotelIdByhspId(this.userid).subscribe((hotelId) => {
         if (hotelId) {
           this.bookings = data.filter(booking => booking.hotelid === hotelId); // Filter bookings for HSP012
           this.calculateMetrics();
