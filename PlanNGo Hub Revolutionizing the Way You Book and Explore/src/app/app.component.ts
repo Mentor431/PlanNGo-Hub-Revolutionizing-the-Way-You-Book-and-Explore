@@ -10,11 +10,12 @@ import { faHotel } from '@fortawesome/free-solid-svg-icons';
 import { faPlane } from '@fortawesome/free-solid-svg-icons';
 import { faSuitcase } from '@fortawesome/free-solid-svg-icons';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FontAwesomeModule, ButtonModule, ToastModule, FormsModule],
+  imports: [RouterOutlet, FontAwesomeModule, ButtonModule, ToastModule, FormsModule, RouterModule],
   providers: [MessageService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

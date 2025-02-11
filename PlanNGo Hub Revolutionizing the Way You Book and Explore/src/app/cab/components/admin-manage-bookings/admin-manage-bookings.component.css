@@ -1,5 +1,5 @@
 /* Body and overall page layout */
-.background {
+/* .background {
   position: fixed;
   top: 0;
   left: 0;
@@ -7,7 +7,7 @@
   height: 100%;
   background-color: #bdcbe2; 
   z-index: -1;  
-}
+} */
 
 .dashboard {
   display: flex;
