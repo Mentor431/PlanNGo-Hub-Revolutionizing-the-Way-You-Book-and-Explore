@@ -770,9 +770,10 @@
           "lastname": "Sarkar",
           "gender": "female",
           "contactNumber": "8974316688",
-          "date": "2025-01-28"
+          "date": "2025-02-13"
         }
-      ]
+      ],
+      "status": "Upcoming"
     },
     {
       "id": "df40",
@@ -906,7 +907,7 @@
           "date": "2025-02-22"
         }
       ],
-      "status": "Upcoming"
+      "status": "Cancelled"
     },
     {
       "id": "1694",
@@ -1087,6 +1088,97 @@
         }
       ],
       "status": "Upcoming"
+    },
+    {
+      "id": "0151",
+      "cab": [
+        {
+          "id": "CAB017",
+          "agencyId": "AGENCY5",
+          "driverName": "Harsh Kapoor",
+          "type": "Wagnor",
+          "fareEstimate": 380,
+          "location": "Mumbai",
+          "available": true,
+          "seater": 4,
+          "image": "assets/car.png",
+          "dropLocation": "Kolkata",
+          "estimatedTime": "9-11 mins",
+          "pinGenerated": "1987",
+          "contactNumber": "+91 9876543226",
+          "reviews": [
+            {
+              "user": "Amit Kumar",
+              "comment": "Ride was comfortable and fast.",
+              "rating": 5
+            },
+            {
+              "user": "Maya Thakur",
+              "comment": "Driver was friendly, but car had minor issues.",
+              "rating": 4
+            }
+          ],
+          "rating": 4.5,
+          "carNumber": "KL345MN"
+        }
+      ],
+      "users": [
+        {
+          "id": "0MZC",
+          "firstname": "Sowmya",
+          "midname": "",
+          "lastname": "K S",
+          "gender": "female",
+          "contactNumber": "1234567891",
+          "date": "2025-02-13"
+        }
+      ],
+      "status": "Cancelled"
+    },
+    {
+      "id": "c92d",
+      "cab": [
+        {
+          "id": "CAB017",
+          "agencyId": "AGENCY5",
+          "driverName": "Harsh Kapoor",
+          "type": "Wagnor",
+          "fareEstimate": 380,
+          "location": "Mumbai",
+          "available": true,
+          "seater": 4,
+          "image": "assets/car.png",
+          "dropLocation": "Kolkata",
+          "estimatedTime": "9-11 mins",
+          "pinGenerated": "1987",
+          "contactNumber": "+91 9876543226",
+          "reviews": [
+            {
+              "user": "Amit Kumar",
+              "comment": "Ride was comfortable and fast.",
+              "rating": 5
+            },
+            {
+              "user": "Maya Thakur",
+              "comment": "Driver was friendly, but car had minor issues.",
+              "rating": 4
+            }
+          ],
+          "rating": 4.5,
+          "carNumber": "KL345MN"
+        }
+      ],
+      "users": [
+        {
+          "id": "3N12",
+          "firstname": "Sowmya",
+          "midname": "",
+          "lastname": "K S",
+          "gender": "female",
+          "contactNumber": "1234567891",
+          "date": "2025-02-13"
+        }
+      ]
     }
   ],
   "reviews": [
@@ -1130,6 +1222,12 @@
           "receiver": "admin",
           "text": "Pickup confirmed.",
           "timestamp": "2025-02-09T07:02:00.071Z"
+        },
+        {
+          "sender": "admin",
+          "receiver": "A1B2",
+          "text": "Are you available?",
+          "timestamp": "2025-02-11T14:06:02.373Z"
         }
       ]
     },
@@ -1140,7 +1238,14 @@
       "location": "Bengaluru",
       "available": false,
       "cabNumber": "EF456GH",
-      "chats": []
+      "chats": [
+        {
+          "sender": "admin",
+          "receiver": "C3D4",
+          "text": "Are you available?",
+          "timestamp": "2025-02-11T14:05:53.646Z"
+        }
+      ]
     },
     {
       "id": "E5F6",
@@ -1210,6 +1315,18 @@
           "receiver": "admin",
           "text": "Yes, I'm available.",
           "timestamp": "2025-02-10T14:09:51.805Z"
+        },
+        {
+          "sender": "admin",
+          "receiver": "M3N4",
+          "text": "Are you available?",
+          "timestamp": "2025-02-11T14:05:35.703Z"
+        },
+        {
+          "sender": "admin",
+          "receiver": "M3N4",
+          "text": "Are you available?",
+          "timestamp": "2025-02-11T14:05:47.606Z"
         }
       ]
     },
@@ -5660,6 +5777,38 @@
       "checkIn": "02/19/2025",
       "checkOut": "02/21/2025",
       "status": "booked"
+    },
+    {
+      "id": "80urhyh",
+      "userid": "PG001",
+      "hotelid": "HOTEL019",
+      "hotelName": "The St. Regis Mumbai",
+      "hotelImage": "assets/hotel/hotel-images/st-regis-mumbai.jpg",
+      "location": "Mumbai",
+      "name": "Sowmya",
+      "age": 25,
+      "gender": "female",
+      "email": "abc@gmail.com",
+      "phone": "1234567890",
+      "guests": [
+        {
+          "name": "ABC",
+          "age": 25,
+          "gender": "male"
+        }
+      ],
+      "roomType": "Deluxe Room",
+      "roomPrice": 22000,
+      "noOfrooms": 1,
+      "stayDuration": 2,
+      "noOfGuests": 2,
+      "totalPrice": 44000,
+      "offer": 0,
+      "netPrice": 44000,
+      "totalPayable": 51920,
+      "checkIn": "2/13/2025",
+      "checkOut": "2/15/2025",
+      "status": "booked"
     }
   ],
   "flights": [
@@ -7261,6 +7410,132 @@
       "totalPrice": 800,
       "seats": [
         "A7"
+      ],
+      "status": "booked"
+    },
+    {
+      "id": "b33a",
+      "flight": {
+        "id": "FL015",
+        "from": "Detroit",
+        "to": "Delhi",
+        "departureDate": "20-02-2025",
+        "price": 800,
+        "airline": "Air India",
+        "totalSeats": 200,
+        "availableSeats": "string[]",
+        "unavailableSeats": "string[]",
+        "fromTime": "05:00 PM",
+        "toTime": "05:00 AM",
+        "duration": "14h"
+      },
+      "passengers": [
+        {
+          "firstName": "ABC",
+          "middleName": "",
+          "lastName": "DEF",
+          "dateOfBirth": "2016-06-09",
+          "gender": "male",
+          "nationality": "Indian",
+          "postalCode": "A123456a"
+        }
+      ],
+      "totalPrice": 800
+    },
+    {
+      "id": "64be",
+      "flight": {
+        "id": "FL015",
+        "from": "Detroit",
+        "to": "Delhi",
+        "departureDate": "20-02-2025",
+        "price": 800,
+        "airline": "Air India",
+        "totalSeats": 200,
+        "availableSeats": "string[]",
+        "unavailableSeats": "string[]",
+        "fromTime": "05:00 PM",
+        "toTime": "05:00 AM",
+        "duration": "14h"
+      },
+      "passengers": [
+        {
+          "firstName": "abc",
+          "middleName": "def",
+          "lastName": "def",
+          "dateOfBirth": "2024-10-09",
+          "gender": "male",
+          "nationality": "Indian",
+          "postalCode": "A123456a",
+          "uid": "n3vpsx3"
+        }
+      ],
+      "totalPrice": 800,
+      "seats": [
+        "A8"
+      ],
+      "status": "booked"
+    },
+    {
+      "id": "0911",
+      "flight": {
+        "id": "FL015",
+        "from": "Detroit",
+        "to": "Delhi",
+        "departureDate": "20-02-2025",
+        "price": 800,
+        "airline": "Air India",
+        "totalSeats": 200,
+        "availableSeats": "string[]",
+        "unavailableSeats": "string[]",
+        "fromTime": "05:00 PM",
+        "toTime": "05:00 AM",
+        "duration": "14h"
+      },
+      "passengers": [
+        {
+          "firstName": "ABC",
+          "middleName": "",
+          "lastName": "DEF",
+          "dateOfBirth": "2023-05-12",
+          "gender": "female",
+          "nationality": "Indian",
+          "postalCode": "A1235456e"
+        }
+      ],
+      "totalPrice": 800
+    },
+    {
+      "id": "64be",
+      "flight": {
+        "id": "FL015",
+        "from": "Detroit",
+        "to": "Delhi",
+        "departureDate": "20-02-2025",
+        "price": 800,
+        "airline": "Air India",
+        "totalSeats": 200,
+        "availableSeats": "string[]",
+        "unavailableSeats": "string[]",
+        "fromTime": "05:00 PM",
+        "toTime": "05:00 AM",
+        "duration": "14h"
+      },
+      "passengers": [
+        {
+          "firstName": "abc",
+          "middleName": "def",
+          "lastName": "def",
+          "dateOfBirth": "2024-10-09",
+          "gender": "male",
+          "nationality": "Indian",
+          "postalCode": "A123456a",
+          "uid": "gw5mw1b"
+        }
+      ],
+      "totalPrice": 800,
+      "seats": [
+        "A9"
       ],
       "status": "booked"
     }
@@ -13655,6 +13930,498 @@
           "status": "available"
         }
       ]
+    },
+    {
+      "id": "decc",
+      "flightId": "FL015",
+      "seats": [
+        {
+          "id": "A1",
+          "status": "booked"
+        },
+        {
+          "id": "A2",
+          "status": "booked"
+        },
+        {
+          "id": "A3",
+          "status": "booked"
+        },
+        {
+          "id": "A4",
+          "status": "booked"
+        },
+        {
+          "id": "A5",
+          "status": "booked"
+        },
+        {
+          "id": "A6",
+          "status": "booked"
+        },
+        {
+          "id": "A7",
+          "status": "booked"
+        },
+        {
+          "id": "A8",
+          "status": "booked"
+        },
+        {
+          "id": "A9",
+          "status": "available"
+        },
+        {
+          "id": "A10",
+          "status": "available"
+        },
+        {
+          "id": "B1",
+          "status": "available"
+        },
+        {
+          "id": "B2",
+          "status": "available"
+        },
+        {
+          "id": "B3",
+          "status": "available"
+        },
+        {
+          "id": "B4",
+          "status": "available"
+        },
+        {
+          "id": "B5",
+          "status": "available"
+        },
+        {
+          "id": "B6",
+          "status": "available"
+        },
+        {
+          "id": "B7",
+          "status": "available"
+        },
+        {
+          "id": "B8",
+          "status": "available"
+        },
+        {
+          "id": "B9",
+          "status": "available"
+        },
+        {
+          "id": "B10",
+          "status": "available"
+        },
+        {
+          "id": "C1",
+          "status": "available"
+        },
+        {
+          "id": "C2",
+          "status": "available"
+        },
+        {
+          "id": "C3",
+          "status": "available"
+        },
+        {
+          "id": "C4",
+          "status": "available"
+        },
+        {
+          "id": "C5",
+          "status": "available"
+        },
+        {
+          "id": "C6",
+          "status": "available"
+        },
+        {
+          "id": "C7",
+          "status": "available"
+        },
+        {
+          "id": "C8",
+          "status": "available"
+        },
+        {
+          "id": "C9",
+          "status": "available"
+        },
+        {
+          "id": "C10",
+          "status": "available"
+        },
+        {
+          "id": "D1",
+          "status": "available"
+        },
+        {
+          "id": "D2",
+          "status": "available"
+        },
+        {
+          "id": "D3",
+          "status": "available"
+        },
+        {
+          "id": "D4",
+          "status": "available"
+        },
+        {
+          "id": "D5",
+          "status": "available"
+        },
+        {
+          "id": "D6",
+          "status": "available"
+        },
+        {
+          "id": "D7",
+          "status": "available"
+        },
+        {
+          "id": "D8",
+          "status": "available"
+        },
+        {
+          "id": "D9",
+          "status": "available"
+        },
+        {
+          "id": "D10",
+          "status": "available"
+        },
+        {
+          "id": "E1",
+          "status": "available"
+        },
+        {
+          "id": "E2",
+          "status": "available"
+        },
+        {
+          "id": "E3",
+          "status": "available"
+        },
+        {
+          "id": "E4",
+          "status": "available"
+        },
+        {
+          "id": "E5",
+          "status": "available"
+        },
+        {
+          "id": "E6",
+          "status": "available"
+        },
+        {
+          "id": "E7",
+          "status": "available"
+        },
+        {
+          "id": "E8",
+          "status": "available"
+        },
+        {
+          "id": "E9",
+          "status": "available"
+        },
+        {
+          "id": "E10",
+          "status": "available"
+        },
+        {
+          "id": "F1",
+          "status": "available"
+        },
+        {
+          "id": "F2",
+          "status": "available"
+        },
+        {
+          "id": "F3",
+          "status": "available"
+        },
+        {
+          "id": "F4",
+          "status": "available"
+        },
+        {
+          "id": "F5",
+          "status": "available"
+        },
+        {
+          "id": "F6",
+          "status": "available"
+        },
+        {
+          "id": "F7",
+          "status": "available"
+        },
+        {
+          "id": "F8",
+          "status": "available"
+        },
+        {
+          "id": "F9",
+          "status": "available"
+        },
+        {
+          "id": "F10",
+          "status": "available"
+        }
+      ]
+    },
+    {
+      "id": "0ae9",
+      "flightId": "FL015",
+      "seats": [
+        {
+          "id": "A1",
+          "status": "booked"
+        },
+        {
+          "id": "A2",
+          "status": "booked"
+        },
+        {
+          "id": "A3",
+          "status": "booked"
+        },
+        {
+          "id": "A4",
+          "status": "booked"
+        },
+        {
+          "id": "A5",
+          "status": "booked"
+        },
+        {
+          "id": "A6",
+          "status": "booked"
+        },
+        {
+          "id": "A7",
+          "status": "booked"
+        },
+        {
+          "id": "A8",
+          "status": "booked"
+        },
+        {
+          "id": "A9",
+          "status": "booked"
+        },
+        {
+          "id": "A10",
+          "status": "available"
+        },
+        {
+          "id": "B1",
+          "status": "available"
+        },
+        {
+          "id": "B2",
+          "status": "available"
+        },
+        {
+          "id": "B3",
+          "status": "available"
+        },
+        {
+          "id": "B4",
+          "status": "available"
+        },
+        {
+          "id": "B5",
+          "status": "available"
+        },
+        {
+          "id": "B6",
+          "status": "available"
+        },
+        {
+          "id": "B7",
+          "status": "available"
+        },
+        {
+          "id": "B8",
+          "status": "available"
+        },
+        {
+          "id": "B9",
+          "status": "available"
+        },
+        {
+          "id": "B10",
+          "status": "available"
+        },
+        {
+          "id": "C1",
+          "status": "available"
+        },
+        {
+          "id": "C2",
+          "status": "available"
+        },
+        {
+          "id": "C3",
+          "status": "available"
+        },
+        {
+          "id": "C4",
+          "status": "available"
+        },
+        {
+          "id": "C5",
+          "status": "available"
+        },
+        {
+          "id": "C6",
+          "status": "available"
+        },
+        {
+          "id": "C7",
+          "status": "available"
+        },
+        {
+          "id": "C8",
+          "status": "available"
+        },
+        {
+          "id": "C9",
+          "status": "available"
+        },
+        {
+          "id": "C10",
+          "status": "available"
+        },
+        {
+          "id": "D1",
+          "status": "available"
+        },
+        {
+          "id": "D2",
+          "status": "available"
+        },
+        {
+          "id": "D3",
+          "status": "available"
+        },
+        {
+          "id": "D4",
+          "status": "available"
+        },
+        {
+          "id": "D5",
+          "status": "available"
+        },
+        {
+          "id": "D6",
+          "status": "available"
+        },
+        {
+          "id": "D7",
+          "status": "available"
+        },
+        {
+          "id": "D8",
+          "status": "available"
+        },
+        {
+          "id": "D9",
+          "status": "available"
+        },
+        {
+          "id": "D10",
+          "status": "available"
+        },
+        {
+          "id": "E1",
+          "status": "available"
+        },
+        {
+          "id": "E2",
+          "status": "available"
+        },
+        {
+          "id": "E3",
+          "status": "available"
+        },
+        {
+          "id": "E4",
+          "status": "available"
+        },
+        {
+          "id": "E5",
+          "status": "available"
+        },
+        {
+          "id": "E6",
+          "status": "available"
+        },
+        {
+          "id": "E7",
+          "status": "available"
+        },
+        {
+          "id": "E8",
+          "status": "available"
+        },
+        {
+          "id": "E9",
+          "status": "available"
+        },
+        {
+          "id": "E10",
+          "status": "available"
+        },
+        {
+          "id": "F1",
+          "status": "available"
+        },
+        {
+          "id": "F2",
+          "status": "available"
+        },
+        {
+          "id": "F3",
+          "status": "available"
+        },
+        {
+          "id": "F4",
+          "status": "available"
+        },
+        {
+          "id": "F5",
+          "status": "available"
+        },
+        {
+          "id": "F6",
+          "status": "available"
+        },
+        {
+          "id": "F7",
+          "status": "available"
+        },
+        {
+          "id": "F8",
+          "status": "available"
+        },
+        {
+          "id": "F9",
+          "status": "available"
+        },
+        {
+          "id": "F10",
+          "status": "available"
+        }
+      ]
     }
   ],
   "Tours": [
@@ -15067,7 +15834,7 @@
       "amount": "INR 2700.00",
       "specialRequest": "",
       "bookingDate": "2025-02-04T14:35:53.738Z",
-      "status": true
+      "status": false
     },
     {
       "id": "1a75",
@@ -15220,6 +15987,25 @@
       "specialRequest": "",
       "bookingDate": "2025-02-10T14:03:24.516Z",
       "status": false
+    },
+    {
+      "id": "b77f",
+      "userId": "PG001",
+      "tourId": "TRPKG005",
+      "tourName": "Jaipur Cultural Exploration",
+      "agencyId": "AG001",
+      "adults": 1,
+      "children": 0,
+      "rooms": 1,
+      "departureDate": "2025-02-13T19:30",
+      "arrivalDate": "2025-02-14T19:30",
+      "freePickup": "yes",
+      "paymentStatus": false,
+      "paymentId": "",
+      "amount": "INR 300.00",
+      "specialRequest": "",
+      "bookingDate": "2025-02-11T14:00:18.127Z",
+      "status": true
     }
   ],
   "Payments": [],
@@ -15244,6 +16030,13 @@
       "Reviewer": "Anonymous",
       "Rating": 5,
       "ReviewText": "Test Review"
+    },
+    {
+      "id": "40c4",
+      "tourId": "TRPKG005",
+      "Reviewer": "Anonymous",
+      "Rating": 5,
+      "ReviewText": "Test"
     }
   ],
   "users": [
@@ -15252,7 +16045,7 @@
       "fullName": "Vasudharani",
       "email": "vasudharanignayak@gmail.com",
       "password": "2323",
-      "age": 20,
+      "age": 21,
       "gender": "Female",
       "role": "Admin",
       "location": "Karnataka",
@@ -15260,10 +16053,10 @@
     },
     {
       "id": "PG001",
-      "fullName": "Shree Lakshmi",
+      "fullName": "Shree ",
       "email": "aaa@gmail.com",
       "password": "444",
-      "age": 22,
+      "age": 29,
       "gender": "Female",
       "role": "User",
       "location": "Belagav",
